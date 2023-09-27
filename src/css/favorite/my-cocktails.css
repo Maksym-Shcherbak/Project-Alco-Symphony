@@ -1,0 +1,51 @@
+.favorite-coctails {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 27px 0;
+}
+
+.favorite-coctails-title {
+    color: #242424;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+  
+}
+
+.favorite-coctails-subtitle {
+    color: #242424;
+    text-align: center;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.favorite-coctails-subtitle-span {
+    color: #9CDFDF;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+@media screen and (max-width: 767px) {
+.favorite-coctails {
+    background-image: url(/src/img/fav-coctails-bg/fav-coctails-mob-bg.webp), lightgray 0px 0px / 100% 653.941% no-repeat; max-width: 375px;
+    }
+ }
+
+ @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
+ screen and (min-resolution: 192dpi) and (max-width: 767px),
+ screen and (min-resolution: 2dppx) and (max-width: 767px) {
+    .favorite-coctails {
+        background-image: url(/src/img/fav-coctails-bg/fav-coctails-mob-bg@2x.webp), lightgray 0px 0px / 100% 653.941% no-repeat;
+    }
+ }

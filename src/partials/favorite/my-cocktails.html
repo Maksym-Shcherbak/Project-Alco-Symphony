@@ -6,5 +6,24 @@
     <title>Favorite cocktails</title>
     <link rel="stylesheet" href="../favorite/my-cocktails.html" />
   </head>
-  <body></body>
+  <body>
+    <section class="favorite-coctails">
+      <h2 class="favorite-coctails-title">Favorite cocktails</h2>
+     <div>
+      <picture>
+
+        <source 
+        srcset="/src/img/cocktail-shaker/not-found-cocktails/rafiki.webp 1x, /src/img/cocktail-shaker/not-found-cocktails/rafiki@2x.webp 2x"
+        media="(min-width: 768px)"/>
+        <source 
+        srcset="/src/img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp 1x, /src/img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob@2x.webp 2x"
+        media="(min-width: 280px)"
+        />
+       <img src="/src/img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp" alt="cocktail-picture"
+       loading="lazy">
+      </picture>
+      <p class="favorite-coctails-subtitle">You haven't added any <span class="favorite-coctails-subtitle-span">favorite cocktails</span> yet</p>
+     </div>
+    </section>
+  </body>
 </html>
