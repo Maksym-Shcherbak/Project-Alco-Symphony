@@ -2,10 +2,8 @@ import axios from 'axios';
 
 export class CocktailsAPI {
   #BASE_URL = 'https://drinkify.b.goit.study/api/v1/';
-  constructor(selectedLetter, searchQuery) {
-    this.quantity = 9;
-    this.char = selectedLetter;
-    this.cocktailsName = searchQuery;
+  constructor(quantityOfCocktails) {
+    this.quantity = quantityOfCocktails;
   }
   async getRandomCocktails() {
     const searchParams = new URLSearchParams({
@@ -15,7 +13,7 @@ export class CocktailsAPI {
       const response = await axios(
         `${this.#BASE_URL}cocktails?${searchParams}`
       );
-      console.log(response);
+      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error.message);
@@ -29,7 +27,17 @@ export class CocktailsAPI {
       const response = await axios(
         `${this.#BASE_URL}cocktails/search/?${searchParams}`
       );
-      console.log(response);
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async getIngredients(id) {
+    try {
+      const response = await axios(
+        `${this.#BASE_URL}cocktails/ingredients/?${id}`
+      );
       return response.data;
     } catch (error) {
       console.log(error.message);
