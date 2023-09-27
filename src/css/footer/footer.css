@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 .footer {
   background: #7e8fdd;
 }
@@ -23,8 +22,6 @@
 }
 .footer-container {
   display: flex;
-
-  /* flex-direction: row; */
 }
 
 /* +++++++++++++++++++++++++MOBILE++++++++++++++++++++ */
@@ -36,53 +33,11 @@
     justify-content: space-between;
     height: 186px;
   }
-=======
-/* +++++++++++++++++++++++++MOBILE++++++++++++++++++++ */
-
-.footer {
-  background: #7e8fdd;
-  display: flex;
-
-  /* width: 100%; */
-}
-.footer-container {
-  display: flex;
-  justify-content: space-between;
-}
-@media screen and (min-width: 375px) {
-  .footer {
-    height: 186px;
-  }
-  .footer-container {
-    margin-left: 20px;
-    margin-right: 50px;
-  }
-  .emblem {
-    color: #fdfdff;
-    font-family: Poppins;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px; /* 112.5% */
-    letter-spacing: -0.16px;
-    text-transform: uppercase;
-  }
-  .social-link {
-    color: #fdfdff;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 18px; /* 128.571% */
-    text-transform: uppercase;
-  }
->>>>>>> Stashed changes
 }
 /* +++++++++++++++++++++++++/MOBILE++++++++++++++++++++ */
 
 /* +++++++++++++++++++++++++TABLET++++++++++++++++++++ */
 @media screen and (min-width: 768px) {
-<<<<<<< Updated upstream
   .footer-container {
     padding-left: 12px;
     padding-right: 70px;
@@ -91,78 +46,16 @@
     height: 183px;
   }
 }
-=======
-  .footer {
-    height: 183px;
-  }
-  .footer-container {
-    margin-left: 32px;
-    margin-right: 90px;
-  }
-  /* .emblem {
-    color: var(--white-2, #fdfdff);
-    font-family: Poppins;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px; /* 109.091% */
-  /* letter-spacing: -0.22px;
-    text-transform: uppercase;
-    margin-top: 40.5px;
-  } */
-  /* .social-link {
-    color: #fdfdff;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 110%; /* 15.4px */
-  /* text-transform: uppercase;
-    margin-top: 40px;
-  } */
-}
 
->>>>>>> Stashed changes
 /* +++++++++++++++++++++++++/TABLET++++++++++++++++++++ */
 
 /* +++++++++++++++++++++++++DESKTOP++++++++++++++++++++ */
 @media screen and (min-width: 1200px) {
-<<<<<<< Updated upstream
   .footer-container {
     padding-left: 80px;
     padding-right: 138px;
     padding-top: 40px;
     height: 191px;
   }
-=======
-  .footer {
-    height: 191px;
-  }
-  .footer-container {
-    margin-left: 100px;
-    margin-right: 158px;
-  }
-  /* .emblem {
-    color: var(--white-2, #fdfdff);
-    font-family: Poppins;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 24px; /* 109.091% */
-  /* letter-spacing: -0.22px;
-    text-transform: uppercase;
-    margin-top: 40.5px;
-  } */
-  /* .social-link {
-    color: #fdfdff;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 110%; /* 15.4px */
-  /* text-transform: uppercase;
-    margin-top: 40px;
-  } */
->>>>>>> Stashed changes
 }
 /* +++++++++++++++++++++++++/DESKTOP++++++++++++++++++++ */

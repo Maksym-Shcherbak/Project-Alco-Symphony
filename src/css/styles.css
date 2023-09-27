@@ -27,10 +27,6 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 }
-<<<<<<< Updated upstream
-=======
-
->>>>>>> Stashed changes
 @media screen and (min-width: 375px) {
   .container {
     width: 375px;
@@ -40,11 +36,6 @@
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
-<<<<<<< Updated upstream
-    /* padding: 0 32px; */
-=======
-    padding: 0 32px;
->>>>>>> Stashed changes
   }
 }
 
