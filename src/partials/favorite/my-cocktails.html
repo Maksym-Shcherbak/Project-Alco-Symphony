@@ -17,26 +17,32 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../favorite/my-cocktails.html" />
+    <link rel="stylesheet" href="css/favorite/my-cocktails.css" />
   </head>
   <body>
     <section class="favorite-coctails">
-      <h2 class="favorite-coctails-title">Favorite cocktails</h2>
-     <div>
+      <div class="favorite-coctails-container">
+        <h2 class="favorite-coctails-title">Favorite cocktails</h2>
+     <div class="not-found-cocktails-container">
       <picture>
 
         <source 
-        srcset="/src/img/cocktail-shaker/not-found-cocktails/rafiki.webp 1x, /src/img/cocktail-shaker/not-found-cocktails/rafiki@2x.webp 2x"
+        srcset="img/cocktail-shaker/not-found-cocktails/rafiki.webp 1x, img/cocktail-shaker/not-found-cocktails/rafiki@2x.webp 2x"
         media="(min-width: 768px)"/>
         <source 
-        srcset="/src/img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp 1x, /src/img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob@2x.webp 2x"
+        srcset="img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp 1x, img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob@2x.webp 2x"
         media="(min-width: 280px)"
         />
-       <img src="/src/img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp" alt="cocktail-picture"
+       <img 
+       class="not-found-img"
+       src="img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp" 
+       alt="cocktail-picture"
        loading="lazy">
       </picture>
       <p class="favorite-coctails-subtitle">You haven't added any <span class="favorite-coctails-subtitle-span">favorite cocktails</span> yet</p>
      </div>
+    </div>
+    
     </section>
   </body>
 </html>
