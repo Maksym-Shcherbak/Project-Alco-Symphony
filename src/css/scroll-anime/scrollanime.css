@@ -1,0 +1,53 @@
+.buttonup-scroll{
+    position: fixed;
+  display: flex;
+  background-color: #9CDFDF;
+  border: none;
+  border-radius: 50%;
+  z-index: 30;
+  right: 10px;
+  width: 60px;
+  height: 60px;
+  padding: 5px;
+  visibility: hidden;
+}
+
+
+@keyframes animeUp {
+    50% {
+      padding-bottom: 0;
+    }
+    100% {
+      padding-top: 0;
+      padding-bottom: 5px;
+    }
+  }
+
+
+  /* .up-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+
+  .anima-up {
+    animation-name: animaUp;
+    animation-duration: 400ms;
+    animation-iteration-count: 2;
+  } */
+
+
+@media screen and (max-width: 768px) {
+    .buttonup-scroll {
+      width: 42px;
+      height: 42px;
+    }
+  
+    .buttonscroll.anima-up {
+      width: 32;
+      height: 32;
+    }
+  }
