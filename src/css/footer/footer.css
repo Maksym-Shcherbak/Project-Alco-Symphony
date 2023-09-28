@@ -1,0 +1,61 @@
+.footer .container {
+  background: #7e8fdd;
+}
+.logo {
+  color: #fdfdff;
+  font-family: Poppins;
+  font-size: 22px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 24px; /* 109.091% */
+  letter-spacing: -0.22px;
+  text-transform: uppercase;
+}
+.social-link {
+  color: #fdfdff;
+  font-family: Poppins;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 110%; /* 15.4px */
+  text-transform: uppercase;
+}
+.footer-container {
+  display: flex;
+}
+
+/* +++++++++++++++++++++++++MOBILE++++++++++++++++++++ */
+@media screen and (min-width: 375px) {
+  .footer-container {
+    /* padding-left: 20px; */
+    padding-right: 30px;
+    padding-top: 40px;
+    justify-content: space-between;
+    height: 186px;
+  }
+}
+/* +++++++++++++++++++++++++/MOBILE++++++++++++++++++++ */
+
+/* +++++++++++++++++++++++++TABLET++++++++++++++++++++ */
+@media screen and (min-width: 768px) {
+  .footer-container {
+    padding-left: 12px;
+    padding-right: 70px;
+    padding-top: 32px;
+    /* justify-content: space-between; */
+    height: 183px;
+  }
+}
+
+/* +++++++++++++++++++++++++/TABLET++++++++++++++++++++ */
+
+/* +++++++++++++++++++++++++DESKTOP++++++++++++++++++++ */
+@media screen and (min-width: 1200px) {
+  .footer-container {
+    padding-left: 80px;
+    padding-right: 138px;
+    padding-top: 40px;
+    height: 191px;
+  }
+}
+/* +++++++++++++++++++++++++/DESKTOP++++++++++++++++++++ */
