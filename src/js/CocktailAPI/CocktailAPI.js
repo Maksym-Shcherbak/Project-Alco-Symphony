@@ -4,6 +4,7 @@ export class CocktailsAPI {
   #BASE_URL = 'https://drinkify.b.goit.study/api/v1/';
   constructor(quantityOfCocktails) {
     this.quantity = quantityOfCocktails;
+    this.searchRequest = '';
   }
   async getRandomCocktails() {
     const searchParams = new URLSearchParams({
@@ -19,15 +20,14 @@ export class CocktailsAPI {
       console.log(error.message);
     }
   }
-  async searchCocktails(queryParam, searchQuery) {
+  async searchCocktails(key) {
     const searchParams = new URLSearchParams({
-      [queryParam]: searchQuery,
+      [key]: this.searchRequest,
     });
     try {
       const response = await axios(
         `${this.#BASE_URL}cocktails/search/?${searchParams}`
       );
-      console.log(response);
       return response.data;
     } catch (error) {
       console.log(error.message);
@@ -43,5 +43,13 @@ export class CocktailsAPI {
     } catch (error) {
       console.log(error.message);
     }
+  }
+
+  get query() {
+    return this.searchRequest;
+  }
+
+  set query(newQuery) {
+    this.searchRequest = newQuery;
   }
 }

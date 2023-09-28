@@ -1,11 +1,11 @@
 import SlimSelect from 'slim-select';
 import '../../../node_modules/slim-select/dist/slimselect.css';
-import SearchApiService from './search-api';
+import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
 
 const customKeyboard = document.querySelector('.custom-keyboard');
 const form = document.querySelector('.search-form');
 
-const searchApiService = new SearchApiService();
+const searchApiService = new CocktailsAPI();
 
 window.addEventListener('resize', resizeHandler);
 
@@ -130,7 +130,7 @@ async function searchCoctailsByName(e) {
   }
 
   try {
-    const searchData = await searchApiService.fetchCoctails('s');
+    const searchData = await searchApiService.searchCocktails('s');
 
     if (searchData) {
       console.log(searchData);
@@ -150,7 +150,7 @@ async function searchCoctailsByLetter(letter) {
   }
 
   try {
-    const searchData = await searchApiService.fetchCoctails('f');
+    const searchData = await searchApiService.searchCocktails('f');
 
     if (searchData) {
       console.log(searchData);
