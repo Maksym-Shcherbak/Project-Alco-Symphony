@@ -7,27 +7,11 @@ export default class SearchApiService {
     this.searchRequest = '';
   }
 
-  async fetchCoctailsByName() {
+  async fetchCoctails(key) {
     try {
-      const response = await axios.get(`${BASE_URL}`, {
-        params: {
-          s: this.searchRequest,
-        },
-      });
-      return response.data;
-    } catch (error) {
-      console.log(error.response.statusText);
-      return null;
-    }
-  }
-
-  async fetchCoctailsByLetter() {
-    try {
-      const response = await axios.get(`${BASE_URL}`, {
-        params: {
-          f: this.searchRequest,
-        },
-      });
+      const response = await axios.get(
+        `${BASE_URL}/?${key}=${this.searchRequest}`
+      );
       return response.data;
     } catch (error) {
       console.log(error.response.statusText);

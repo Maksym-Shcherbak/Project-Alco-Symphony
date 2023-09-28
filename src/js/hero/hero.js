@@ -130,7 +130,7 @@ async function searchCoctailsByName(e) {
   }
 
   try {
-    const searchData = await searchApiService.fetchCoctailsByName();
+    const searchData = await searchApiService.fetchCoctails('s');
 
     if (searchData) {
       console.log(searchData);
@@ -150,7 +150,7 @@ async function searchCoctailsByLetter(letter) {
   }
 
   try {
-    const searchData = await searchApiService.fetchCoctailsByLetter();
+    const searchData = await searchApiService.fetchCoctails('f');
 
     if (searchData) {
       console.log(searchData);
