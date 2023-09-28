@@ -17,10 +17,13 @@
         srcset="
           ./partials/hero/images/girl-small.webp      375w,
           ./partials/hero/images/girl-small@2x.webp   750w,
+          ./partials/hero/images/girl-small@3x.webp  1125w,
           ./partials/hero/images/girl-medium.webp     768w,
           ./partials/hero/images/girl-medium@2x.webp 1536w,
+          ./partials/hero/images/girl-medium@3x.webp 2304w,
           ./partials/hero/images/girl-large.webp     1200w,
-          ./partials/hero/images/girl-large@2x.webp  2400w
+          ./partials/hero/images/girl-large@2x.webp  2400w,
+          ./partials/hero/images/girl-large@3x.webp  3600w
         "
         sizes="(max-width: 767px) 375px,
           (min-width: 768px) and (max-width: 1199px) 768px,
@@ -47,7 +50,12 @@
   <div class="search-container">
     <div class="custom-keyboard"></div>
     <form class="search-form">
-      <input type="text" class="search-input" placeholder="Search" />
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search"
+        name="searchQuery"
+      />
       <button type="submit" class="search-button">
         <svg width="16" height="16" class="">
           <use href="./partials/hero/images/sprite.svg#icon-search"></use>
