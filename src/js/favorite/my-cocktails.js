@@ -1,7 +1,7 @@
 export function renderFavCoctails(coctailArray) {
-    const markup = coctailArray
-        .map((image) => {
-            return `
+  const markup = coctailArray
+    .map(image => {
+      return `
             <li>
             <div>
             <img>
@@ -15,9 +15,8 @@ export function renderFavCoctails(coctailArray) {
             </button>
             </div>
             </li>;
-        `
-        })
+        `;
+    })
     .join('');
-    
- return markup;
+  return markup;
 }
