@@ -11,7 +11,7 @@ export const createCocktailCards = (arr, container) => {
       </div>
       <div class="cocktail-card-controls">
         <button type="button" class="cocktail-card-learn">Learn more</button>
-        <button type="button" class="cocktail-card-button add" ><svg class="add-button-icon" width="26" height="26"><use href="./img/sprite.svg#icon-heart"></use></svg></button>
+        <button type="button" class="cocktail-card-button add" ><svg class="add-button-icon" width="26" height="26"><use href="/img/sprite.svg#icon-heart"></use></svg></button>
       </div>
     </li>`
     )
