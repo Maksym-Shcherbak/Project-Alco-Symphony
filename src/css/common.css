@@ -13,6 +13,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --white-color: #ffffff;
+  --violet-color: #7E8EDD;
+  --active-color: #9CDFDF;
+  --title-color: #242424;
+  --cart-color: #FDFDFF;
+  --hell-color: #F8F9FF;
+  --second-dark-color: #1A1A1A;
+  --black-color: #000000;
+  --button-color: rgba(126, 143, 221, 0.40);
+  --button-dark: rgba(253, 253, 255, 0.10);
+  --button-dark-hover: rgba(36, 36, 36, 0.20);
+
 }
 
 body {
@@ -38,8 +51,7 @@ body {
   }
 
   body {
-    background: url(../img/cocktails/background_desktop.png) 0px 0px / 100% 100%
-        no-repeat,
+    background: url(../img/cocktails/background_desktop.png) 0px 0px / 100% 100% no-repeat,
       lightgray 0px 0px / 100% 100% no-repeat;
   }
 }
