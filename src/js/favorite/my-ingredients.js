@@ -32,19 +32,36 @@
 //   'favorite-ingradients',
 //   JSON.stringify(favoriteIngradientsArray)
 // );
-document.addEventListener('DOMContentLoaded', () => {
-  favoriteIngradientsArray = JSON.parse(
-    localStorage.getItem('favorite-ingradients')
-  );
-  return favoriteIngradientsArray;
-});
 let favoriteIngradientsArray = [];
+let currentIngradient;
+let modalElement;
 const ingradientsListElement = document.querySelector(
   '.favorite-ingradients-list'
 );
-const modalElement = document.querySelector('.ingradient-modal');
+
+document.addEventListener('DOMContentLoaded', event => {
+  favoriteIngradientsArray = JSON.parse(
+    localStorage.getItem('favorite-ingradients')
+  );
+  setModalElement();
+  renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+});
+
 ingradientsListElement.addEventListener('click', ingradientListListener);
+
+function setModalElement() {
+  modalElement = document.querySelector('.ingradient-modal');
+}
 function ingradientListListener(event) {
+  if (event.target.nodeName !== 'BUTTON') {
+    return;
+  }
+  if (event.srcElement.className === 'remove-button') {
+    removeButtonListener(event);
+    renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+    return;
+  }
+
   modalOpen(event, modalElement);
   modalElement
     .querySelector('.back-button')
@@ -52,16 +69,74 @@ function ingradientListListener(event) {
   modalElement
     .querySelector('.remove-button')
     .addEventListener('click', removeButtonListener);
+
+  modalElement
+    .querySelector('.add-button')
+    .addEventListener('click', addButtonListener);
 }
 function modalOpen(event, DOMElement) {
-  if (event.target.nodeName !== 'BUTTON') {
-    return;
+  renderIngradientModal(favoriteIngradientsArray, DOMElement, event);
+  DOMElement.classList.add('open');
+}
+function backButtonListener() {
+  closeModal(modalElement);
+  renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+}
+function closeModal(DOMElement) {
+  DOMElement.classList.remove('open');
+  DOMElement.innerHTML = '';
+}
+function removeButtonListener(event) {
+  event.target.classList.add('hidden');
+  console.dir(event);
+  if (event.target.nextElementSibling) {
+    event.target.nextElementSibling.classList.remove('hidden');
   }
 
   for (let index = 0; index < favoriteIngradientsArray.length; index++) {
-    const { title, abv, type, country, flavour, description } =
-      favoriteIngradientsArray[index];
+    const { title } = favoriteIngradientsArray[index];
     if (event.target.dataset.name === title) {
+      favoriteIngradientsArray.splice(index, 1);
+      localStorage.setItem(
+        'favorite-ingradients',
+        JSON.stringify(favoriteIngradientsArray)
+      );
+    }
+  }
+}
+function addButtonListener(event) {
+  event.target.classList.add('hidden');
+  event.target.previousElementSibling.classList.remove('hidden');
+  favoriteIngradientsArray.push(currentIngradient);
+  localStorage.setItem(
+    'favorite-ingradients',
+    JSON.stringify(favoriteIngradientsArray)
+  );
+}
+function renderIngradients(ingradientsArray, DOMElement) {
+  DOMElement.innerHTML = '';
+  let alcoholNonalcoholMarkup = 'Non-Alcoholic';
+  for (let index = 0; index < ingradientsArray.length; index++) {
+    const { title, description, alcohol } = ingradientsArray[index];
+    if (alcohol.toLowerCase() === 'yes') {
+      alcoholNonalcoholMarkup = 'Alcoholic';
+    }
+    const markup = `<li>
+    <h2 class="title">${title}</h2>
+      <p class="alcohol">${alcoholNonalcoholMarkup}</p>
+      <p class="description">${description}</p>
+       <button type="button" data-name="${title}">Read more</button>
+       <button class="remove-button" type="button" data-name="${title}" >Remove from favorite</button>
+      </li>`;
+    DOMElement.insertAdjacentHTML('beforeend', markup);
+  }
+}
+function renderIngradientModal(ingradientsArray, DOMElement, event) {
+  for (let index = 0; index < ingradientsArray.length; index++) {
+    const { title, abv, type, country, flavour, description } =
+      ingradientsArray[index];
+    if (event.target.dataset.name === title) {
+      currentIngradient = ingradientsArray[index];
       const markup = `<h2 class="title">${title}</h2>
       <p class="type">${type}</p>
       <div>
@@ -73,30 +148,10 @@ function modalOpen(event, DOMElement) {
           <li> Flavour: ${flavour}</li>
         </ul>
       </div>
-      <button class="remove-button" type="button" data-name="${title}">Remove from favorite</button>
+      <button class="remove-button" type="button" data-name="${title}" >Remove from favorite</button>
+       <button class="add-button hidden" type="button" data-name="${title}" >Add tofavorite</button>
       <button class="back-button" type="button">Back</button>`;
       DOMElement.insertAdjacentHTML('beforeend', markup);
-    }
-    DOMElement.classList.add('open');
-  }
-}
-function backButtonListener() {
-  closeModal(modalElement);
-}
-function closeModal(DOMElement) {
-  DOMElement.classList.remove('open');
-  DOMElement.innerHTML = '';
-}
-function removeButtonListener(event) {
-  for (let index = 0; index < favoriteIngradientsArray.length; index++) {
-    const { title } = favoriteIngradientsArray[index];
-    if (event.target.dataset.name === title) {
-      favoriteIngradientsArray.splice(index, 1);
-      localStorage.setItem(
-        'favorite-ingradients',
-        JSON.stringify(favoriteIngradientsArray)
-      );
-      console.log(favoriteIngradientsArray);
     }
   }
 }
