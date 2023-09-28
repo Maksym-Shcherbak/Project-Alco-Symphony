@@ -53,22 +53,6 @@
   right: 20px;
 }
 
-/* .logo-icon {
-  position: absolute;
-  top: -1px;
-  right: -25px;
-} */
-
-/* .mobile-menu-open {
-  width: 28px;
-  height: 28px;
-  border: none;
-  background-color: transparent;
-  padding: 0;
-  display: flex;
-  align-items: center;
-} */
-
 /* //////// */
 @media screen and (max-width: 1199px) {
   .page-header .flex-container {
