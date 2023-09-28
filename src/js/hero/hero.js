@@ -66,6 +66,13 @@ function renderSelect(alphabetArray) {
       showSearch: false,
     },
   });
+
+  const selectFace = document.querySelector('.ss-main');
+  selectFace.style.backgroundColor = '#7E8FDD66';
+
+  selectFace.addEventListener('click', () => {
+    selectFace.style.backgroundColor = '#9CDFDF';
+  });
 }
 
 function resizeHandler() {

@@ -150,7 +150,7 @@
   text-transform: uppercase;
   border-radius: 8px !important;
   border: none !important;
-  background: rgba(126, 143, 221, 0.4) !important;
+  /* background: rgba(126, 143, 221, 0.4) !important; */
   color: #fdfdff !important;
   font-size: 14px !important;
   font-weight: 600 !important;
