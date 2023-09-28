@@ -7,6 +7,6 @@ const options = {
   visiblePages: 5,
   page: 1,
 };
-const instance = new Pagination(container, options);
+export const instance = new Pagination(container, options);
 
-instance.getCurrentPage();
+

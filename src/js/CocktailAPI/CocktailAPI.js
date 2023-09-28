@@ -27,6 +27,7 @@ export class CocktailsAPI {
       const response = await axios(
         `${this.#BASE_URL}cocktails/search/?${searchParams}`
       );
+      console.log(response);
       return response.data;
     } catch (error) {
       console.log(error.message);
