@@ -1,18 +1,19 @@
-$('body').append('<div class="upbtn"></div>');
-$(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-        $('.upbtn').css({
-            transform: 'scale(1)'
-        });
-        } else {
-        $('.upbtn').css({
-            transform: 'scale(0)'
-        });
+
+
+window.addEventListener('scroll', function() {
+    let button = document.querySelector('.upbtn');
+    if (window.scrollY > 100) {
+        button.style.display = 'block';
+    } else {
+        button.style.display = 'none';
     }
 });
-$('.upbtn').on('click',function() {
-    $('html, body').animate({
-        scrollTop: 0
-    }, 500);
-    return false;
+
+// Функция для прокрутки страницы вверх
+
+document.querySelector('.upbtn').addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });
