@@ -15,6 +15,7 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 140px;
 }
 
 .favorite-coctails-subtitle {
@@ -41,13 +42,12 @@
   font-size: 24px;
   line-height: 1.2;
   margin-left: 20px;
-  margin-bottom: 138px;
+  margin-bottom: 140px;
 }
 
 .not-found-cocktails-container {
   width: 244px;
   gap: 20px;
-  margin-bottom: 140px;
 }
 
 .not-found-img {
@@ -98,6 +98,11 @@
     font-size: 24px;
     line-height: 1.17;
   }
+
+  .delete-btn-icon {
+    width: 24px;
+    height: 24px;
+  }
 }
 
 /* <--------Desktop------> */
@@ -111,16 +116,3 @@
   }
 }
 
-/* @media screen and (max-width: 767px) {
-.favorite-coctails {
-    background-image: url(/src/img/fav-coctails-bg/fav-coctails-mob-bg.webp), lightgray 0px 0px / 100% 653.941% no-repeat; max-width: 375px;
-    }
- }
-
- @media screen and (min-device-pixel-ratio: 2) and (max-width: 767px),
- screen and (min-resolution: 192dpi) and (max-width: 767px),
- screen and (min-resolution: 2dppx) and (max-width: 767px) {
-    .favorite-coctails {
-        background-image: url(/src/img/fav-coctails-bg/fav-coctails-mob-bg@2x.webp), lightgray 0px 0px / 100% 653.941% no-repeat;
-    }
- } */
