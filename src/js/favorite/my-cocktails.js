@@ -1,3 +1,7 @@
+import '../../js/header/header';
+// import './js/learn-more-btn/learn-more-btn';
+import '../../js/scroll-anime/scroll-anime';
+
 export function renderFavCoctails(coctailArray) {
   const markup = coctailArray
     .map(image => {

@@ -23,6 +23,14 @@ export class PaginationForCocktails {
     return this.chunks;
   }
 
+  changePageByClick(arr, container, renderPage) {
+    this.pagination.on('afterMove', event => {
+      const currentPage = event.page;
+      const index = currentPage - 1;
+      renderPage(arr[index], container);
+    });
+  }
+
   get lengthForPart() {
     return this.options.itemsPerPage;
   }

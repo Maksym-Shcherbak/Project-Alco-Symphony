@@ -23,9 +23,9 @@ cocktailsApi
 cocktailsApi.searchCocktails('f', 'a').then(data => {
   parts = paginationForCocktails.createCardsPerPage(data);
   createCocktailCards(parts[0], cocktailList);
-});
-
-paginationForCocktails.pagination.on('afterMove', event => {
-  const currentPage = event.page;
-  createCocktailCards(parts[currentPage - 1], cocktailList);
+  paginationForCocktails.changePageByClick(
+    parts,
+    cocktailList,
+    createCocktailCards
+  );
 });
