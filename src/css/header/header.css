@@ -28,8 +28,6 @@
   line-height: 24px;
   letter-spacing: -1%;
   color: #fdfdff;
-  padding-left: 20px;
-  padding-top: 27px;
   margin-bottom: 180px;
 }
 .menu-logo-icon {
@@ -104,6 +102,54 @@
   height: 32px;
 }
 
+/* свич */
+/* //перемикач ________________________________________________________________*/
+.mobile-header {
+  display: flex;
+  justify-content: space-between;
+
+  padding-top: 27px;
+}
+.mobile-switch {
+  width: 64px;
+  height: 32px;
+}
+
+.mobile-imput[type='checkbox'] {
+  position: relative;
+  outline: none;
+  -webkit-appearance: none;
+  /* width: 100%;
+    height: 100%; */
+  width: 50px;
+  height: 25px;
+  border: #242424 2px solid;
+  background: transparent;
+  border-radius: 34px;
+  transition: 0.5s;
+}
+
+.mobile-imput:checked[type='checkbox'] {
+  background: transparent;
+}
+
+.mobile-imput[type='checkbox']::before {
+  content: '';
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  border-radius: 100px;
+  top: 0;
+  left: 2px;
+  background: #9cdfdf;
+  transition: 0.5s;
+  transform: scale(1.1);
+}
+
+.mobile-imput:checked[type='checkbox']::before {
+  left: 30px;
+}
+
 /* //////// */
 @media screen and (max-width: 1199px) {
   .page-header .flex-container {
@@ -164,7 +210,9 @@
     gap: 28px;
   }
   /* //перемикач */
-
+  .mobile-header {
+    display: flex;
+  }
   .switch {
     width: 64px;
     height: 32px;
@@ -172,10 +220,8 @@
 
   input[type='checkbox'] {
     position: relative;
-    appearance: none;
     outline: none;
-    /* width: 100%;
-    height: 100%; */
+    -webkit-appearance: none;
     width: 50px;
     height: 25px;
     border: #242424 2px solid;
