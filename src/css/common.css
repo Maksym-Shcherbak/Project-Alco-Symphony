@@ -22,10 +22,9 @@
   --hell-color: rgb(248, 249, 255);
   --second-dark-color: rgba(26, 26, 26, 1);
   --black-color: rgb(0, 0, 0);
-  --button-color: rgba(126, 143, 221, 0.40);
-  --button-dark: rgba(253, 253, 255, 0.10);
-  --button-dark-hover: rgba(36, 36, 36, 0.20);
-
+  --button-color: rgba(126, 143, 221, 0.4);
+  --button-dark: rgba(253, 253, 255, 0.1);
+  --button-dark-hover: rgba(36, 36, 36, 0.2);
 }
 
 body {
@@ -34,7 +33,7 @@ body {
 }
 
 .container {
-  padding: 0 20px;
+  padding: 0 32px;
   margin: 0 auto;
 }
 
@@ -47,11 +46,12 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
-    padding: 0 32px;
+    padding: 0 100px;
   }
 
   body {
-    background: url(../img/cocktails/background_desktop.png) 0px 0px / 100% 100% no-repeat,
+    background: url(../img/cocktails/background_desktop.png) 0px 0px / 100% 100%
+        no-repeat,
       lightgray 0px 0px / 100% 100% no-repeat;
   }
 }
