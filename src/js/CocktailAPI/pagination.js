@@ -1,5 +1,5 @@
 import Pagination from 'tui-pagination';
-import { splitParts } from '../cocktails/splitParts';
+import { splitParts } from './splitParts';
 import 'tui-pagination/dist/tui-pagination.css';
 
 export class PaginationForCocktails {
