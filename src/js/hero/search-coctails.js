@@ -1,8 +1,8 @@
-import SearchApiService from './search-api';
+import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
 export { searchCoctailsByName, searchCoctailsByLetter };
 
 const form = document.querySelector('.search-form');
-const searchApiService = new SearchApiService();
+const searchApiService = new CocktailsAPI();
 
 async function searchCoctailsByName(e) {
   e.preventDefault();
@@ -14,7 +14,7 @@ async function searchCoctailsByName(e) {
   }
 
   try {
-    const searchData = await searchApiService.fetchCoctails('s');
+    const searchData = await searchApiService.searchCocktails('s');
 
     if (searchData) {
       console.log(searchData);
@@ -34,7 +34,7 @@ async function searchCoctailsByLetter(letter) {
   }
 
   try {
-    const searchData = await searchApiService.fetchCoctails('f');
+    const searchData = await searchApiService.searchCocktails('f');
 
     if (searchData) {
       console.log(searchData);
