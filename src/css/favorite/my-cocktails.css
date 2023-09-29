@@ -2,6 +2,7 @@
 @import url('../common.css');
 @import url('../header/header.css');
 @import url('../footer/footer.css');
+@import url('../scroll-anime/scrollanime.css');
 
 .favorite-coctails-title {
   font-style: normal;
