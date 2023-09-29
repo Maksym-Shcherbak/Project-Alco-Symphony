@@ -4,12 +4,19 @@
 .logo {
   color: #fdfdff;
   font-family: Poppins;
-  font-size: 22px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 600;
-  line-height: 24px; /* 109.091% */
+  line-height: 18px; /* 109.091% */
   letter-spacing: -0.22px;
   text-transform: uppercase;
+  height: 18px;
+  width: 71px;
+  margin-right: 4px;
+}
+.logo-icon {
+  display: flex;
+  flex-direction: row;
 }
 .social-link {
   color: #fdfdff;
@@ -17,21 +24,42 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 110%; /* 15.4px */
+  line-height: 18px; /* 15.4px */
   text-transform: uppercase;
+}
+.social-list {
+  display: flex;
 }
 .footer-container {
   display: flex;
+  justify-content: space-between;
 }
-
+.social-list-icon {
+  color: #fdfdff;
+}
+.social-title {
+  display: flex;
+  flex-direction: row;
+}
+.social-list-link {
+  color: #fdfdff;
+}
 /* +++++++++++++++++++++++++MOBILE++++++++++++++++++++ */
 @media screen and (min-width: 375px) {
   .footer-container {
     /* padding-left: 20px; */
-    padding-right: 30px;
+    /* padding-right: 32px; */
     padding-top: 40px;
-    justify-content: space-between;
+
     height: 186px;
+  }
+  .social-list {
+    margin-top: 16px;
+    gap: 16px;
+  }
+  .social-list-item {
+    width: 32px;
+    height: 32px;
   }
 }
 /* +++++++++++++++++++++++++/MOBILE++++++++++++++++++++ */
@@ -44,6 +72,28 @@
     padding-top: 32px;
     /* justify-content: space-between; */
     height: 183px;
+  }
+  .logo {
+    font-size: 22px;
+    line-height: 24px; /* 109.091% */
+    letter-spacing: -0.22px;
+    text-transform: uppercase;
+    height: 24px;
+    width: 97px;
+    margin-right: 8px;
+  }
+  .social-link {
+    line-height: 110%; /* 15.4px */
+    height: 15px;
+    width: 94px;
+  }
+  .social-list-item {
+    height: 40px;
+    width: 40px;
+  }
+  .cocktail-icon {
+    height: 25px;
+    width: 29px;
   }
 }
 
