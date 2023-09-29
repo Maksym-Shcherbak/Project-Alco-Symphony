@@ -1,11 +1,11 @@
-import SlimSelect from 'slim-select';
-import '../../../node_modules/slim-select/dist/slimselect.css';
-import SearchApiService from './search-api';
+import { renderKeyboard, renderSelect } from './render-alphabets';
+import {
+  searchCoctailsByName,
+  searchCoctailsByLetter,
+} from './search-coctails';
 
 const customKeyboard = document.querySelector('.custom-keyboard');
 const form = document.querySelector('.search-form');
-
-const searchApiService = new SearchApiService();
 
 window.addEventListener('resize', resizeHandler);
 
@@ -48,37 +48,6 @@ const alphabetArray = [
   '0',
 ];
 
-function renderKeyboard(alphabetArray) {
-  const keyboard = document.querySelector('.big-keyboard');
-
-  const keyboardMurkup = alphabetArray.map(key => `<li>${key}</li>`).join('');
-
-  keyboard.innerHTML = keyboardMurkup;
-}
-
-function renderSelect(alphabetArray) {
-  const keyboard = document.querySelector('#alphabet-select');
-  const selectMurkup = alphabetArray
-    .map(key => `<option value="${key}">${key}</option>`)
-    .join('');
-
-  keyboard.innerHTML = selectMurkup;
-
-  new SlimSelect({
-    select: '#alphabet-select',
-    settings: {
-      showSearch: false,
-    },
-  });
-
-  const selectFace = document.querySelector('.ss-main');
-  selectFace.style.backgroundColor = '#7E8FDD66';
-
-  selectFace.addEventListener('click', () => {
-    selectFace.style.backgroundColor = '#9CDFDF';
-  });
-}
-
 function resizeHandler() {
   const screenWidth = window.innerWidth;
 
@@ -119,43 +88,3 @@ function resizeHandler() {
 resizeHandler();
 
 form.addEventListener('submit', searchCoctailsByName);
-
-async function searchCoctailsByName(e) {
-  e.preventDefault();
-
-  searchApiService.query = e.currentTarget.elements.searchQuery.value.trim();
-
-  if (searchApiService.query === '') {
-    console.log('Empty Request');
-  }
-
-  try {
-    const searchData = await searchApiService.fetchCoctails('s');
-
-    if (searchData) {
-      console.log(searchData);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-
-  form.reset();
-}
-
-async function searchCoctailsByLetter(letter) {
-  searchApiService.query = letter;
-
-  if (searchApiService.query === '') {
-    console.log('Empty Request');
-  }
-
-  try {
-    const searchData = await searchApiService.fetchCoctails('f');
-
-    if (searchData) {
-      console.log(searchData);
-    }
-  } catch (error) {
-    console.error(error);
-  }
-}
