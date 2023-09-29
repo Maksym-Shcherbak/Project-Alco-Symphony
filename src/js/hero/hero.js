@@ -1,7 +1,11 @@
 import SlimSelect from 'slim-select';
 import '../../../node_modules/slim-select/dist/slimselect.css';
+import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
 
 const customKeyboard = document.querySelector('.custom-keyboard');
+const form = document.querySelector('.search-form');
+
+const searchApiService = new CocktailsAPI();
 
 window.addEventListener('resize', resizeHandler);
 
@@ -81,10 +85,77 @@ function resizeHandler() {
   if (screenWidth >= 768) {
     customKeyboard.innerHTML = `<ul class="big-keyboard"></ul>`;
     renderKeyboard(alphabetArray);
+
+    const keyboardEl = document.querySelectorAll('.custom-keyboard li');
+    let selectedLetter = null;
+
+    keyboardEl.forEach(item => {
+      item.addEventListener('click', () => {
+        if (selectedLetter) {
+          selectedLetter.style.backgroundColor = '';
+        }
+        item.style.backgroundColor = '#9CDFDF';
+        selectedLetter = item;
+
+        const letter = item.textContent;
+
+        searchCoctailsByLetter(letter);
+      });
+    });
   } else {
     customKeyboard.innerHTML = `<select id="alphabet-select"></select>`;
     renderSelect(alphabetArray);
+
+    const selectEl = document.querySelector('#alphabet-select');
+    selectEl.addEventListener('change', setOutput);
+
+    function setOutput(e) {
+      const letter = e.currentTarget.value;
+      searchCoctailsByLetter(letter);
+    }
   }
 }
 
 resizeHandler();
+
+form.addEventListener('submit', searchCoctailsByName);
+
+async function searchCoctailsByName(e) {
+  e.preventDefault();
+
+  searchApiService.query = e.currentTarget.elements.searchQuery.value.trim();
+
+  if (searchApiService.query === '') {
+    console.log('Empty Request');
+  }
+
+  try {
+    const searchData = await searchApiService.searchCocktails('s');
+
+    if (searchData) {
+      console.log(searchData);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+
+  form.reset();
+}
+
+async function searchCoctailsByLetter(letter) {
+  searchApiService.query = letter;
+
+  if (searchApiService.query === '') {
+    console.log('Empty Request');
+  }
+
+  try {
+    const searchData = await searchApiService.searchCocktails('f');
+
+    if (searchData) {
+      console.log(searchData);
+    }
+  } catch (error) {
+    console.error(error);
+  }
+}

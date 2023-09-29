@@ -26,14 +26,13 @@
           (min-width: 768px) and (max-width: 1199px) 768px,
           1200px"
         src="./partials/hero/images/girl-small.webp"
-        type="image/webp"
         alt="Girl with cocktail"
       />
       <svg width="96" height="96" class="right-star">
-        <use href="./partials/hero/images/sprite.svg#icon-star"></use>
+        <use href="/img/sprite.svg#icon-star"></use>
       </svg>
       <svg width="25" height="25" class="left-star">
-        <use href="./partials/hero/images/sprite.svg#icon-star"></use>
+        <use href="/img/sprite.svg#icon-star"></use>
       </svg>
       <div class="ellipse14"></div>
       <div class="rectangle725"></div>
@@ -44,13 +43,19 @@
   </div>
 </section>
 <section class="search">
+  <h2 hidden="">Search Coctail</h2>
   <div class="search-container">
     <div class="custom-keyboard"></div>
     <form class="search-form">
-      <input type="text" class="search-input" placeholder="Search" />
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Search"
+        name="searchQuery"
+      />
       <button type="submit" class="search-button">
         <svg width="16" height="16" class="">
-          <use href="./partials/hero/images/sprite.svg#icon-search"></use>
+          <use href="/img/sprite.svg#icon-search"></use>
         </svg>
       </button>
     </form>

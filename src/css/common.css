@@ -13,6 +13,18 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  --white-color: rgb(255, 255, 255);
+  --violet-color: rgba(126, 143, 221, 1);
+  --active-color: rgba(156, 223, 223, 1);
+  --title-color: rgba(36, 36, 36, 1);
+  --cart-color: rgba(253, 253, 255, 1);
+  --hell-color: rgb(248, 249, 255);
+  --second-dark-color: rgba(26, 26, 26, 1);
+  --black-color: rgb(0, 0, 0);
+  --button-color: rgba(126, 143, 221, 0.4);
+  --button-dark: rgba(253, 253, 255, 0.1);
+  --button-dark-hover: rgba(36, 36, 36, 0.2);
 }
 
 body {
@@ -21,7 +33,7 @@ body {
 }
 
 .container {
-  padding: 0 20px;
+  padding: 0 32px;
   margin: 0 auto;
 }
 
@@ -34,7 +46,7 @@ body {
 @media screen and (min-width: 768px) {
   .container {
     width: 768px;
-    padding: 0 32px;
+    padding: 0 100px;
   }
 
   body {
