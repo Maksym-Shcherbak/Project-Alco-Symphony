@@ -1,4 +1,4 @@
-<header class="page-header" id="page-header">
+<header class="header" id="page-header">
   <div class="flex-container container">
     <nav class="nav">
       <ul class="menu-list">
@@ -8,18 +8,17 @@
         <li class="menu-item">
           <a class="menu-link" href="">Favorite</a>
         </li>
-        <li class="switch">
-          <input type="checkbox" />
-        </li>
       </ul>
-      <a class="header-logo-link logo list" href="./index.html">
+      <a class="header-logo-link list" href="./index.html">
         DRINKIFY
-
         <svg class="logo-icon" width="21" height="21" aria-label="logo-ikons">
           <use href="/img/sprite.svg#icon-cocktail"></use>
         </svg>
       </a>
     </nav>
+    <div class="switch">
+      <input type="checkbox" />
+    </div>
 
     <!-- бургер -->
     <button
@@ -27,8 +26,13 @@
       class="mobile-menu-open js-open-menu"
       aria-expanded="false"
     >
-      <svg class="mobile-menu-open-icon" aria-label="menu">
-        <use href="/img/sprite.svg#icon-cocktail"></use>
+      <svg
+        class="mobile-menu-open-icon"
+        width="40"
+        height="40"
+        aria-label="menu"
+      >
+        <use href="/img/sprite.svg#icon-align-justify"></use>
       </svg>
     </button>
   </div>
