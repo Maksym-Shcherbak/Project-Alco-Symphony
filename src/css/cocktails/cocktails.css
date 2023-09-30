@@ -16,6 +16,10 @@
   overflow: hidden;
 }
 
+.drinkify-cocktails {
+  margin-bottom: 80px;
+}
+
 .drinkify-cocktails-title {
   color: rgba(36, 36, 36, 1);
   font-family: Poppins;
@@ -118,6 +122,11 @@
   background-color: rgba(126, 143, 221, 1);
 }
 
+.add-button-icon {
+  fill: transparent;
+  stroke: rgba(253, 253, 255, 1);
+}
+
 @media screen and (max-width: 375px) {
   .cocktail-card {
     max-width: 335px;
@@ -144,6 +153,10 @@
   .container {
     width: 768px;
     padding: 0 32px;
+  }
+
+  .drinkify-cocktails {
+    margin-bottom: 80px;
   }
 
   .drinkify-cocktails-title {

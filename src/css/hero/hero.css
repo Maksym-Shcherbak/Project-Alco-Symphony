@@ -6,7 +6,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 32px;
   font-weight: 400;
-  line-height: 38px;
+  line-height: 1.2;
   color: #242424;
   margin-bottom: 18px;
 }
@@ -21,7 +21,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.4;
   margin-bottom: 36px;
 }
 
@@ -30,7 +30,7 @@
   color: #fff;
   font-family: 'Poppins', sans-serif;
   font-weight: 600;
-  line-height: 20px;
+  line-height: 1.4;
   letter-spacing: 0.28px;
   text-transform: uppercase;
   padding: 14px 28px;
@@ -47,7 +47,7 @@
 .hero-image {
   margin-top: 27px;
   position: relative;
-  width: 354px;
+  width: 100%;
   height: 481px;
   margin-left: auto;
   margin-right: auto;
@@ -56,6 +56,8 @@
 .main-girl {
   position: absolute;
   z-index: 5;
+  right: 4px;
+  max-width: unset;
 }
 
 .ellipse12 {
@@ -65,7 +67,7 @@
   background-color: #7e8fdd;
   border-radius: 50%;
   position: absolute;
-  left: 40px;
+  left: 25px;
   bottom: 25px;
 }
 
@@ -76,7 +78,7 @@
   background-color: #9cdfdf;
   border-radius: 50%;
   position: absolute;
-  right: 35px;
+  right: 39px;
   bottom: 0px;
 }
 
@@ -88,7 +90,7 @@
   border-radius: 50%;
   position: absolute;
   top: 8px;
-  right: 128px;
+  right: 136px;
 }
 
 .rectangle725 {
@@ -97,7 +99,7 @@
   height: 338px;
   position: absolute;
   bottom: 94px;
-  right: 57px;
+  right: 61px;
   border-radius: 80px 0px;
   background: #7e8fdd;
   box-shadow: 0px 28px 75px 0px rgba(88, 109, 204, 0.5);
@@ -106,15 +108,15 @@
 
 .right-star {
   position: absolute;
-  right: 2px;
-  top: 0px;
+  right: 24px;
+  top: 11px;
   z-index: 1;
 }
 
 .left-star {
   position: absolute;
-  left: 25px;
-  bottom: 134px;
+  left: 12px;
+  bottom: 139px;
 }
 
 .search-text {
@@ -125,7 +127,7 @@
   font-family: 'Poppins', sans-serif;
   font-size: 14px;
   font-weight: 400;
-  line-height: 20px;
+  line-height: 1.4;
   letter-spacing: 0.28px;
   position: absolute;
   bottom: 7px;
@@ -150,7 +152,6 @@
   text-transform: uppercase;
   border-radius: 8px !important;
   border: none !important;
-  /* background: rgba(126, 143, 221, 0.4) !important; */
   color: #fdfdff !important;
   font-size: 14px !important;
   font-weight: 600 !important;
@@ -173,19 +174,11 @@
   height: 90px !important;
 }
 
-.ss-list::-webkit-scrollbar-thumb {
-  color: red;
-}
-
 .ss-content.ss-open-below {
   margin-top: 4px !important;
   border-radius: 4px !important;
   border: 1px solid #9cdfdf !important;
   background-color: #fdfdff !important;
-}
-
-.ss-content.ss-open-below::-webkit-scrollbar-thumb {
-  color: red;
 }
 
 .ss-content.ss-open-above {
@@ -220,12 +213,12 @@
   align-items: center;
   flex-direction: column;
   gap: 40px;
+  margin-bottom: 40px;
 }
 
 .search-form {
   display: inline-block;
   position: relative;
-  width: 80%;
 }
 
 .search-input {
@@ -261,6 +254,10 @@
     margin-right: auto;
   }
 
+  .hero-image {
+    width: 354px;
+  }
+
   .search-form {
     width: 335px;
   }
@@ -279,7 +276,7 @@
 
   .main-tagline {
     font-size: 44px;
-    line-height: 48px;
+    line-height: 1.1;
     margin-bottom: 24px;
   }
 
@@ -287,7 +284,12 @@
     margin-bottom: 48px;
     width: 338px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
+  }
+
+  .main-girl {
+    right: 0px;
+    max-width: 100%;
   }
 
   .rectangle725 {
@@ -306,28 +308,38 @@
   .right-star {
     width: 114px;
     height: 114px;
-    right: -41px;
+    right: -31px;
     top: -23px;
   }
 
   .left-star {
     width: 32px;
     height: 32px;
-    left: -28px;
+    left: -36px;
     bottom: 162px;
+  }
+
+  .ellipse12 {
+    left: 39px;
+    bottom: 32px;
+  }
+
+  .ellipse13 {
+    right: 0px;
+    bottom: 6px;
   }
 
   .ellipse14 {
     width: 18px;
     height: 18px;
-    top: 8px;
+    top: 0px;
     right: 114px;
   }
 
   .search-text {
     width: 198px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
   }
 
   .big-keyboard {
@@ -368,10 +380,15 @@
     margin-left: auto;
     margin-right: auto;
     margin-top: 100px;
+    margin-bottom: 50px;
   }
 
   .search-form {
     width: 300px;
+  }
+
+  .search-text {
+    left: 90px;
   }
 }
 
@@ -388,7 +405,7 @@
 
   .main-tagline {
     font-size: 64px;
-    line-height: 70px;
+    line-height: 1.1;
     margin-bottom: 28px;
   }
 
@@ -396,14 +413,14 @@
     margin-bottom: 48px;
     width: 480px;
     font-size: 20px;
-    line-height: 26px;
+    line-height: 1.3;
   }
 
   .rectangle725 {
     width: 380px;
     height: 476px;
     bottom: 92px;
-    right: 1px;
+    right: 0px;
   }
 
   .hero-image {
@@ -415,7 +432,7 @@
   .right-star {
     width: 142px;
     height: 142px;
-    right: -62px;
+    right: -55px;
     top: 16px;
     z-index: 5;
   }
@@ -423,8 +440,16 @@
   .left-star {
     width: 52px;
     height: 52px;
-    left: -46px;
-    bottom: 221px;
+    left: -52px;
+    bottom: 216px;
+  }
+
+  .ellipse12 {
+    left: 62px;
+  }
+
+  .ellipse13 {
+    right: 32px;
   }
 
   .ellipse14 {
@@ -433,9 +458,10 @@
   }
 
   .search-text {
-    width: 198px;
+    width: 203px;
     font-size: 16px;
-    line-height: 24px;
+    line-height: 1.5;
+    left: 110px;
   }
 
   .search-container {
