@@ -1,7 +1,11 @@
+import '../../js/header/header';
+// import './js/learn-more-btn/learn-more-btn';
+import '../../js/scroll-anime/scroll-anime';
+
 export function renderFavCoctails(coctailArray) {
-    const markup = coctailArray
-        .map((image) => {
-            return `
+  const markup = coctailArray
+    .map(image => {
+      return `
             <li>
             <div>
             <img>
@@ -15,9 +19,8 @@ export function renderFavCoctails(coctailArray) {
             </button>
             </div>
             </li>;
-        `
-        })
+        `;
+    })
     .join('');
-    
- return markup;
+  return markup;
 }
