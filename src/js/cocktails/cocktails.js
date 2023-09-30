@@ -1,58 +1,38 @@
 import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
 import { createCocktailCards } from './renderCocktails';
-import { instance } from './pagination';
-import 'tui-pagination/dist/tui-pagination.css';
+import { PaginationForCocktails } from '../CocktailAPI/pagination';
+import { getQuantityOfCocktails } from './getQuantityOfCocktails';
 
 const cocktailList = document.querySelector('.cocktails-cards');
-let lengthPart;
-let totalCards = 0;
-let chunks = [];
-function getQuantityOfCocktails() {
-  if (window.innerWidth < 1280) {
-    lengthPart = 8;
-    return lengthPart;
-  } else {
-    return (lengthPart = 9);
-  }
-}
-getQuantityOfCocktails();
-const cocktailsApi = new CocktailsAPI(lengthPart);
+const container = document.getElementById('tui-pagination-container');
+let parts = null;
+
+const quantity = getQuantityOfCocktails();
+const options = {
+  totalItems: 0,
+  itemsPerPage: quantity.quantityOfCocktails,
+  visiblePages: quantity.quantityOfVisiblePages,
+  page: 1,
+};
+
+const paginationForCocktails = new PaginationForCocktails(container, options);
+
+const cocktailsApi = new CocktailsAPI(quantity.quantityOfCocktails);
+
 cocktailsApi
   .getRandomCocktails()
   .then(data => createCocktailCards(data, cocktailList));
 
-// cocktailsApi
-//   .searchCocktails('f', 'g')
-//   .then(data => {
-//     console.log(data);
-//     return data;
-//   })
-//   .then(data => {
-//     totalCards = data.length;
-//     instance.reset(totalCards);
-//     chunks = splitParts(data, totalCards);
-//     console.log(chunks);
-//     createCocktailCards(chunks[0], cocktailList);
-//   });
-
-// instance.on('afterMove', event => {
-//   const currentPage = event.page;
-//   createCocktailCards(chunks[currentPage - 1], cocktailList);
-// });
-
-function splitParts(arr, total) {
-  // передаём массив, который нужно разбить
-  if (total > lengthPart) {
-    // проверяем, имеет ли переданный массив длину больше, чем длина части
-    let chunks = [], // подготавливаем возращаемый массив с частями
-      parts = Math.floor(total / lengthPart); // сколько частей получится
-    for (
-      let i = 0;
-      i < total;
-      i += lengthPart // проходим по массиву, шаг длине части
-    )
-      chunks.push(arr.slice(i, i + lengthPart)); // добавляем часть в массив с частями
-
-    return chunks; // возвращаем массив
-  } else return arr; // если получаемый массив меньше длины части, то возвращаем его же.
+export function renderCocktailsBySearch(arrayOfCocktails) {
+  parts = paginationForCocktails.createCardsPerPage(arrayOfCocktails);
+  paginationForCocktails.hidePagination(
+    quantity.quantityOfCocktails,
+    container
+  );
+  createCocktailCards(parts[0], cocktailList);
+  paginationForCocktails.changePageByClick(
+    parts,
+    cocktailList,
+    createCocktailCards
+  );
 }

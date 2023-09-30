@@ -6,16 +6,19 @@
           <a class="menu-link" href="./index.html">Home</a>
         </li>
         <li class="menu-item">
-          <a class="menu-link" href="">Favorite</a>
+          <a class="menu-link" href="">Favorite </a>
         </li>
       </ul>
-      <a class="header-logo-link list" href="./index.html">
-        DRINKIFY
-        <svg class="logo-icon" width="21" height="21" aria-label="logo-ikons">
-          <use href="/img/sprite.svg#icon-cocktail"></use>
-        </svg>
-      </a>
+      <div class="title">
+        <a class="header-logo-link list" href="./index.html">
+          DRINKIFY
+          <svg class="logo-icon" width="21" height="21" aria-label="logo-ikons">
+            <use href="/img/sprite.svg#icon-cocktail"></use>
+          </svg>
+        </a>
+      </div>
     </nav>
+
     <!-- 29/09/2023 Valja DARK THEME START -->
     <div class="switch">
       <input type="checkbox" id="darkModeToggle" />
@@ -24,7 +27,9 @@
       <!-- Keep this label -->
     </div>
     <!-- 29/09/2023 Valja DARK THEME FINISH -->
-    <!-- Original Button for Dark Mode Toggle -->
+    <!-- Original Button for Dark Mode Toggle -->>
+
+    <!-- бургер -->
     <button
       type="button"
       class="mobile-menu-open js-open-menu"
@@ -32,11 +37,11 @@
     >
       <svg
         class="mobile-menu-open-icon"
-        width="40"
-        height="40"
+        width="32"
+        height="32"
         aria-label="menu"
       >
-        <use href="/img/sprite.svg#icon-align-justify"></use>
+        <use href="/img/sprite.svg#icon-paragraph-justify"></use>
       </svg>
     </button>
   </div>
@@ -45,14 +50,33 @@
     <div class="container mobail-menu-container">
       <button class="mobile-close-btn js-close-menu">
         <svg class="mobile-menu-close-icon" width="32" height="32">
-          <use href=""></use>
+          <use href="/img/sprite.svg#icon-x"></use>
         </svg>
       </button>
-      <ul>
-        <li class="menu-item">
+
+      <div class="mobile-title">
+        <a class="menu-logo-link list" href="./index.html">
+          DRINKIFY
+          <svg
+            class="menu-logo-icon"
+            width="19.58"
+            height="18"
+            aria-label="logo-ikons"
+          >
+            <use href="/img/sprite.svg#icon-cocktail"></use>
+          </svg>
+        </a>
+      </div>
+
+      <div class="mobile-switch">
+        <input class="mobile-imput" type="checkbox" />
+      </div>
+
+      <ul class="mobile-list">
+        <li class="mobile-item">
           <a class="mobile-menu-link" href="./index.html">Home</a>
         </li>
-        <li class="menu-item">
+        <li class="mobile-item">
           <a class="mobile-menu-link" href=" ">Favorite</a>
         </li>
       </ul>

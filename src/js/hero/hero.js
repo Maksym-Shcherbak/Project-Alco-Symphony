@@ -1,7 +1,11 @@
-import SlimSelect from 'slim-select';
-import '../../../node_modules/slim-select/dist/slimselect.css';
+import { renderKeyboard, renderSelect } from './render-alphabets';
+import {
+  searchCoctailsByName,
+  searchCoctailsByLetter,
+} from './search-coctails';
 
 const customKeyboard = document.querySelector('.custom-keyboard');
+const form = document.querySelector('.search-form');
 
 window.addEventListener('resize', resizeHandler);
 
@@ -44,47 +48,43 @@ const alphabetArray = [
   '0',
 ];
 
-function renderKeyboard(alphabetArray) {
-  const keyboard = document.querySelector('.big-keyboard');
-
-  const keyboardMurkup = alphabetArray.map(key => `<li>${key}</li>`).join('');
-
-  keyboard.innerHTML = keyboardMurkup;
-}
-
-function renderSelect(alphabetArray) {
-  const keyboard = document.querySelector('#alphabet-select');
-  const selectMurkup = alphabetArray
-    .map(key => `<option value="${key}">${key}</option>`)
-    .join('');
-
-  keyboard.innerHTML = selectMurkup;
-
-  new SlimSelect({
-    select: '#alphabet-select',
-    settings: {
-      showSearch: false,
-    },
-  });
-
-  const selectFace = document.querySelector('.ss-main');
-  selectFace.style.backgroundColor = '#7E8FDD66';
-
-  selectFace.addEventListener('click', () => {
-    selectFace.style.backgroundColor = '#9CDFDF';
-  });
-}
-
-function resizeHandler() {
+export function resizeHandler() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth >= 768) {
     customKeyboard.innerHTML = `<ul class="big-keyboard"></ul>`;
     renderKeyboard(alphabetArray);
+
+    const keyboardEl = document.querySelectorAll('.custom-keyboard li');
+    let selectedLetter = null;
+
+    keyboardEl.forEach(item => {
+      item.addEventListener('click', () => {
+        if (selectedLetter) {
+          selectedLetter.style.backgroundColor = '';
+        }
+        item.style.backgroundColor = '#9CDFDF';
+        selectedLetter = item;
+
+        const letter = item.textContent;
+
+        searchCoctailsByLetter(letter);
+      });
+    });
   } else {
     customKeyboard.innerHTML = `<select id="alphabet-select"></select>`;
     renderSelect(alphabetArray);
+
+    const selectEl = document.querySelector('#alphabet-select');
+    selectEl.addEventListener('change', setOutput);
+
+    function setOutput(e) {
+      const letter = e.currentTarget.value;
+      searchCoctailsByLetter(letter);
+    }
   }
 }
 
 resizeHandler();
+
+form.addEventListener('submit', searchCoctailsByName);
