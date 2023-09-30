@@ -48,7 +48,7 @@ const alphabetArray = [
   '0',
 ];
 
-function resizeHandler() {
+export function resizeHandler() {
   const screenWidth = window.innerWidth;
 
   if (screenWidth >= 768) {
