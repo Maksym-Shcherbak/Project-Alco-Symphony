@@ -31,6 +31,14 @@ export class PaginationForCocktails {
     });
   }
 
+  hidePagination(cardsForPage, paginationDiv) {
+    if (this.totalCards > cardsForPage) {
+      paginationDiv.classList.toggle('visually-hidden');
+      // } else {
+      //   paginationDiv.classList.remove('visually-hidden');
+      // }
+    }
+  }
   get lengthForPart() {
     return this.options.itemsPerPage;
   }
