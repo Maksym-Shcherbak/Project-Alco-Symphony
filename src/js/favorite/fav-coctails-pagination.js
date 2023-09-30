@@ -4,24 +4,33 @@ import { renderFavCoctails, coctailArray, favCoctailsList } from './favorite-coc
 
 
 const container = document.getElementById('tui-pagination-container');
-let lengthForPart = 6;
 export class FavCoctailsPagination {
-    constructor(container, lengthPart) {
+    constructor(container) {
     this.totalCards = 0; 
+    this.itemsPerPage = 6;
     this.options = {
       totalItems: 0,
-      itemsPerPage: lengthPart,
-      visiblePages: 5,
+      itemsPerPage: this.itemsPerPage,
+      visiblePages: this.getVisiblePages(),
       page: 1,
       centerAlign: true,
         };   
     this.pagination = new Pagination(container, this.options);
-        this.chunks = [];
+    this.chunks = [];
 
-}
-    
+    }
+  
+  getVisiblePages() {
+    if (window.innerWidth < 768) {
+      return 5;
+    } else {
+      return 7;
+    }
+  }
+  
     designCard(arr) {
     this.totalCards = arr.length;
+    this.options.totalItems = this.totalCards;
     this.pagination.reset(this.totalCards);
     this.chunks = splitParts(arr, this.totalCards, this.options.itemsPerPage);
     return this.chunks;
@@ -33,28 +42,22 @@ export class FavCoctailsPagination {
       const index = currentPage - 1;
       renderPage(arr[index], container);
     });
-  }
-
-  get lengthForPart() {
-    return this.options.itemsPerPage;
-  }
-
-  set lengthForPart(number) {
-    this.options.itemsPerPage = number;
-    console.log(this.options.itemsPerPage);
-  }
-    
+    }
+  
+  updatePagination() {
+    this.options.visiblePages = this.getVisiblePages();    
+    this.pagination.setItemsPerPage(this.itemsPerPage);
+    this.pagination.reset();
+  } 
 }
 
-function splitParts(arr, totalItems, itemsPerPage) {
-  const chunks = [];
-  for (let i = 0; i < totalItems; i += itemsPerPage) {
-    chunks.push(arr.slice(i, i + itemsPerPage));
-  }
-  return chunks;
-}
+const favCocktailsPagination = new FavCoctailsPagination(container);
+favCocktailsPagination.changePageByClick(coctailArray, favCoctailsList, renderFavCoctails);
 
-if (coctailArray.length >= lengthForPart) {
-  const favCocktailsPagination = new FavCoctailsPagination(container, lengthForPart);
-  favCocktailsPagination.changePageByClick(coctailArray, favCoctailsList, renderFavCoctails);
-}
+window.addEventListener('load', () => {
+  favCocktailsPagination.updatePagination();
+});
+
+window.addEventListener('resize', () => {
+  favCocktailsPagination.updatePagination();
+});
