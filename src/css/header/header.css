@@ -110,13 +110,6 @@
 
 /* свич */
 /* //перемикач ________________________________________________________________*/
-/* .mobile-header {
-  display: flex;
-
-  justify-content: space-between;
-
-  padding-top: 20px;
-} */
 .mobile-switch {
   position: absolute;
   top: 23.5px;
