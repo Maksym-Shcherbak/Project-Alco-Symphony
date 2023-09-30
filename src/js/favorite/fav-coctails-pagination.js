@@ -1,6 +1,6 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import { renderFavCoctails, coctailArray, favCoctailsList } from './favorite-coctails-render';
+import { renderFavCoctails, coctailArray } from './favorite-coctails-render';
 import { PaginationForCocktails } from '../CocktailAPI/pagination'
 
 
