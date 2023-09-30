@@ -2,6 +2,11 @@ import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
 import { createCocktailCards } from './renderCocktails';
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
 import { getQuantityOfCocktails } from './getQuantityOfCocktails';
+import {
+  searchCoctailsByName,
+  searchCoctailsByLetter,
+} from '../hero/search-coctails';
+import { resizeHandler } from '../hero/hero';
 
 const cocktailList = document.querySelector('.cocktails-cards');
 const container = document.getElementById('tui-pagination-container');
@@ -20,12 +25,13 @@ cocktailsApi
   .getRandomCocktails()
   .then(data => createCocktailCards(data, cocktailList));
 
-cocktailsApi.searchCocktails('f', 'a').then(data => {
-  parts = paginationForCocktails.createCardsPerPage(data);
+export function renderCocktailsBySearch(arrayOfCocktails) {
+  parts = paginationForCocktails.createCardsPerPage(arrayOfCocktails);
+  paginationForCocktails.hidePagination(lengthForPart, container);
   createCocktailCards(parts[0], cocktailList);
   paginationForCocktails.changePageByClick(
     parts,
     cocktailList,
     createCocktailCards
   );
-});
+}

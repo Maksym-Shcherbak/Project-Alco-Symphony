@@ -31,12 +31,19 @@ export class PaginationForCocktails {
     });
   }
 
+  hidePagination(cardsForPage, paginationDiv) {
+    if (this.totalCards > cardsForPage) {
+      paginationDiv.classList.remove('visually-hidden');
+    } else {
+      paginationDiv.classList.add('visually-hidden');
+    }
+  }
+
   get lengthForPart() {
     return this.options.itemsPerPage;
   }
 
   set lengthForPart(number) {
     this.lengthPart = number;
-    console.log(this.options.itemsPerPage);
   }
 }
