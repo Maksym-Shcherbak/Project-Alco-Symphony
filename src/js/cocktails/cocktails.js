@@ -20,8 +20,11 @@ cocktailsApi
   .getRandomCocktails()
   .then(data => createCocktailCards(data, cocktailList));
 
-cocktailsApi.searchCocktails('f', 'a').then(data => {
+cocktailsApi.searchRequest = 'Ma';
+cocktailsApi.searchCocktails('s').then(data => {
   parts = paginationForCocktails.createCardsPerPage(data);
+  console.log(parts);
+  paginationForCocktails.hidePagination(lengthForPart, container);
   createCocktailCards(parts[0], cocktailList);
   paginationForCocktails.changePageByClick(
     parts,
