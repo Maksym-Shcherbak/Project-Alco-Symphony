@@ -17,7 +17,39 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <link rel="stylesheet" href="../favorite/my-ingredients.html" />
+    <link
+      rel="stylesheet"
+      href="https://uicdn.toast.com/tui.pagination/latest/tui-pagination.css"
+    />
+    
+    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/modulepreload-polyfill-ec808ebb.js"></script>
+    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/my-ingredients-1581b11f.js"></script>
+    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/my-ingredients-a0b14d8a.css">
   </head>
-  <body></body>
+  <body>
+    <style>
+      .ingradient-modal {
+        visibility: hidden;
+      }
+      .ingradient-modal.open {
+        visibility: visible;
+      }
+      .add-button.hidden {
+        visibility: hidden;
+      }
+      .remove-button.hidden {
+        visibility: hidden;
+      }
+    </style>
+    <section class="favorite-ingadients-section">
+      <ul class="favorite-ingradients-list"></ul>
+      <div
+        id="tui-pagination-container"
+        class="tui-pagination pagination-container"
+      ></div>
+    </section>
+    <!-- <script type="module" src="./main.js"></script> -->
+    
+    <div class="ingradient-modal"></div>
+  </body>
 </html>
