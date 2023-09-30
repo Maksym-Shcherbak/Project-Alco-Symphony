@@ -1,63 +1,47 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { renderFavCoctails, coctailArray, favCoctailsList } from './favorite-coctails-render';
+import { PaginationForCocktails } from '../CocktailAPI/pagination'
 
 
 const container = document.getElementById('tui-pagination-container');
-export class FavCoctailsPagination {
-    constructor(container) {
-    this.totalCards = 0; 
-    this.itemsPerPage = 6;
-    this.options = {
-      totalItems: 0,
-      itemsPerPage: this.itemsPerPage,
-      visiblePages: this.getVisiblePages(),
-      page: 1,
-      centerAlign: true,
-        };   
-    this.pagination = new Pagination(container, this.options);
-    this.chunks = [];
+let parts = null;
+const cocktailList = document.querySelector('.fav-coctails-list');
 
-    }
-  
-  getVisiblePages() {
+const quantity = getVisiblePages();
+
+  function getVisiblePages() {
     if (window.innerWidth < 768) {
       return 5;
     } else {
       return 7;
     }
   }
-  
-    designCard(arr) {
-    this.totalCards = arr.length;
-    this.options.totalItems = this.totalCards;
-    this.pagination.reset(this.totalCards);
-    this.chunks = splitParts(arr, this.totalCards, this.options.itemsPerPage);
-    return this.chunks;
-        
+const options = {
+  totalItems: 0,
+  itemsPerPage: 6,
+  visiblePages: quantity,
+  page: 1,
+};
+
+const favCocktailsPagination = new PaginationForCocktails(container, options);
+
+function renderCocktailsBySearch(array) {
+  parts = favCocktailsPagination.createCardsPerPage(array);
+  favCocktailsPagination.hidePagination(
+    options.itemsPerPage,
+    container
+  );
+  renderFavCoctails(parts[0], cocktailList);
+
+    favCocktailsPagination.changePageByClick(
+    parts,
+    cocktailList,
+    renderFavCoctails,
+  );
 }
-    changePageByClick(arr, container, renderPage) {
-    this.pagination.on('afterMove', (event) => {
-      const currentPage = event.page;
-      const index = currentPage - 1;
-      renderPage(arr[index], container);
-    });
-    }
+
+renderCocktailsBySearch(coctailArray);
+
   
-  updatePagination() {
-    this.options.visiblePages = this.getVisiblePages();    
-    this.pagination.setItemsPerPage(this.itemsPerPage);
-    this.pagination.reset();
-  } 
-}
-
-const favCocktailsPagination = new FavCoctailsPagination(container);
-favCocktailsPagination.changePageByClick(coctailArray, favCoctailsList, renderFavCoctails);
-
-window.addEventListener('load', () => {
-  favCocktailsPagination.updatePagination();
-});
-
-window.addEventListener('resize', () => {
-  favCocktailsPagination.updatePagination();
-});
+  

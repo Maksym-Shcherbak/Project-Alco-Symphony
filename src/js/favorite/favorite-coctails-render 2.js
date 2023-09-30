@@ -1,4 +1,4 @@
-export function renderFavCoctails(coctailArray) {
+export function renderFavCoctails(coctailArray, container) {
   const markup = coctailArray
     .map((item) => {
       return `
@@ -19,16 +19,62 @@ export function renderFavCoctails(coctailArray) {
         </li>`;
     })
     .join('');
-
-  return markup;
+  container.innerHTML = markup;
+ 
 }
 
 const coctailArray = [
-{
+  {
+    drink: "Coctail",
+    drinkThumb: "link",
+    description: "Description",
+  },
+  {
 drink: "Coctail",
 drinkThumb: "link", 
 description: "Description",
-}
+  },
+    {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+      {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+        {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+          {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+            {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+              {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+                {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+                  {
+drink: "Coctail",
+drinkThumb: "link", 
+description: "Description",
+  },
+                  
 ]
 const renderedMarkup = renderFavCoctails(coctailArray);
 const favCoctailsList = document.querySelector(".fav-coctails-list");
