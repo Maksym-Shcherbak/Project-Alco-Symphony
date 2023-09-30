@@ -3,15 +3,9 @@ import { splitParts } from './splitParts';
 import 'tui-pagination/dist/tui-pagination.css';
 
 export class PaginationForCocktails {
-  constructor(container, lengthPart) {
+  constructor(container, options) {
     this.totalCards = 0;
-    this.options = {
-      totalItems: 0,
-      itemsPerPage: lengthPart,
-      visiblePages: 5,
-      page: 1,
-      centerAlign: true,
-    };
+    this.options = options;
     this.pagination = new Pagination(container, this.options);
     this.chunks = [];
   }
