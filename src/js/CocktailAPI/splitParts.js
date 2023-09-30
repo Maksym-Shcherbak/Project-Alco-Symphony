@@ -12,5 +12,5 @@ export function splitParts(arr, total, lengthPart) {
       chunks.push(arr.slice(i, i + lengthPart)); // добавляем часть в массив с частями
 
     return chunks; // возвращаем массив
-  } else return arr; // если получаемый массив меньше длины части, то возвращаем его же.
+  } else return [arr]; // если получаемый массив меньше длины части, то возвращаем его же.
 }
