@@ -103,16 +103,16 @@ const body = document.body;
 // Define an object to map screen sizes to background image URLs
 const backgroundImageUrls = {
   mobile: {
-    dark: '../img/background/dark-theme/mobile-bg.webp',
-    light: '../img/background/light-theme/mobile-bg.webp',
+    dark: '/img/background/dark-theme/mobile-bg.webp',
+    light: '/img/background/light-theme/mobile-bg.webp',
   },
   tablet: {
-    dark: '../img/background/dark-theme/tablet-bg.webp',
-    light: '../img/background/light-theme/tablet-bg.webp',
+    dark: '/img/background/dark-theme/tablet-bg.webp',
+    light: '/img/background/light-theme/tablet-bg.webp',
   },
   desktop: {
-    dark: '../img/background/dark-theme/desktop-bg.webp',
-    light: '../img/background/light-theme/desktop-bg.webp',
+    dark: '/img/background/dark-theme/desktop-bg.webp',
+    light: '/img/background/light-theme/desktop-bg.webp',
   },
 };
 
