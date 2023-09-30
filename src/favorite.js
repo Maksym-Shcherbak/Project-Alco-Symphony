@@ -1,4 +1,6 @@
-export function renderFavCoctails(coctailArray) {
+// import { renderFavCoctails } from "./js/favorite/my-cocktails";
+
+function renderFavCoctails(coctailArray) {
     const markup = coctailArray
         .map(({img,title,text}) => {
             return `
@@ -21,3 +23,18 @@ export function renderFavCoctails(coctailArray) {
     
  return markup;
 }
+
+const favoriteList = document.querySelector('.favorite-list')
+
+
+function load(key){
+    try {
+        const value = localStorage.getItem(key)
+        return value === null ? undefined : JSON.parse(value)
+    }
+    catch(error){
+        console.log(error.message);
+    }
+}
+
+favoriteList.innerHTML=renderFavCoctails(load('favorite'))
