@@ -1,7 +1,7 @@
 export const createCocktailCards = (arr, container) => {
   const markup = arr
     .map(
-      item => `<li class="cocktail-card" id="${item.d}">
+      item => `<li class="cocktail-card" id="${item._id}">
       <div class='cocktail-card-info'>
       <div class="cocktail-card-info-thumb">
       <img class="cocktail-card-info-img" src="${item.drinkThumb}" alt="${item.drink}" loading="lazy" />
