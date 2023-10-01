@@ -23,35 +23,9 @@ export function renderFavCoctails(coctailArray, container) {
  
 }
 
- export const coctailArray = [
-  {
-    drink: "Coctail",
-    drinkThumb: "link",
-    description: "Description",
-  },
-  {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-    {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-      {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-        {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-          {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  }      
-]
+export let coctailArray = [];
+
+
+//  drink: "Coctail",
+//     drinkThumb: "link",
+//     description: "Description"

@@ -17,7 +17,7 @@ saveToLocalStorage('favorite', arr)
 }
 }
 
-function saveToLocalStorage(key, value){
+export function saveToLocalStorage(key, value){
     try {
         const parsedValue = JSON.stringify(value)
         localStorage.setItem(key, parsedValue)
