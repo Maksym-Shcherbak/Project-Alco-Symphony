@@ -1,0 +1,59 @@
+@import url('../reset.css');
+@import url('../common.css');
+@import url('../header/header.css');
+@import url('../footer/footer.css');
+@import url('../scroll-anime/scrollanime.css');
+.favorite-ingadients-section {
+  padding-top: 80px;
+
+  min-height: 100vh;
+}
+.favorite-ingradients-title {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 1.16667;
+}
+.no-ingradients-wrapper {
+  margin: 0 auto;
+  padding-top: 138px;
+  max-width: 244px;
+}
+.no-ingradients-wrapper.hidden {
+  visibility: hidden;
+  pointer-events: none;
+  width: 0;
+  height: 0;
+  padding: 0;
+  margin: 0;
+}
+.not-found-img {
+  margin: 0 auto;
+  margin-bottom: 20px;
+}
+.favorite-ingradients-alert {
+  text-align: center;
+  font-size: 18px;
+  line-height: 1.333;
+}
+.favorite-ingradients-alert-span {
+  font-style: italic;
+
+  color: var(--active-color);
+}
+.favorite-ingradients-list {
+}
+.title {
+}
+.alcohol {
+}
+.description {
+}
+.remove-button {
+}
+.trash-icon {
+  pointer-events: none;
+}
+.tui-pagination {
+}
+.pagination-container {
+}
