@@ -28,7 +28,8 @@
 }
 
 body {
-  background: url(../img/cocktails/background.png) 0px 0px / 100% 100%,
+  background: url(../img/background/light-theme/mobile-bg@2x.webp) 0px 0px /
+      100% 100%,
     lightgray 100% 100% / cover no-repeat;
 }
 
@@ -63,8 +64,8 @@ body {
   }
 
   body {
-    background: url(../img/cocktails/background_desktop.png) 0px 0px / 100% 100%
-        no-repeat,
+    background: url(../img/background/light-theme/tablet-bg@2x.webp) 0px 0px /
+        100% 100% no-repeat,
       lightgray 0px 0px / 100% 100% no-repeat;
   }
 }
@@ -73,5 +74,11 @@ body {
   .container {
     width: 1280px;
     padding: 0 100px;
+  }
+
+  body {
+    background: url(../img/background/light-theme/desktop-bg@2x.webp) 0px 0px /
+        100% 100% no-repeat,
+      lightgray 0px 0px / 100% 100% no-repeat;
   }
 }
