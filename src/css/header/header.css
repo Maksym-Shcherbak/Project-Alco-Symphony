@@ -1,6 +1,9 @@
 .header {
   padding: 20px 0;
-  position: fixed;
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  background: transparent; */
 }
 .flex-container {
   display: flex;
