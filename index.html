@@ -20,11 +20,11 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/index-f41b526c.js"></script>
+    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/index-2abaed53.js"></script>
     <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/pagination-fc30b0bd.js">
-    <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/darktheme-a62af967.js">
+    <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/darktheme-f8d386e9.js">
     <link rel="stylesheet" href="/Project-Alco-Symphony/assets/pagination-a0b14d8a.css">
-    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/index-921b617b.css">
+    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/index-2b527fc9.css">
   </head>
   <body>
     <header class="header" id="page-header">
@@ -35,25 +35,30 @@
           <a class="menu-link" href="./index.html">Home</a>
         </li>
         <li class="menu-item">
-          <a class="menu-link" href="">Favorite </a>
+          <div class="dropdown">
+            <button class="dropbtn" id="dropbtn">
+              <span class="dropbtn-text">Favorite</span>
+              <svg
+                class="menu-icon-drop"
+                width="12"
+                height="6"
+                aria-label="menu"
+              >
+                <use href="/Project-Alco-Symphony/assets/sprite-2c5d6bed.svg#icon-Vector-22"></use>
+              </svg>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a class="fav-link" href="/favorite-cocktails.html"
+                >Favorite coctails</a
+              >
+              <a class="fav-ingr" href="/favorite-ingredients.html"
+                >Favorite ingridients</a
+              >
+            </div>
+          </div>
         </li>
       </ul>
-      <div class="dropdown">
-        <button class="dropbtn">
-          <svg class="menu-icon-drop" width="12" height="6" aria-label="menu">
-            <use href="/Project-Alco-Symphony/assets/sprite-2c5d6bed.svg#icon-Vector-22"></use>
-          </svg>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content" id="myDropdown">
-          <a class="fav-link" href="/favorite-cocktails.html"
-            >Favorite coctails</a
-          >
-          <a class="fav-ingr" href="/favorite-ingredients.html"
-            >Favorite ingridients</a
-          >
-        </div>
-      </div>
       <div class="title">
         <a class="header-logo-link list" href="./index.html">
           DRINKIFY
@@ -72,7 +77,7 @@
       <!-- Keep this label -->
     </div>
     <!-- 29/09/2023 Valja DARK THEME FINISH -->
-    <!-- Original Button for Dark Mode Toggle -->>
+    <!-- Original Button for Dark Mode Toggle -->
 
     <!-- бургер -->
     <button
@@ -151,10 +156,6 @@
   </div>
 </header>
 
-
-    <a href="./favorite-cocktails.html">Favorite Cocktails</a>
-
-    <a href="./favorite-ingredients.html">Favorite Ingradients</a>
 
     <main>
       <section class="hero">
