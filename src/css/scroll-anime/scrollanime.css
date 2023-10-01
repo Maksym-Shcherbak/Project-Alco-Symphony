@@ -56,3 +56,28 @@
   transform: scale(1.2);
   transition: 3s, 1s;
 }
+
+
+.cocktail-card:hover {
+
+  transform: translateY(-5%);
+  transition: 3s, 1s;
+}
+
+
+
+.animation:hover {
+  animation: jump 0.5s infinite;
+}
+
+@keyframes jump {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
