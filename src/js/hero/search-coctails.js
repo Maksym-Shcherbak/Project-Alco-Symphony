@@ -3,6 +3,7 @@ import { renderCocktailsBySearch } from '../cocktails/cocktails';
 export { searchCoctailsByName, searchCoctailsByLetter };
 
 const form = document.querySelector('.search-form');
+const cocktailsTitle = document.querySelector('.drinkify-cocktails-title');
 
 const searchApiService = new CocktailsAPI();
 
@@ -20,6 +21,7 @@ async function searchCoctailsByName(e) {
 
     if (searchData) {
       renderCocktailsBySearch(searchData);
+      cocktailsTitle.innerText = 'Searching results';
     }
   } catch (error) {
     console.error(error);
@@ -40,6 +42,7 @@ async function searchCoctailsByLetter(letter) {
 
     if (searchData) {
       renderCocktailsBySearch(searchData);
+      cocktailsTitle.innerText = 'Searching results';
     }
   } catch (error) {
     console.error(error);
