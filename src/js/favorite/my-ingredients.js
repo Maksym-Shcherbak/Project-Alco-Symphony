@@ -231,6 +231,7 @@
 
 console.log();
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
+// import '../../js/darktheme/darktheme';
 
 let favoriteIngradientsArray = [];
 let parts;
