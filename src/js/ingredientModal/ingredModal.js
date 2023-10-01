@@ -25,7 +25,7 @@ async function onIngredClick(e) {
       );
 
       markupIngredient(result);
-      refs.backdropIngred.classList.remove('is-hidden');
+      ingrModalRefs.backdropIngred.classList.remove('is-hidden');
       let addBtn = document.querySelector('.add-to-fav-ing-btn');
       let removeBtn = document.querySelector('.remove-from-fav-ing-btn');
       addBtn.addEventListener('click', () => {
@@ -43,7 +43,7 @@ async function onIngredClick(e) {
   }
 }
 
-refs.backdropIngred.addEventListener('click', closeIngredModal);
+ingrModalRefs.backdropIngred.addEventListener('click', closeIngredModal);
 
 function closeIngredModal(e) {
   if (
@@ -53,11 +53,11 @@ function closeIngredModal(e) {
     return;
   }
   throttle(cleanIngredMarkup, 100);
-  refs.backdropIngred.classList.add('is-hidden');
+  ingrModalRefs.backdropIngred.classList.add('is-hidden');
 }
 
 function cleanIngredMarkup() {
-  refs.ingreModalInner.innerHTML = '';
+  ingrModalRefs.ingreModalInner.innerHTML = '';
 }
 
 const addIngredientToFav = (addBtn, removeBtn, id) => {
