@@ -1,7 +1,9 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import { renderFavCoctails, coctailArray } from './favorite-coctails-render';
+import { renderFavCoctails} from './favorite-coctails-render';
 import { PaginationForCocktails } from '../CocktailAPI/pagination'
+import { load } from './favorite-coctails-render';
+
 
 
 const container = document.getElementById('tui-pagination-container');
@@ -41,7 +43,7 @@ function renderCocktailsBySearch(array) {
   );
 }
 
-renderCocktailsBySearch(coctailArray);
+renderCocktailsBySearch(load("favorite"));
 
   
   
