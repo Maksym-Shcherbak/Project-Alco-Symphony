@@ -154,7 +154,7 @@
 .favorite-ingradients-list .read-more-button {
   padding: 14px 71px;
 
-  background-color: var(--cart-color);
+  background-color: transparent;
 
   border-radius: 12px;
   border: 1px solid var(--violet-color);
@@ -198,10 +198,7 @@
     height: 56px;
   }
 }
-@media screen and (min-width: 1280px) {
-  .favorite-ingradients-list {
-  }
-}
+
 .favorite-ingradients-list .trash-icon {
   pointer-events: none;
 
@@ -211,9 +208,5 @@
   .favorite-ingradients-list .trash-icon {
     width: 24px;
     height: 24px;
-  }
-}
-@media screen and (min-width: 1280px) {
-  .favorite-ingradients-list {
   }
 }
