@@ -231,6 +231,8 @@
 
 console.log();
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
+import '../../js/header/header';
+import '../../js/scroll-anime/scroll-anime';
 
 let favoriteIngradientsArray = [];
 let parts;
@@ -240,13 +242,15 @@ const paginationElement = document.getElementById('tui-pagination-container');
 const ingradientsListElement = document.querySelector(
   '.favorite-ingradients-list'
 );
-
+const noFoundElement = document.querySelector('.no-ingradients-wrapper');
 const pagination = new PaginationForCocktails(paginationElement, 6);
 document.addEventListener('DOMContentLoaded', event => {
   favoriteIngradientsArray = JSON.parse(
     localStorage.getItem('favorite-ingradients')
   );
-
+  if (favoriteIngradientsArray.length !== 0) {
+    noFoundElement.classList.add('hidden');
+  }
   setModalElement();
   parts = pagination.createCardsPerPage(favoriteIngradientsArray);
 
@@ -258,7 +262,10 @@ document.addEventListener('DOMContentLoaded', event => {
   );
 });
 
-ingradientsListElement.addEventListener('click', ingradientListListener);
+ingradientsListElement.addEventListener(
+  'click' || 'touch',
+  ingradientListListener
+);
 
 function setModalElement() {
   modalElement = document.querySelector('.ingradient-modal');
@@ -270,7 +277,10 @@ function ingradientListListener(event) {
   }
   if (event.srcElement.className === 'remove-button') {
     removeButtonListener(event);
-    renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+    renderIngradients(
+      pagination.createCardsPerPage(favoriteIngradientsArray)[0],
+      ingradientsListElement
+    );
     return;
   }
 
@@ -337,7 +347,9 @@ function renderIngradients(ingradientsArray, DOMElement) {
       <p class="alcohol">${alcoholNonalcoholMarkup}</p>
       <p class="description">${description}</p>
        <button type="button" data-name="${title}">Read more</button>
-       <button class="remove-button" type="button" data-name="${title}" >Remove from favorite</button>
+       <button class="remove-button" type="button" data-name="${title}" > <svg class="trash-icon" width="24" height="24">
+        <use href="./img/sprite.svg#icon-trash"></use>
+      </svg></button>
       </li>`;
     DOMElement.insertAdjacentHTML('beforeend', markup);
   }
