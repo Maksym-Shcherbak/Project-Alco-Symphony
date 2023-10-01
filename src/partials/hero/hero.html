@@ -1,0 +1,68 @@
+<section class="hero">
+  <div class="hero-container container">
+    <div class="hero-taglines">
+      <h1 class="main-tagline title">
+        A party without <span>cocktails</span> <br />
+        is not like a party
+      </h1>
+      <p class="sub-tagline">
+        From classic sips to exotic mixes, we're your key to becoming a cocktail
+        wizard!
+      </p>
+      <button type="button" class="first-button">View cocktails</button>
+    </div>
+    <div class="hero-image">
+      <img
+        class="main-girl"
+        srcset="
+          img/hero/girl-small.webp      375w,
+          img/hero/girl-small@2x.webp   750w,
+          img/hero/girl-small@3x.webp  1125w,
+          img/hero/girl-medium.webp     768w,
+          img/hero/girl-medium@2x.webp 1536w,
+          img/hero/girl-medium@3x.webp 2304w,
+          img/hero/girl-large.webp     1280w,
+          img/hero/girl-large@2x.webp  2560w,
+          img/hero/girl-large@3x.webp  3840w
+        "
+        sizes="(max-width: 767px) 375px,
+          (min-width: 768px) and (max-width: 1279px) 768px,
+          1280px"
+        src="img/hero/girl-small.webp"
+        alt="Girl with cocktail"
+      />
+      <svg width="96" height="96" class="right-star star">
+        <use href="/img/sprite.svg#icon-star"></use>
+      </svg>
+      <svg width="25" height="25" class="left-star star">
+        <use href="/img/sprite.svg#icon-star"></use>
+      </svg>
+      <div class="ellipse14"></div>
+      <div class="rectangle725"></div>
+      <p class="search-text">Search your favorite cocktail by ABC</p>
+      <div class="ellipse12"></div>
+      <div class="ellipse13"></div>
+    </div>
+  </div>
+</section>
+<section class="search">
+  <div class="container">
+    <h2 hidden="">Search Coctail</h2>
+    <div class="search-container">
+      <div class="custom-keyboard"></div>
+      <form class="search-form">
+        <input
+          type="text"
+          class="search-input"
+          placeholder="Search"
+          name="searchQuery"
+        />
+        <button type="submit" class="search-button">
+          <svg width="16" height="16" class="search-icon">
+            <use href="/img/sprite.svg#icon-search"></use>
+          </svg>
+        </button>
+      </form>
+    </div>
+  </div>
+</section>

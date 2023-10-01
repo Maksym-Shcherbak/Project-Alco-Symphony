@@ -1,5 +1,128 @@
-<header class="header">
-  <nav class="nav">
-    <ul class="nav-list"></ul>
-  </nav>
+<header class="header" id="page-header">
+  <div class="flex-container container">
+    <nav class="nav">
+      <ul class="menu-list">
+        <li class="menu-item">
+          <a class="menu-link" href="./index.html">Home</a>
+        </li>
+        <li class="menu-item">
+          <div class="dropdown">
+            <button class="dropbtn" id="dropbtn">
+              <span class="dropbtn-text">Favorite</span>
+              <svg
+                class="menu-icon-drop"
+                width="12"
+                height="6"
+                aria-label="menu"
+              >
+                <use href="/img/sprite.svg#icon-Vector-22"></use>
+              </svg>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" id="myDropdown">
+              <a class="fav-link" href="/favorite-cocktails.html"
+                >Favorite coctails</a
+              >
+              <a class="fav-ingr" href="/favorite-ingredients.html"
+                >Favorite ingridients</a
+              >
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="title">
+        <a class="header-logo-link list" href="./index.html">
+          DRINKIFY
+          <svg class="logo-icon" width="21" height="21" aria-label="logo-ikons">
+            <use href="/img/sprite.svg#icon-cocktail"></use>
+          </svg>
+        </a>
+      </div>
+    </nav>
+
+    <!-- 29/09/2023 Valja DARK THEME START -->
+    <div class="switch">
+      <input type="checkbox" id="darkModeToggle" />
+      <!-- Keep this slider -->
+      <label class="slider round" for="darkModeToggle"></label>
+      <!-- Keep this label -->
+    </div>
+    <!-- 29/09/2023 Valja DARK THEME FINISH -->
+    <!-- Original Button for Dark Mode Toggle -->
+
+    <!-- бургер -->
+    <button
+      type="button"
+      class="mobile-menu-open js-open-menu"
+      aria-expanded="false"
+    >
+      <svg
+        class="mobile-menu-open-icon"
+        width="32"
+        height="32"
+        aria-label="menu"
+      >
+        <use href="/img/sprite.svg#icon-paragraph-justify"></use>
+      </svg>
+    </button>
+  </div>
+  <!-- mob menu ------------------------------------------------------------------->
+  <div class="mobile-menu js-menu-container js-menu-container">
+    <div class="container mobail-menu-container">
+      <button class="mobile-close-btn js-close-menu">
+        <svg class="mobile-menu-close-icon" width="32" height="32">
+          <use href="/img/sprite.svg#icon-x"></use>
+        </svg>
+      </button>
+
+      <div class="mobile-title">
+        <a class="menu-logo-link list" href="./index.html">
+          DRINKIFY
+          <svg
+            class="menu-logo-icon"
+            width="19.58"
+            height="18"
+            aria-label="logo-ikons"
+          >
+            <use href="/img/sprite.svg#icon-cocktail"></use>
+          </svg>
+        </a>
+      </div>
+      <!-- //mob switch -->
+      <div class="mobile-switch">
+        <input class="mobile-imput" type="checkbox" />
+      </div>
+
+      <ul class="mobile-list">
+        <li class="mobile-item">
+          <a class="mobile-menu-link" href="./index.html">Home</a>
+        </li>
+        <li class="mobile-item">
+          <a class="mobile-menu-link" href=" ">Favorite</a>
+        </li>
+      </ul>
+      <!-- //mob dropdown-->
+      <div class="mob-dropdown">
+        <button class="mob-dropbtn">
+          <svg
+            class="mob-menu-icon-drop"
+            width="12"
+            height="6"
+            aria-label="menu"
+          >
+            <use href="/img/sprite.svg#icon-Vector-22"></use>
+          </svg>
+          <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="mob-dropdown-content" id="mob-myDropdown">
+          <a class="mob-fav-link" href="/favorite-cocktails.html"
+            >Favorite coctails</a
+          >
+          <a class="mob-fav-ingr" href="/favorite-ingredients.html"
+            >Favorite ingridients</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </header>
