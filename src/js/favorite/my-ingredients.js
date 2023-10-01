@@ -257,9 +257,9 @@ const pagination = new PaginationForCocktails(
   PAGINATION_OPTIONS
 );
 document.addEventListener('DOMContentLoaded', event => {
-  favoriteIngradientsArray = JSON.parse(
-    localStorage.getItem('favorite-ingradients')
-  );
+  favoriteIngradientsArray =
+    JSON.parse(localStorage.getItem('favorite-ingradients')) || [];
+
   if (favoriteIngradientsArray.length !== 0) {
     noFoundElement.classList.add('hidden');
     ingradientsListElement.classList.remove('hidden');
