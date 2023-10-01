@@ -11,7 +11,9 @@
 .dark-mode .search-text,
 .dark-mode .cocktail-card-name,
 .dark-mode .cocktail-card-description,
-.dark-mode .cocktail-card-learn {
+.dark-mode .cocktail-card-learn,
+.dark-mode .favorite-ingradients-alert,
+.dark-mode .favorite-ingradients-title {
   color: rgba(253, 253, 255, 1);
 }
 
