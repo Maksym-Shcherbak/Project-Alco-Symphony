@@ -9,22 +9,12 @@ export async function getIngredient(ingredName) {
   });
   return await axios
     .get(`${BASE_URL}${INGRED_SEARCH_NAME}${params}`)
-    .then(res => {
-      if (res.status !== 200) {
-        throw new Error(res.statusText);
+    .then(response => {
+      if (response.status !== 200) {
+        throw new Error(response.statusText);
       }
-      return res.data;
+      return response.data;
     });
-  /* try {
-    const response = await fetch(`${BASE_URL}${INGRED_SEARCH_NAME}${params}`);
-    const responseJson = await response.json();
-    console.log(responseJson);
-    const result = responseJson.find(ing => ing.title === ingredName);
-    console.log(result);
-    return result;
-  } catch (error) {
-    console.log(error);
-  } */
 }
 
 export const fetchIngredient = async id => {

@@ -1,4 +1,4 @@
-import { every, throttle } from 'lodash';
+import { throttle } from 'lodash';
 import { Notify } from 'notiflix';
 import { refs } from './refs';
 import { getIngredient } from './fetch-data';
@@ -7,8 +7,8 @@ import markupIngredient from './markup-ingredient';
 
 const ingrModalRefs = {
   ingredList: document.querySelector('.modal-ingredients-list'),
-  ingreModalInner: document.querySelector('.ingred-modal-inner'),
-  closeModalBtn: document.querySelector('.ingred-modal-x-btn'),
+  ingredModalInner: document.querySelector('.ingred-modal-inner'),
+  closeModalBtn: document.querySelector('.ingred-modal-close-btn'),
   backdropIngred: document.querySelector('.backdrop-ingred'),
 };
 
@@ -48,7 +48,7 @@ refs.backdropIngred.addEventListener('click', closeIngredModal);
 function closeIngredModal(e) {
   if (
     e.target !== e.currentTarget &&
-    e.target.closest('.ingred-modal-x-btn') !== refs.closeModalBtn
+    e.target.closest('.ingred-modal-close-btn') !== refs.closeModalBtn
   ) {
     return;
   }
