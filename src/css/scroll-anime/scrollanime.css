@@ -2,7 +2,7 @@
   z-index: 9999;
   width: 50px;
   height: 50px;
-  color: #FFF;
+  color: var(--white-color);
   position: fixed;
   bottom: 20px;
   right: 30px;
@@ -25,7 +25,7 @@
 
 .left-star:hover,
 .right-star:hover {
-  fill: aqua;
+  fill: var(--active-color);
   rotate: z 90deg;
   transform: scale(1.2);
   transition-duration: 2s, 1s;
@@ -33,7 +33,7 @@
 
 .header-logo-link,
 .logo-icon:hover {
-  fill: aqua;
+  fill: var(--active-color);
   transition-duration: 1s, 1s;
   transform: scale(1.5);
 }
@@ -45,21 +45,18 @@
   transition-duration: 1s, 1s;
 }
 
-.drinkify-cocktails-title:hover {
-  translate: 20px 2rem 100px;
-  transition-duration: 1s, 1s;
-}
-
-
-
 .menu-item:hover {
   transform: scale(1.1);
   color: var(--violet-color);
   transition-duration: 1s, 1s;
 }
 
+.cocktail-card-button:hover,
+.social-list-item:hover,
 .first-button:hover,
 .first-button:focus {
   transform: scale(1.2);
-  transition-duration: 3s, 1s;
+  transition: 3s, 1s;
 }
+
+.social-list-item {}
