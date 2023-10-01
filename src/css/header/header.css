@@ -150,6 +150,62 @@
 .mobile-imput:checked[type='checkbox']::before {
   left: 26px;
 }
+/* //__________выпадающее меню моб_____________________________________________ */
+.mob-dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.mob-dropdown .dropbtn {
+  cursor: pointer;
+  border: none;
+  outline: none;
+  margin: 0;
+  width: 24px;
+  height: 24px;
+  background-color: transparent;
+}
+
+.mob-dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #7e8fdd;
+  width: 192px;
+  height: 80px;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+.mob-dropdown-content a {
+  float: none;
+  color: #fdfdff80;
+
+  text-decoration: none;
+  display: block;
+  text-align: left;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: 2%;
+}
+
+.mob-dropdown-content a:hover {
+  color: #fdfdff;
+}
+
+.show {
+  display: block;
+}
+.mob-menu-icon-drop {
+  width: 12px;
+  height: 6px;
+}
+.mob-fav-link {
+  padding: 18px 41px 0 24px;
+}
+.mob-fav-ingr {
+  padding: 8px 24px 18px 24px;
+}
 
 /* //////// */
 @media screen and (max-width: 1199px) {
@@ -162,6 +218,9 @@
   .menu-list {
     display: none;
     gap: 28px;
+  }
+  .dropdown {
+    display: none;
   }
 }
 
@@ -186,7 +245,7 @@
     justify-content: flex-start;
     /* padding-left: 100px;
     padding-top: 14px; */
-    gap: 302px;
+    /* gap: 302px; */
   }
 
   .flex-container {
@@ -254,5 +313,69 @@
 
   input:checked[type='checkbox']::before {
     left: 32px;
+  }
+
+  /* //___выпадающее меню DESKTOP__________________________________________________ */
+
+  .dropdown {
+    float: left;
+    overflow: hidden;
+    margin-right: 302px;
+  }
+
+  .dropdown .dropbtn {
+    cursor: pointer;
+
+    border: none;
+    outline: none;
+
+    background-color: inherit;
+
+    margin: 0;
+    width: 24px;
+    height: 24px;
+  }
+
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #7e8fdd;
+    width: 192px;
+    height: 80px;
+    border-radius: 16px;
+    z-index: 1;
+    top: 68px;
+    left: 132px;
+  }
+
+  .dropdown-content a {
+    float: none;
+    color: #fdfdff80;
+
+    text-decoration: none;
+    display: block;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: 2%;
+  }
+
+  .dropdown-content a:hover {
+    color: #fdfdff;
+  }
+
+  .show {
+    display: block;
+  }
+  .menu-icon-drop {
+    width: 12px;
+    height: 6px;
+  }
+  .fav-link {
+    padding: 18px 41px 0 24px;
+  }
+  .fav-ingr {
+    padding: 8px 24px 18px 24px;
   }
 }
