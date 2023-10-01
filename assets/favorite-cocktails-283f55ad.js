@@ -1,4 +1,4 @@
-import{P as d}from"./pagination-062ed8d5.js";import"./scroll-anime-b532eaa1.js";function e(t,s){const l=t.map(i=>`
+import{P as d}from"./pagination-fc30b0bd.js";import"./scroll-anime-b532eaa1.js";function e(t,s){const l=t.map(i=>`
         <li class="fav-coctail-card">
           <div class="fav-coctail-card-container">
             <img class="fav-coctail-img" src="${i.drinkThumb}" alt="${i.drink}">
