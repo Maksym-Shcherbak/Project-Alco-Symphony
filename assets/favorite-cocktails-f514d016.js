@@ -1,4 +1,4 @@
-import{P as d}from"./pagination-fc30b0bd.js";import"./darktheme-3b557d97.js";function e(t,s){const l=t.map(i=>`
+import{P as d}from"./pagination-fc30b0bd.js";import"./darktheme-a62af967.js";function e(t,s){const l=t.map(i=>`
         <li class="fav-coctail-card">
           <div class="fav-coctail-card-container">
             <img class="fav-coctail-img" src="${i.drinkThumb}" alt="${i.drink}">
