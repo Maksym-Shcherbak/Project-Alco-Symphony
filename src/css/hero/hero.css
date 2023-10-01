@@ -119,6 +119,10 @@
   bottom: 139px;
 }
 
+.search-icon {
+  fill: rgb(36, 36, 36, 1);
+}
+
 .search-text {
   display: block;
   width: 173px;
