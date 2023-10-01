@@ -23,8 +23,9 @@
     <load src="partials/header/header.html" />
     <main>
       <section class="favorite-coctails">
-        <div class="favorite-coctails-container">
+        <div class="favorite-coctails-container container">
           <h2 class="favorite-coctails-title">Favorite cocktails</h2>
+          <ul class="fav-coctails-list"></ul>
           <div class="not-found-cocktails-container">
             <picture>
               <source
@@ -57,11 +58,16 @@
             </p>
           </div>
         </div>
+        <div
+          id="tui-pagination-container"
+          class="tui-pagination visually-hidden"
+        ></div>
       </section>
     </main>
     <load src="partials/footer/footer.html" />
     <load src="partials/modal/modal.html" />
     <load src="partials/scroll-anime/scroll-anime.html" />
-    <script type="module" src="/js/favorite/my-cocktails.js"></script>
+
+    <script type="module" src="./js/favorite/my-cocktails.js"></script>
   </body>
 </html>

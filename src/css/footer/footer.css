@@ -6,13 +6,14 @@
   font-family: Poppins;
   font-size: 16px;
   font-style: normal;
+  align-items: center;
   font-weight: 600;
-  line-height: 18px; /* 109.091% */
+  line-height: 1.125; /* 109.091% */
   letter-spacing: -0.22px;
   text-transform: uppercase;
   height: 18px;
   width: 71px;
-  margin-right: 4px;
+  gap: 4px;
 }
 .logo-icon {
   display: flex;
@@ -24,11 +25,12 @@
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
-  line-height: 18px; /* 15.4px */
+  line-height: 1.28; /* 15.4px */
   text-transform: uppercase;
 }
 .social-list {
   display: flex;
+  padding-bottom: 80px;
 }
 .footer-container {
   display: flex;
@@ -36,6 +38,8 @@
 }
 .social-list-icon {
   color: #fdfdff;
+  height: 32px;
+  width: 32px;
 }
 .social-title {
   display: flex;
@@ -47,19 +51,11 @@
 /* +++++++++++++++++++++++++MOBILE++++++++++++++++++++ */
 @media screen and (min-width: 375px) {
   .footer-container {
-    /* padding-left: 20px; */
-    /* padding-right: 32px; */
     padding-top: 40px;
-
-    height: 186px;
   }
   .social-list {
     margin-top: 16px;
-    gap: 16px;
-  }
-  .social-list-item {
-    width: 32px;
-    height: 32px;
+    gap: 14px;
   }
 }
 /* +++++++++++++++++++++++++/MOBILE++++++++++++++++++++ */
@@ -70,12 +66,10 @@
     padding-left: 12px;
     padding-right: 70px;
     padding-top: 32px;
-    /* justify-content: space-between; */
-    height: 183px;
   }
   .logo {
     font-size: 22px;
-    line-height: 24px; /* 109.091% */
+    line-height: 1.09; /* 109.091% */
     letter-spacing: -0.22px;
     text-transform: uppercase;
     height: 24px;
@@ -83,11 +77,14 @@
     margin-right: 8px;
   }
   .social-link {
-    line-height: 110%; /* 15.4px */
+    line-height: 1.1; /* 15.4px */
     height: 15px;
     width: 94px;
   }
-  .social-list-item {
+  .social-list {
+    gap: 16px;
+  }
+  .social-list-icon {
     height: 40px;
     width: 40px;
   }
@@ -105,7 +102,7 @@
     padding-left: 80px;
     padding-right: 138px;
     padding-top: 40px;
-    height: 191px;
+    /* height: 191px; */
   }
 }
 /* +++++++++++++++++++++++++/DESKTOP++++++++++++++++++++ */

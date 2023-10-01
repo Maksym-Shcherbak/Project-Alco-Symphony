@@ -7,25 +7,32 @@ const cocktailList = document.querySelector('.cocktails-cards');
 const container = document.getElementById('tui-pagination-container');
 let parts = null;
 
-let lengthForPart = getQuantityOfCocktails();
+const quantity = getQuantityOfCocktails();
+const options = {
+  totalItems: 0,
+  itemsPerPage: quantity.quantityOfCocktails,
+  visiblePages: quantity.quantityOfVisiblePages,
+  page: 1,
+};
 
-const paginationForCocktails = new PaginationForCocktails(
-  container,
-  lengthForPart
-);
+const paginationForCocktails = new PaginationForCocktails(container, options);
 
-const cocktailsApi = new CocktailsAPI(lengthForPart);
+const cocktailsApi = new CocktailsAPI(quantity.quantityOfCocktails);
 
 cocktailsApi
   .getRandomCocktails()
   .then(data => createCocktailCards(data, cocktailList));
 
-cocktailsApi.searchCocktails('f', 'a').then(data => {
-  parts = paginationForCocktails.createCardsPerPage(data);
+export function renderCocktailsBySearch(arrayOfCocktails) {
+  parts = paginationForCocktails.createCardsPerPage(arrayOfCocktails);
+  paginationForCocktails.hidePagination(
+    quantity.quantityOfCocktails,
+    container
+  );
   createCocktailCards(parts[0], cocktailList);
   paginationForCocktails.changePageByClick(
     parts,
     cocktailList,
     createCocktailCards
   );
-});
+}

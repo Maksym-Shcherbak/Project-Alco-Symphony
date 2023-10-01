@@ -1,7 +1,10 @@
 import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
+import { renderCocktailsBySearch } from '../cocktails/cocktails';
 export { searchCoctailsByName, searchCoctailsByLetter };
 
 const form = document.querySelector('.search-form');
+const cocktailsTitle = document.querySelector('.drinkify-cocktails-title');
+
 const searchApiService = new CocktailsAPI();
 
 async function searchCoctailsByName(e) {
@@ -17,7 +20,8 @@ async function searchCoctailsByName(e) {
     const searchData = await searchApiService.searchCocktails('s');
 
     if (searchData) {
-      console.log(searchData);
+      renderCocktailsBySearch(searchData);
+      cocktailsTitle.innerText = 'Searching results';
     }
   } catch (error) {
     console.error(error);
@@ -37,7 +41,8 @@ async function searchCoctailsByLetter(letter) {
     const searchData = await searchApiService.searchCocktails('f');
 
     if (searchData) {
-      console.log(searchData);
+      renderCocktailsBySearch(searchData);
+      cocktailsTitle.innerText = 'Searching results';
     }
   } catch (error) {
     console.error(error);

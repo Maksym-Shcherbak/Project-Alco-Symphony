@@ -1,4 +1,6 @@
+
 import './header-menu';
+
 import './header-dropdown';
 
 /* When the user clicks on the button, 
@@ -18,3 +20,4 @@ window.onclick = function (e) {
     }
   }
 };
+

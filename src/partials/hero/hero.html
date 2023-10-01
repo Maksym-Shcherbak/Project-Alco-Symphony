@@ -1,7 +1,7 @@
 <section class="hero">
   <div class="hero-container container">
     <div class="hero-taglines">
-      <h1 class="main-tagline">
+      <h1 class="main-tagline title">
         A party without <span>cocktails</span> <br />
         is not like a party
       </h1>
@@ -15,23 +15,26 @@
       <img
         class="main-girl"
         srcset="
-          /partials/hero/images/girl-small.webp      375w,
-          /partials/hero/images/girl-small@2x.webp   750w,
-          /partials/hero/images/girl-medium.webp     768w,
-          /partials/hero/images/girl-medium@2x.webp 1536w,
-          /partials/hero/images/girl-large.webp     1200w,
-          /partials/hero/images/girl-large@2x.webp  2400w
+          img/hero/girl-small.webp      375w,
+          img/hero/girl-small@2x.webp   750w,
+          img/hero/girl-small@3x.webp  1125w,
+          img/hero/girl-medium.webp     768w,
+          img/hero/girl-medium@2x.webp 1536w,
+          img/hero/girl-medium@3x.webp 2304w,
+          img/hero/girl-large.webp     1280w,
+          img/hero/girl-large@2x.webp  2560w,
+          img/hero/girl-large@3x.webp  3840w
         "
         sizes="(max-width: 767px) 375px,
-          (min-width: 768px) and (max-width: 1199px) 768px,
-          1200px"
-        src="./partials/hero/images/girl-small.webp"
+          (min-width: 768px) and (max-width: 1279px) 768px,
+          1280px"
+        src="img/hero/girl-small.webp"
         alt="Girl with cocktail"
       />
-      <svg width="96" height="96" class="right-star">
+      <svg width="96" height="96" class="right-star star">
         <use href="/img/sprite.svg#icon-star"></use>
       </svg>
-      <svg width="25" height="25" class="left-star">
+      <svg width="25" height="25" class="left-star star">
         <use href="/img/sprite.svg#icon-star"></use>
       </svg>
       <div class="ellipse14"></div>
@@ -55,8 +58,8 @@
           name="searchQuery"
         />
         <button type="submit" class="search-button">
-          <svg width="16" height="16" class="">
-            <use href="./partials/hero/images/sprite.svg#icon-search"></use>
+          <svg width="16" height="16" class="search-icon">
+            <use href="/img/sprite.svg#icon-search"></use>
           </svg>
         </button>
       </form>
