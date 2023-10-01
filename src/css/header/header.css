@@ -329,8 +329,9 @@
 
   .dropdown {
     float: left;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin-right: 302px;
+    position: relative;
   }
 
   .dropdown .dropbtn {
@@ -361,9 +362,9 @@
     width: 192px;
     height: 80px;
     border-radius: 16px;
-    z-index: 1;
-    top: 60px;
-    left: 160px;
+    z-index: 9;
+    top: 32px;
+    left: -45px;
   }
 
   .dropdown-content a {
