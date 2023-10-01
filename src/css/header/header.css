@@ -157,19 +157,29 @@
   left: 26px;
 }
 /* //__________выпадающее меню моб_____________________________________________ */
+/* .dropdown-container.lastChild {
+  display: flex;
+} */
 .mob-dropdown {
   float: left;
-  overflow: hidden;
+  position: absolute;
+  top: 270px;
+  left: 215px;
 }
 
 .mob-dropdown .dropbtn {
+  top: 120px;
+  left: 50px;
+  border: none;
+  outline: none;
+
+  background-color: inherit;
   cursor: pointer;
   border: none;
   outline: none;
   margin: 0;
   width: 24px;
   height: 24px;
-  background-color: transparent;
 }
 
 .mob-dropdown-content {
@@ -205,6 +215,7 @@
 .mob-menu-icon-drop {
   width: 12px;
   height: 6px;
+  fill: #242424;
 }
 .mob-fav-link {
   padding: 18px 41px 0 24px;
