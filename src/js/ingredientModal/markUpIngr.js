@@ -1,4 +1,4 @@
-import { refs } from './refs';
+import { ingrModalRefs } from './ingredModal';
 
 export default function markupIngredient({
   abv,
@@ -25,7 +25,7 @@ export default function markupIngredient({
   if (!flavour) flavour = noDataMsg;
   if (!type) type = noDataMsg;
 
-  refs.ingredModalInner.innerHTML = `    
+  ingrModalRefs.ingredModalInner.innerHTML = `    
     <h3 class="ingred-header">${title}</h3>
     <p class="ingred-type">${type}</p>
     <p class="ingred-desc">${description}</p>

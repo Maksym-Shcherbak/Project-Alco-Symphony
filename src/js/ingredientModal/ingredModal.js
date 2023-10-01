@@ -1,9 +1,11 @@
 import { throttle } from 'lodash';
 import { Notify } from 'notiflix';
-import { refs } from './refs';
-import { getIngredient } from './fetch-data';
-import { addToLS, removeFromLS } from './local-storage-operations';
-import markupIngredient from './markup-ingredient';
+import { getIngredient } from './ingredFetch';
+import {
+  addButtonListener,
+  removeButtonListener,
+} from '../favorite/my-ingredients';
+import markupIngredient from './markUpIngr';
 
 const ingrModalRefs = {
   ingredList: document.querySelector('.modal-ingredients-list'),
@@ -35,7 +37,7 @@ async function onIngredClick(e) {
         removeIngredientFromFav(addBtn, removeBtn, removeBtn.dataset.id);
       });
     } catch (err) {
-      Notify.failure('Oops, something went wrong!', {
+      Notify.failure('Error occurred!', {
         clickToClose: true,
       });
       console.error(err);
@@ -48,7 +50,7 @@ ingrModalRefs.backdropIngred.addEventListener('click', closeIngredModal);
 function closeIngredModal(e) {
   if (
     e.target !== e.currentTarget &&
-    e.target.closest('.ingred-modal-close-btn') !== refs.closeModalBtn
+    e.target.closest('.ingred-modal-close-btn') !== ingrModalRefs.closeModalBtn
   ) {
     return;
   }
@@ -61,13 +63,13 @@ function cleanIngredMarkup() {
 }
 
 const addIngredientToFav = (addBtn, removeBtn, id) => {
-  addToLS('ingredients', id);
+  addButtonListener('ingredients', id);
   removeBtn.classList.remove('is-hidden');
   addBtn.classList.add('is-hidden');
 };
 
 const removeIngredientFromFav = (addBtn, removeBtn, id) => {
-  removeFromLS('ingredients', id);
+  removeButtonListener('ingredients', id);
   addBtn.classList.remove('is-hidden');
   removeBtn.classList.add('is-hidden');
 };
