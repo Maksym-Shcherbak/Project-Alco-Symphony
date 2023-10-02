@@ -7,10 +7,6 @@
   display: flex;
   align-items: baseline;
   justify-content: flex-start;
-  /* padding-left: 32px;
-  padding-top: 12px; */
-}
-.title {
 }
 
 .header-logo-link {
@@ -125,6 +121,9 @@
 
 /* свич */
 /* //перемикач ________________________________________________________________*/
+.switch {
+  display: none;
+}
 .mobile-switch {
   width: 50px;
   height: 25px;
