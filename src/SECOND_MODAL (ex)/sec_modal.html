@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="sec_modal.html.css">
+    <title>Second modal example</title>
+  </head>
+
+  <body>
+    <!-- Optional modal button -->
+    <button data-first-modal-open class="main_button" type="button">
+      II Modal
+    </button>
+
+    <!-- Full backdrop -->
+    <div class="backdrop is-hidden" data-first-modal>
+        <!-- Modal window -->
+        <div class="ingredients_modal_window">
+        <!-- Close button -->
+        <button
+          class="ingredients_modal_close_btn"
+          type="button"
+          aria-label="close menu review"
+          data-first-modal-close
+        >
+          <svg class="ingredients_modal_close_icon" width="24" height="24">
+            <use href="icons.svg#icon-x-close"></use>
+          </svg>
+        </button>
+
+        <!-- Title -->
+        <ul class="ingredients_modal_title_list">
+            <li class="ingredients_modal_title_list_item"><h3 class="ingredients_modal_title">Campari</h3></li>
+            <li class="ingredients_modal_title_list_item"><p class="ingredients_modal_desc">Liqueur</p></li>
+        </ul>
+
+        <!-- Description -->
+        <p class="ingredients_modal_main_desc"><span class="ingredients_modal_bold_desc">Campari </span>is an Italian alcoholic liqueur, considered an apéritif (20.5%, 21%, 24%, 25%, or 28.5% ABV, depending on the country in which it is sold), obtained from the infusion of herbs and fruit (including chinotto and cascarilla) in alcohol and water. It is a bitters, characterised by its dark red colour.</p>
+
+        <!-- Ingredients -->
+        <ul class="ingredients_modal_ingredients_list">
+            <li class="ingredients_modal_ingredients_list_item"><a class="ingredients_modal_ingredients_link" href="">Type: Bitters</a></li>
+            <li class="ingredients_modal_ingredients_list_item"><a class="ingredients_modal_ingredients_link" href="">Country of origin: Italy</a></li>
+            <li class="ingredients_modal_ingredients_list_item"><a class="ingredients_modal_ingredients_link" href="">Alcohol by volume: 20.5 - 28.5 %</a></li>
+            <li class="ingredients_modal_ingredients_list_item"><a class="ingredients_modal_ingredients_link" href="">Flavour : Bitter, spicy and sweet</a></li>
+        </ul>
+        <!-- Functional buttons -->
+        <ul class="ingredients_modal_functional_btn_list">
+            <li class="ingredients_modal_functional_btn_list_item"><button type="button" class="ingredients_modal_functional_btn">add to favorite</button></li>
+            <li class="ingredients_modal_functional_btn_list_item"><button data-first-modal-close type="button" class="ingredients_modal_back_btn">back</button></li>
+        </ul>
+        </div>
+    </div>
+  </body>
+
+  <script type="module" src="sec_modal.js"'></script>
+</html>
