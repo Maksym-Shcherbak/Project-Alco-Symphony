@@ -80,7 +80,7 @@ async function addToFavorite(event) {
   }
 }
 
-function saveToLocalStorage(key, value) {
+export function saveToLocalStorage(key, value) {
   try {
     const parsedValue = JSON.stringify(value);
     localStorage.setItem(key, parsedValue);
@@ -89,7 +89,7 @@ function saveToLocalStorage(key, value) {
   }
 }
 
-function removeFromLocalStorage(key, cocktailId) {
+export function removeFromLocalStorage(key, cocktailId) {
   try {
     const arrayFavCocktails = JSON.parse(localStorage.getItem(key));
     for (let index = 0; index < arrayFavCocktails.length; index++) {
