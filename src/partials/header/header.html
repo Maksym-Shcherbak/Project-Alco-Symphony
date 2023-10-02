@@ -87,10 +87,10 @@
             <use href="/img/sprite.svg#icon-cocktail"></use>
           </svg>
         </a>
-      </div>
-      <!-- //mob switch -->
-      <div class="mobile-switch">
-        <input class="mobile-imput" type="checkbox" />
+        <!-- //mob switch -->
+        <div class="mobile-switch">
+          <input class="mobile-imput" type="checkbox" />
+        </div>
       </div>
 
       <ul class="mobile-list">
@@ -98,11 +98,41 @@
           <a class="mobile-menu-link" href="./index.html">Home</a>
         </li>
         <li class="mobile-item">
-          <a class="mobile-menu-link" href=" ">Favorite</a>
+          <div class="mob-dropdown">
+            <button class="mob-dropbtn" id="mob-dropbtn">
+              <!-- <span class="mob-dropbtn-text">Favorite</span> -->
+              <svg
+                class="mob-menu-icon-drop"
+                width="12"
+                height="6"
+                aria-label="menu"
+              >
+                <use href="/img/sprite.svg#icon-Vector-22"></use>
+              </svg>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="mob-dropdown-content" id="mob-myDropdown">
+              <a class="mob-fav-link" href="./favorite-cocktails.html"
+                >Favorite coctails</a
+              >
+              <a class="mob-fav-ingr" href="./favorite-ingredients.html"
+                >Favorite ingridients</a
+              >
+            </div>
+          </div>
         </li>
       </ul>
+
+      <!-- <ul class="mobile-list">
+        <li class="mobile-item">
+          <a class="mobile-menu-link" href="./index.html">Home</a>
+        </li>
+        <li class="mobile-item">
+          <a class="mobile-menu-link" href=" ">Favorite</a>
+        </li>
+      </ul> -->
       <!-- //mob dropdown-->
-      <div class="mob-dropdown">
+      <!-- <div class="mob-dropdown">
         <button class="mob-dropbtn">
           <svg
             class="mob-menu-icon-drop"
@@ -110,7 +140,7 @@
             height="6"
             aria-label="menu"
           >
-            <use href="/img/sprite.svg#icon-Vector-22"></use>
+            <use href="/img/sprite.svg#icon-Vector-26"></use>
           </svg>
           <i class="fa fa-caret-down"></i>
         </button>
@@ -122,7 +152,7 @@
             >Favorite ingridients</a
           >
         </div>
-      </div>
+      </div> -->
     </div>
   </div>
 </header>
