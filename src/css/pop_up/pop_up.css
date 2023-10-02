@@ -98,6 +98,12 @@ body {
   }
 
   /* Image and ingredients */
+  .pop_up_pic {
+    width: 295px;
+    height: 277px;
+    border-radius: 16px;
+  }
+
   .pop_up_pic_and_ingredients_list {
     display: flex;
     flex-direction: column;
@@ -111,6 +117,7 @@ body {
   .pop_up_pic_and_ingredients_list_first_item {
     display: flex;
     flex-direction: column;
+    align-items: center;
   }
 
   .pop_up_ingredients_list_title {
@@ -247,6 +254,10 @@ body {
     width: 560px;
     height: 529px;
     padding: 40px;
+  }
+
+  .pop_up_pic {
+    width: 288px;
   }
 
   .pop_up_pic_and_ingredients_list {
