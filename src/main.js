@@ -8,3 +8,5 @@ import './js/learn-more-btn/learn-more-btn';
 import './js/favourite-btn/favourite-btn';
 import './js/scroll-anime/scroll-anime';
 import './js/notification/notification';
+import './js/modal/createModalForCocktail';
+// import './js/modal/createModalIngredient';
