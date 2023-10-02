@@ -10,9 +10,7 @@
   align-items: baseline;
 }
 .nav {
-  display: flex;
-  align-items: baseline;
-  justify-content: flex-start;
+  flex-direction: row;
   /* padding-left: 32px;
   padding-top: 12px; */
 }
