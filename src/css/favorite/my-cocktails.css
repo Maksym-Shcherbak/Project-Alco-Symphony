@@ -3,6 +3,8 @@
 @import url('../header/header.css');
 @import url('../footer/footer.css');
 @import url('../scroll-anime/scrollanime.css');
+@import url('../pagination/pagination.css');
+@import url('../darktheme.css');
 
 .favorite-coctails-title {
   font-style: normal;
@@ -30,39 +32,105 @@
   font-weight: 400;
 }
 
+.buttons-container {
+  display: flex;
+  gap: 15px;
+}
+
+.fav-coctail-img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.learn-more-btn {
+  padding: 14px 71px;
+  border-radius: 12px;
+  border: 1px solid #7e8fdd;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 1.43;
+  letter-spacing: 0.28px;
+  text-transform: uppercase;
+  transition: background-color 0.5s ease;
+}
+
+.learn-more-btn:hover,
+.learn-more-btn:focus {
+  color: #fdfdff;
+  font-size: 14px;
+  line-height: 1.43;
+  letter-spacing: 0.28px;
+  background: #7e8fdd;
+}
+
+.delete-btn {
+  display: flex;
+  padding: 16px 16px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: #7e8fdd;
+  border: none;
+  width: 48px;
+  height: 48px;
+}
+.delete-btn-icon {
+  width: 24px;
+  height: 24px;
+}
 /* <------Phone-----> */
 
 @media screen and (max-width: 767px) {
+  .fav-coctails-list {
+    display: flex;
+    flex-direction: column;
+    column-gap: 20px;
+  }
+
+  .fav-coctails-list {
+    width: 335px;
+    border-radius: 20px;
+    background: #fdfdff;
+    box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
+  }
+
   .favorite-coctails-container {
     padding-top: 80px;
   }
-}
 
-.favorite-coctails-title {
-  font-size: 24px;
-  line-height: 1.2;
-  margin-left: 20px;
-  margin-bottom: 140px;
-}
+  .favorite-coctails-title {
+    font-size: 24px;
+    line-height: 1.2;
+    margin-left: 20px;
+    margin-bottom: 140px;
+  }
 
-.not-found-cocktails-container {
-  width: 244px;
-  gap: 20px;
-}
+  .not-found-cocktails-container {
+    width: 244px;
+    gap: 20px;
+  }
 
-.not-found-img {
-  width: 142px;
-  height: 122px;
-}
+  .not-found-img {
+    width: 142px;
+    height: 122px;
+  }
 
-.favorite-coctails-subtitle {
-  font-size: 18px;
-  line-height: 1.33;
-}
+  .favorite-coctails-subtitle {
+    font-size: 18px;
+    line-height: 1.33;
+  }
 
-.favorite-coctails-subtitle-span {
-  font-size: 18px;
-  line-height: 1.33;
+  .favorite-coctails-subtitle-span {
+    font-size: 18px;
+    line-height: 1.33;
+  }
+
+  .delete-btn-icon {
+    width: 18px;
+    height: 18px;
+  }
 }
 
 /* <----------Tablet-----------> */
@@ -99,9 +167,32 @@
     line-height: 1.17;
   }
 
+  .delete-btn {
+    width: 56px;
+    height: 56px;
+  }
+
   .delete-btn-icon {
     width: 24px;
     height: 24px;
+  }
+
+  .learn-more-btn {
+    padding: 16px 55px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 0.36px;
+  }
+  .learn-more-btn:hover,
+  .learn-more-btn:focus {
+    padding: 16px 55px;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: 0.36px;
+  }
+
+  .fav-coctail-card {
+    width: 334px;
   }
 }
 
@@ -115,4 +206,3 @@
     margin-left: 100px;
   }
 }
-

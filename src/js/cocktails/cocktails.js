@@ -2,32 +2,35 @@ import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
 import { createCocktailCards } from './renderCocktails';
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
 import { getQuantityOfCocktails } from './getQuantityOfCocktails';
-import {
-  searchCoctailsByName,
-  searchCoctailsByLetter,
-} from '../hero/search-coctails';
-import { resizeHandler } from '../hero/hero';
+import { createModal } from '../pop_up/pop_up_open';
 
 const cocktailList = document.querySelector('.cocktails-cards');
 const container = document.getElementById('tui-pagination-container');
 let parts = null;
 
-let lengthForPart = getQuantityOfCocktails();
+const quantity = getQuantityOfCocktails();
+const options = {
+  totalItems: 0,
+  itemsPerPage: quantity.quantityOfCocktails,
+  visiblePages: quantity.quantityOfVisiblePages,
+  page: 1,
+};
 
-const paginationForCocktails = new PaginationForCocktails(
-  container,
-  lengthForPart
-);
+const paginationForCocktails = new PaginationForCocktails(container, options);
 
-const cocktailsApi = new CocktailsAPI(lengthForPart);
+const cocktailsApi = new CocktailsAPI(quantity.quantityOfCocktails);
 
-cocktailsApi
-  .getRandomCocktails()
-  .then(data => createCocktailCards(data, cocktailList));
+cocktailsApi.getRandomCocktails().then(data => {
+  createCocktailCards(data, cocktailList);
+  createModal();
+});
 
 export function renderCocktailsBySearch(arrayOfCocktails) {
   parts = paginationForCocktails.createCardsPerPage(arrayOfCocktails);
-  paginationForCocktails.hidePagination(lengthForPart, container);
+  paginationForCocktails.hidePagination(
+    quantity.quantityOfCocktails,
+    container
+  );
   createCocktailCards(parts[0], cocktailList);
   paginationForCocktails.changePageByClick(
     parts,

@@ -154,11 +154,9 @@ darkModeToggle.addEventListener('change', () => {
   if (isDarkMode) {
     // If the toggle is checked, enable dark mode
     body.classList.add('dark-mode');
-    console.log('Dark mode enabled.');
   } else {
     // If the toggle is unchecked, disable dark mode
     body.classList.remove('dark-mode');
-    console.log('Dark mode disabled.');
   }
 
   // Determine the screen size based on the viewport width
@@ -172,7 +170,7 @@ darkModeToggle.addEventListener('change', () => {
   }
 
   // Set the background image based on screen size and mode
-  setBackgroundImage(screenSize, isDarkMode);
+  // setBackgroundImage(screenSize, isDarkMode);
 
   // Save the current mode to local storage
   saveModeToLocalStorage(isDarkMode);
@@ -195,13 +193,16 @@ window.addEventListener('DOMContentLoaded', () => {
   // If there's a saved mode, set it as the initial mode
   if (savedMode !== null) {
     darkModeToggle.checked = savedMode;
+    if (darkModeToggle.checked) {
+      body.classList.add('dark-mode');
+    }
   }
 
   // Determine the initial dark mode state based on the toggle's checked state
   const isDarkMode = darkModeToggle.checked;
 
   // Set the initial background image
-  setBackgroundImage(screenSize, isDarkMode);
+  // setBackgroundImage(screenSize, isDarkMode);
 });
 
 // Check if the saved mode has expired (24 hours) and reset to light mode if needed
