@@ -1,4 +1,4 @@
-import{P as u}from"./darktheme-22353e3b.js";function n(e,t){const d=e.map(a=>`
+import{P as u}from"./darktheme-1880ef82.js";function n(e,t){const d=e.map(a=>`
         <li class="fav-coctail-card" id=${a.id}>
           <div class="fav-coctail-card-container">
             <img class="fav-coctail-img" src="${a.img}" alt="${a.title}">
