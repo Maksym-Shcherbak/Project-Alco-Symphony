@@ -30,7 +30,6 @@ async function getCocktailById(e) {
 
 function onToFavorite() {
   const addBtn = document.querySelector('.add-to-fav');
-  console.log(addBtn);
   addBtn.addEventListener('click', addToFavorite);
 }
 
@@ -47,7 +46,6 @@ function closeModal() {
 
 async function addToFavorite(event) {
   if (event.target.classList.contains('add-to-fav')) {
-    console.log('click');
     const id = event.target.id;
     const cocktailArr = await cocktailAPI.getFullCocktailInfo(id);
     const cocktail = cocktailArr.map(item => {
@@ -59,18 +57,14 @@ async function addToFavorite(event) {
         favorite: true,
       };
     });
-    console.log(cocktail);
     let savedCocktails = JSON.parse(localStorage.getItem('favorite')) || [];
-    console.log(savedCocktails);
     let isInCocktailsArray;
     if (savedCocktails.length !== 0) {
       isInCocktailsArray = savedCocktails.some(item => item.id === id);
-      console.log(isInCocktailsArray);
     }
     // else {
     //   isInCocktailsArray = true;
     // }
-    console.log(isInCocktailsArray);
     if (!isInCocktailsArray) {
       arr.push(...cocktail, ...savedCocktails);
       saveToLocalStorage('favorite', arr);
