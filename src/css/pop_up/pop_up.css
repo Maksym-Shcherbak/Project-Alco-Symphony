@@ -66,7 +66,7 @@ body {
 
 @media screen and (min-width: 375px) {
   /* Close button */
-  .pop_up_modal_window {
+  .modal {
     position: fixed;
     top: 50%;
     left: 50%;
@@ -113,7 +113,7 @@ body {
     flex-direction: column;
   }
 
-  .pop_up_ingredients_list_title {
+  .cocktail-modal-name {
     color: #242424;
     font-family: Poppins;
     font-size: 16px;
@@ -123,7 +123,7 @@ body {
     margin-bottom: 8px;
   }
 
-  .pop_up_ingredients_list_desc {
+  .modal-text {
     color: rgba(36, 36, 36, 0.5);
     font-family: Poppins;
     font-size: 14px;
@@ -136,7 +136,7 @@ body {
     margin-bottom: 20px;
   }
 
-  .ingrtedients_list {
+  .cocktail-modal-list {
     list-style: disc;
     margin-left: 20px;
     display: flex;
@@ -144,7 +144,7 @@ body {
     gap: 8px;
   }
 
-  .ingredients_link {
+  .modal-cocktail-ingredient {
     color: rgba(36, 36, 36, 0.8);
     font-family: Poppins;
     font-size: 14px;
@@ -154,17 +154,17 @@ body {
     transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .ingredients_link:hover,
-  .ingredients_link:focus {
+  .modal-cocktail-ingredient:hover,
+  .modal-cocktail-ingredient:focus {
     color: #7e8fdd;
   }
 
   /* Description */
-  .pop_up_desc {
+  .cocktail-modal-instructions {
     margin-top: 40px;
   }
 
-  .pop_up_desc_title {
+  .modal-instructions-title {
     color: #242424;
     font-family: Poppins;
     font-size: 16px;
@@ -174,7 +174,7 @@ body {
     margin-bottom: 14px;
   }
 
-  .pop_up_desc_text {
+  .modal-instructions-text {
     width: 295px;
     height: 100px;
     color: rgba(36, 36, 36, 0.5);
@@ -195,44 +195,37 @@ body {
     gap: 14px;
   }
 
-  .pop_up_functional_button {
+  .modal-cocktail-btn {
     width: 295px;
     height: 48px;
     border-radius: 12px;
     border-width: 0px;
-    color: #fdfdff;
     font-family: Poppins;
     font-size: 14px;
     font-style: normal;
     font-weight: 600;
     line-height: 20px;
     letter-spacing: 0.28px;
+  }
+
+  .add-to-fav {
+    color: #fdfdff;
     background: #7e8fdd;
     transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .pop_up_functional_button:hover,
-  .pop_up_functional_button:focus {
+  .add-to-fav:hover,
+  .add-to-fav:focus {
     background: #6e7fcf;
   }
 
-  .pop_up_close_button {
-    width: 295px;
-    height: 48px;
-    border-radius: 12px;
-    border-width: 0px;
+  .modal-cocktail-back {
     color: #242424;
-    font-family: Poppins;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 20px;
-    letter-spacing: 0.28px;
     transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .pop_up_close_button:hover,
-  .pop_up_close_button:focus {
+  .modal-cocktail-back:hover,
+  .modal-cocktail-back:focus {
     background: rgba(36, 36, 36, 0.2);
   }
 }
@@ -243,7 +236,7 @@ body {
     height: 24px;
   }
 
-  .pop_up_modal_window {
+  .modal {
     width: 560px;
     height: 529px;
     padding: 40px;
@@ -255,11 +248,11 @@ body {
     gap: 20px;
   }
 
-  .pop_up_pic_and_ingredients_list_second_item {
+  .cocktail-img-and-ingredients {
     display: flex;
   }
 
-  .pop_up_drink_title {
+  .cocktail-modal-name {
     color: #242424;
     font-family: Poppins;
     font-size: 20px;
@@ -274,7 +267,7 @@ body {
     gap: 20px;
   }
 
-  .pop_up_desc_text {
+  .modal-instructions-text {
     width: 520px;
     height: 60px;
   }
@@ -287,12 +280,12 @@ body {
     gap: 14px;
   }
 
-  .pop_up_functional_button {
+  .add-to-fav {
     width: 251px;
     height: 56px;
   }
 
-  .pop_up_close_button {
+  .modal-cocktail-back {
     width: 172px;
     height: 56px;
   }

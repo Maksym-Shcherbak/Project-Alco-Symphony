@@ -14,7 +14,6 @@ export class CocktailsAPI {
       const response = await axios(
         `${this.#BASE_URL}cocktails?${searchParams}`
       );
-      console.log(response.data);
       return response.data;
     } catch (error) {
       console.log(error.message);
@@ -36,8 +35,17 @@ export class CocktailsAPI {
 
   async getIngredients(id) {
     try {
+      const response = await axios(`${this.#BASE_URL}ingredients/${id}`);
+      return response.data;
+    } catch (error) {
+      console.log(error.message);
+    }
+  }
+
+  async getFullCocktailInfo(id) {
+    try {
       const response = await axios(
-        `${this.#BASE_URL}cocktails/ingredients/?${id}`
+        `${this.#BASE_URL}cocktails/lookup/?id=${id}`
       );
       return response.data;
     } catch (error) {
