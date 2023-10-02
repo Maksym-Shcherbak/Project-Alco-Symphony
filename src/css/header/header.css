@@ -63,6 +63,15 @@
   letter-spacing: 2%;
   color: #fdfdff;
 }
+
+.mobile-item.contact {
+  display: none;
+}
+
+.mobile-item.contact.show {
+  display: block;
+}
+
 .mobail-menu-container {
   position: relative;
   height: 1024px;
@@ -336,6 +345,7 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    gap: 280px;
   }
 
   .flex-container {
@@ -408,9 +418,9 @@
   /* //___выпадающее меню DESKTOP__________________________________________________ */
 
   .dropdown {
-    float: left;
-    /* overflow: hidden; */
-    margin-right: 302px;
+    /* float: left;
+    /* overflow: hidden; 
+    margin-right: 302px; */
     position: relative;
   }
 

@@ -3,6 +3,8 @@ dropbtn.addEventListener('click', myFunction);
 function myFunction(e) {
   if (e.currentTarget.nodeName === 'BUTTON')
     document.getElementById('mob-myDropdown').classList.toggle('show');
+  const contactLink = document.querySelector('.mobile-item.contact');
+  contactLink.classList.toggle('show');
 }
 
 // Close the dropdown if the user clicks outside of it
