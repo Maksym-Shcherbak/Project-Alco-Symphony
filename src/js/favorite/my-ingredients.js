@@ -229,8 +229,11 @@
 //   JSON.stringify(favoriteIngradientsArray)
 // );
 
-console.log();
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
+import '../../js/header/header';
+import '../../js/scroll-anime/scroll-anime';
+import '../../js/notification/notification';
+import '../../js/darktheme/darktheme';
 
 let favoriteIngradientsArray = [];
 let parts;
@@ -240,12 +243,27 @@ const paginationElement = document.getElementById('tui-pagination-container');
 const ingradientsListElement = document.querySelector(
   '.favorite-ingradients-list'
 );
+const noFoundElement = document.querySelector('.no-ingradients-wrapper');
 
-const pagination = new PaginationForCocktails(paginationElement, 6);
+const PAGINATION_OPTIONS = {
+  totalItems: 0,
+  itemsPerPage: 6,
+
+  page: 1,
+};
+
+const pagination = new PaginationForCocktails(
+  paginationElement,
+  PAGINATION_OPTIONS
+);
 document.addEventListener('DOMContentLoaded', event => {
-  favoriteIngradientsArray = JSON.parse(
-    localStorage.getItem('favorite-ingradients')
-  );
+  favoriteIngradientsArray =
+    JSON.parse(localStorage.getItem('favorite-ingradients')) || [];
+
+  if (favoriteIngradientsArray.length !== 0) {
+    noFoundElement.classList.add('hidden');
+    ingradientsListElement.classList.remove('hidden');
+  }
 
   setModalElement();
   parts = pagination.createCardsPerPage(favoriteIngradientsArray);
@@ -258,7 +276,10 @@ document.addEventListener('DOMContentLoaded', event => {
   );
 });
 
-ingradientsListElement.addEventListener('click', ingradientListListener);
+ingradientsListElement.addEventListener(
+  'click' || 'touch',
+  ingradientListListener
+);
 
 function setModalElement() {
   modalElement = document.querySelector('.ingradient-modal');
@@ -270,7 +291,10 @@ function ingradientListListener(event) {
   }
   if (event.srcElement.className === 'remove-button') {
     removeButtonListener(event);
-    renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+    renderIngradients(
+      pagination.createCardsPerPage(favoriteIngradientsArray)[0],
+      ingradientsListElement
+    );
     return;
   }
 
@@ -325,6 +349,11 @@ function addButtonListener(event) {
   );
 }
 function renderIngradients(ingradientsArray, DOMElement) {
+  if (ingradientsArray.length === 0) {
+    noFoundElement.classList.remove('hidden');
+    ingradientsListElement.classList.add('hidden');
+  }
+  pagination.hidePagination(6, paginationElement);
   DOMElement.innerHTML = '';
   let alcoholNonalcoholMarkup = 'Non-Alcoholic';
   for (let index = 0; index < ingradientsArray.length; index++) {
@@ -336,8 +365,12 @@ function renderIngradients(ingradientsArray, DOMElement) {
     <h2 class="title">${title}</h2>
       <p class="alcohol">${alcoholNonalcoholMarkup}</p>
       <p class="description">${description}</p>
-       <button type="button" data-name="${title}">Read more</button>
-       <button class="remove-button" type="button" data-name="${title}" >Remove from favorite</button>
+       <div class="buttons-container">
+         <button type="button" data-name="${title}" class="read-more-button">Read more</button>
+         <button class="remove-button" type="button" data-name="${title}" > <svg class="trash-icon" width="18px" height="18px">
+          <use href="./img/sprite.svg#icon-trash"></use>
+        </svg></button>
+       </div>
       </li>`;
     DOMElement.insertAdjacentHTML('beforeend', markup);
   }

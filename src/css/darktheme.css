@@ -11,7 +11,12 @@
 .dark-mode .search-text,
 .dark-mode .cocktail-card-name,
 .dark-mode .cocktail-card-description,
-.dark-mode .cocktail-card-learn {
+.dark-mode .cocktail-card-learn,
+.dark-mode .favorite-ingradients-alert,
+.dark-mode .favorite-ingradients-title,
+.dark-mode .favorite-ingradients-list .description,
+.dark-mode .favorite-ingradients-list .read-more-button,
+.dark-mode .dropbtn-text {
   color: rgba(253, 253, 255, 1);
 }
 
@@ -29,8 +34,13 @@
   color: rgba(253, 253, 255, 0.2);
 }
 
-.dark-mode .cocktail-card {
+.dark-mode .cocktail-card,
+.dark-mode .favorite-ingradients-list li {
   background-color: rgb(35, 35, 48, 1);
+}
+
+.dark-mode input[type='checkbox'] {
+  border-color: rgba(126, 143, 221, 1);
 }
 
 @media screen and (min-width: 768px) {
@@ -47,4 +57,7 @@
         100% 100%,
       black 100% 100% / cover no-repeat;
   }
+}
+.dark-mode .favorite-ingradients-list .alcohol {
+  color: rgba(253, 253, 255, 0.5);
 }
