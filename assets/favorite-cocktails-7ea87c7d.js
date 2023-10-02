@@ -1,9 +1,9 @@
-import{P as u}from"./darktheme-1880ef82.js";function n(e,t){const d=e.map(a=>`
-        <li class="fav-coctail-card" id=${a.id}>
+import"./scroll-anime-4160da64.js";import{P as u}from"./pagination-4d028742.js";function n(e,t){const d=e.map(o=>`
+        <li class="fav-coctail-card" id=${o.id}>
           <div class="fav-coctail-card-container">
-            <img class="fav-coctail-img" src="${a.img}" alt="${a.title}">
-            <h3 class="fav-coctail-titile">${a.title}</h3>
-            <p class="fav-coctail-description">${a.text}</p>
+            <img class="fav-coctail-img" src="${o.img}" alt="${o.title}">
+            <h3 class="fav-coctail-titile">${o.title}</h3>
+            <p class="fav-coctail-description">${o.text}</p>
           </div>
           <div>
             <button type="button" class="learn-more-btn">learn more</button>
@@ -13,4 +13,4 @@ import{P as u}from"./darktheme-1880ef82.js";function n(e,t){const d=e.map(a=>`
 </svg>
             </button>
           </div>
-        </li>`).join("");t.innerHTML=d}const g=document.querySelector(".fav-coctails-list");function s(e){try{const t=localStorage.getItem(e);return t===null?void 0:JSON.parse(t)}catch(t){console.log(t.message)}}n(s("favorite"),g);const l=document.getElementById("tui-pagination-container");let o=null;const c=document.querySelector(".fav-coctails-list"),v=f();function f(){return window.innerWidth<768?5:7}const r={totalItems:0,itemsPerPage:6,visiblePages:v,page:1},i=new u(l,r);function C(e){o=i.createCardsPerPage(e),i.hidePagination(r.itemsPerPage,l),n(o[0],c),i.changePageByClick(o,c,n)}C(s("favorite"));
+        </li>`).join("");t.innerHTML=d}const g=document.querySelector(".fav-coctails-list");function s(e){try{const t=localStorage.getItem(e);return t===null?void 0:JSON.parse(t)}catch(t){console.log(t.message)}}n(s("favorite"),g);const r=document.getElementById("tui-pagination-container");let a=null;const c=document.querySelector(".fav-coctails-list"),v=f();function f(){return window.innerWidth<768?5:7}const l={totalItems:0,itemsPerPage:6,visiblePages:v,page:1},i=new u(r,l);function m(e){a=i.createCardsPerPage(e),i.hidePagination(l.itemsPerPage,r),n(a[0],c),i.changePageByClick(a,c,n)}m(s("favorite"));
