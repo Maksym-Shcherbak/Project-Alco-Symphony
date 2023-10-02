@@ -65,6 +65,9 @@
 <symbol id="icon-Vector-26" viewBox="0 0 56 32">
 <path fill="none" stroke="#fdfdff" style="stroke: var(--color1, #fdfdff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 4l24 24 24-24"></path>
 </symbol>
+<symbol id="icon-Vector-27" viewBox="0 0 56 32">
+<path fill="none" stroke="#fdfdff" style="stroke: var(--color1, #fdfdff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 28l24-24 24 24"></path>
+</symbol>
 
    </defs>
 </svg>

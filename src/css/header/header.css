@@ -278,7 +278,7 @@
   .mob-dropdown {
     float: left;
     position: absolute;
-    right: 45%;
+    right: 40%;
   }
   .mobile-item {
     font-size: 24px;
@@ -290,6 +290,9 @@
   .mob-dropbtn-text {
     font-size: 24px;
     line-height: 32px;
+  }
+  .mob-dropdown-content {
+    left: -35px;
   }
 }
 
