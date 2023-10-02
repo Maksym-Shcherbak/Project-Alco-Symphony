@@ -124,9 +124,6 @@
 /* свич */
 /* //перемикач ________________________________________________________________*/
 .mobile-switch {
-  /* position: absolute; */
-  /* top: 23.5px;
-  right: 70px; */
   width: 50px;
   height: 25px;
 }
@@ -168,11 +165,10 @@
 .mob-dropdown {
   float: left;
   position: absolute;
+  right: 40%;
 }
 
 .mob-dropdown .mob-dropbtn {
-  /* top: 120px;
-  left: 50px; */
   border: none;
   outline: none;
 
@@ -181,11 +177,20 @@
   border: none;
   outline: none;
   margin: 0;
-  width: 24px;
+  width: 94px;
   height: 24px;
-
   display: flex;
+  justify-content: center;
   align-items: center;
+  gap: 4px;
+}
+.mob-dropbtn-text {
+  padding: 3px 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 24px;
+  letter-spacing: 2%;
+  color: #fdfdff;
 }
 
 .mob-dropdown-content {
@@ -195,6 +200,8 @@
   width: 192px;
   height: 80px;
   z-index: 1;
+  top: 32px;
+  left: -45px;
 }
 
 .mob-dropdown-content a {
@@ -203,7 +210,7 @@
 
   text-decoration: none;
   display: block;
-  text-align: left;
+  text-align: center;
   font-weight: 400;
   font-size: 14px;
   line-height: 18px;
@@ -223,10 +230,10 @@
   border: 2px;
 }
 .mob-fav-link {
-  padding: 18px 41px 0 24px;
+  padding-top: 18px;
 }
 .mob-fav-ingr {
-  padding: 8px 24px 18px 24px;
+  padding-top: 8px;
 }
 
 /* //////// */
@@ -247,6 +254,11 @@
 }
 
 @media screen and (min-width: 768px) {
+  .mobile-title {
+    padding-top: 24px;
+    padding-right: 34px;
+    margin-bottom: 251px;
+  }
   .mobile-menu-open-icon {
     width: 40px;
     height: 40px;
