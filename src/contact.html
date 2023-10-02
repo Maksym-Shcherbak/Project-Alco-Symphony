@@ -11,11 +11,48 @@
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <script
-      async
-      defer
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDC5qC38Dlsq_sEEHeuPB-4KriRluwLxo8&callback=initMap"
-    ></script>
+    <script>
+      (g => {
+        var h,
+          a,
+          k,
+          p = 'The Google Maps JavaScript API',
+          c = 'google',
+          l = 'importLibrary',
+          q = '__ib__',
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement('script'));
+              e.set('libraries', [...r] + '');
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, t => '_' + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set('callback', c + '.maps.' + q);
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + ' could not load.')));
+              a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+              m.head.append(a);
+            }));
+        d[l]
+          ? console.warn(p + ' only loads once. Ignoring:', g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({
+        key: 'AIzaSyDC5qC38Dlsq_sEEHeuPB-4KriRluwLxo8',
+        v: 'weekly',
+        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+        // Add other bootstrap parameters as needed, using camel case.
+      });
+    </script>
   </head>
   <body>
     <load src="partials/header/header.html" />
@@ -24,62 +61,74 @@
         <h2 class="h2_header">OUR STAFF</h2>
         <div class="emp_details">
           <div class="employee">
-            <img src="./img/maksyn_shcherbakov.png" alt="Максим Щербак" />
+            <img
+              src="./img/contact/maksyn_shcherbakov.png"
+              alt="Максим Щербак"
+            />
             <h3>Max Shcherbakov</h3>
             <p>Team Lead</p>
           </div>
           <div class="employee">
-            <img src="./img/ekaterina_vasileva.png" alt="Фото Сотрудника 2" />
+            <img
+              src="./img/contact/ekaterina_vasileva.png"
+              alt="Фото Сотрудника 2"
+            />
             <h3>Ekaterina Vasileva</h3>
             <p>Scrum Master</p>
           </div>
           <div class="employee">
-            <img src="./img/bogdan_paslawski.png" alt="Фото Сотрудника 3" />
+            <img
+              src="./img/contact/bogdan_paslawski.png"
+              alt="Фото Сотрудника 3"
+            />
             <h3>Bogdan Paslawski</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/denis_egorov.png" alt="Фото Сотрудника 4" />
+            <img src="./img/contact/denis_egorov.png" alt="Фото Сотрудника 4" />
             <h3>Denis Egorov</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/fox.png" alt="Фото Сотрудника 5" />
+            <img src="./img/contact/fox.png" alt="Фото Сотрудника 5" />
             <h3>Oleksii Pogrebniak</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/illia_petov.png" alt="Фото Сотрудника 6" />
+            <img src="./img/contact/illia_petov.png" alt="Фото Сотрудника 6" />
             <h3>Illia Petrov</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/Olena.png" alt="Фото Сотрудника 7" />
+            <img src="./img/contact/Olena.png" alt="Фото Сотрудника 7" />
             <h3>Olena Kaspruk</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/olha_chala.png" alt="Фото Сотрудника 8" />
+            <img src="./img/contact/olha_chala.png" alt="Фото Сотрудника 8" />
             <h3>Olha Chala</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/valentyna_hutsuliak.png" alt="Фото Сотрудника 9" />
+            <img
+              src="./img/contact/valentyna_hutsuliak.png"
+              alt="Фото Сотрудника 9"
+            />
             <h3>Valentyna Hutsuliak</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/bath_cat 1.png" alt="Фото Сотрудника 10" />
+            <img src="./img/contact/bath_cat 1.png" alt="Фото Сотрудника 10" />
             <h3>Pavlo Kuchma</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/bald_cat 1.png" alt="Фото Сотрудника 11" />
+            <img src="./img/contact/bald_cat 1.png" alt="Фото Сотрудника 11" />
             <h3>Lev Obodzintsky</h3>
             <p>Developer</p>
           </div>
           <div class="employee">
-            <img src="./img/cup_cat 2.png" alt="Фото Сотрудника 12" />
+            <img src="./img/contact/cup_cat 2.png" alt="Фото Сотрудника 12" />
             <h3>Vladislav Vialov</h3>
             <p>Developer</p>
           </div>
@@ -110,6 +159,7 @@
       </div>
     </div>
     <load src="partials/footer/footer.html" />
+    <load src="partials/scroll-anime/scroll-anime.html" />
     <script type="module" src="./js/contact/contact.js"></script>
   </body>
 </html>
