@@ -53,12 +53,6 @@
 <symbol id="icon-paragraph-justify" viewBox="0 0 32 32">
 <path d="M0 2h32v4h-32zM0 8h32v4h-32zM0 14h32v4h-32zM0 20h32v4h-32zM0 26h32v4h-32z"></path>
 </symbol>
-<symbol id="icon-align-justify-2" viewBox="0 0 32 32">
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6" d="M28 13.333h-24"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6" d="M28 8h-24"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6" d="M28 18.667h-24"></path>
-<path stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="1.6" d="M28 24h-24"></path>
-</symbol>
 <symbol id="icon-Vector-22" viewBox="0 0 56 32">
 <path fill="none" stroke="#7e8fdd" style="stroke: var(--color1, #7e8fdd)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M3.998 4l24 24 24-24"></path>
 </symbol>
@@ -67,6 +61,12 @@
 </symbol>
 <symbol id="icon-Vector-27" viewBox="0 0 56 32">
 <path fill="none" stroke="#fdfdff" style="stroke: var(--color1, #fdfdff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 28l24-24 24 24"></path>
+</symbol>
+<symbol id="icon-align-justify-3" viewBox="0 0 32 32">
+<path fill="none" stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 13.334h-24"></path>
+<path fill="none" stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 8h-24"></path>
+<path fill="none" stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 18.666h-24"></path>
+<path fill="none" stroke="#242424" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="2" d="M28 24h-24"></path>
 </symbol>
 
    </defs>
