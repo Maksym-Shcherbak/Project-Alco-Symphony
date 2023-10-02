@@ -2,11 +2,11 @@ export function renderFavCoctails(coctailArray, container) {
   const markup = coctailArray
     .map((item) => {
       return `
-        <li class="fav-coctail-card">
+        <li class="fav-coctail-card" id=${item.id}>
           <div class="fav-coctail-card-container">
-            <img class="fav-coctail-img" src="${item.drinkThumb}" alt="${item.drink}">
-            <h3 class="fav-coctail-titile">${item.drink}</h3>
-            <p class="fav-coctail-description">${item.description}</p>
+            <img class="fav-coctail-img" src="${item.img}" alt="${item.title}">
+            <h3 class="fav-coctail-titile">${item.title}</h3>
+            <p class="fav-coctail-description">${item.text}</p>
           </div>
           <div>
             <button type="button" class="learn-more-btn">learn more</button>
@@ -23,35 +23,54 @@ export function renderFavCoctails(coctailArray, container) {
  
 }
 
- export const coctailArray = [
-  {
-    drink: "Coctail",
-    drinkThumb: "link",
-    description: "Description",
-  },
-  {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-    {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-      {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-        {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  },
-          {
-drink: "Coctail",
-drinkThumb: "link", 
-description: "Description",
-  }      
-]
+
+
+
+const favoriteList = document.querySelector('.fav-coctails-list')
+
+export function load(key){
+  try {
+      const value = localStorage.getItem(key)
+      return value === null ? undefined : JSON.parse(value)
+  }
+  catch(error){
+      console.log(error.message);
+  }
+}
+
+renderFavCoctails(load('favorite'),favoriteList)
+
+
+
+//  export const coctailArray = [
+//   {
+//     drink: "Coctail",
+//     drinkThumb: "link",
+//     description: "Description",
+//   },
+//   {
+// drink: "Coctail",
+// drinkThumb: "link", 
+// description: "Description",
+//   },
+//     {
+// drink: "Coctail",
+// drinkThumb: "link", 
+// description: "Description",
+//   },
+//       {
+// drink: "Coctail",
+// drinkThumb: "link", 
+// description: "Description",
+//   },
+//         {
+// drink: "Coctail",
+// drinkThumb: "link", 
+// description: "Description",
+//   },
+//           {
+// drink: "Coctail",
+// drinkThumb: "link", 
+// description: "Description",
+//   }      
+// ]
