@@ -56,10 +56,10 @@
 <symbol id="icon-Vector-22" viewBox="0 0 56 32">
 <path fill="none" stroke="#7e8fdd" style="stroke: var(--color1, #7e8fdd)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M3.998 4l24 24 24-24"></path>
 </symbol>
-<symbol id="icon-Vector-26" viewBox="0 0 56 32">
+<symbol id="icon-drop" viewBox="0 0 56 32">
 <path fill="none" stroke="#fdfdff" style="stroke: var(--color1, #fdfdff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 4l24 24 24-24"></path>
 </symbol>
-<symbol id="icon-Vector-27" viewBox="0 0 56 32">
+<symbol id="icon-up" viewBox="0 0 56 32">
 <path fill="none" stroke="#fdfdff" style="stroke: var(--color1, #fdfdff)" stroke-linejoin="round" stroke-linecap="round" stroke-miterlimit="4" stroke-width="8" d="M4 28l24-24 24 24"></path>
 </symbol>
 <symbol id="icon-align-justify-3" viewBox="0 0 32 32">

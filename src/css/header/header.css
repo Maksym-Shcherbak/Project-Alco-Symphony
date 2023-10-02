@@ -240,6 +240,10 @@
   height: 6px;
   border: 2px;
 }
+.mob-menu-icon-up {
+  /* display: none; */
+  visibility: hidden;
+}
 .mob-fav-link {
   padding-top: 18px;
 }
