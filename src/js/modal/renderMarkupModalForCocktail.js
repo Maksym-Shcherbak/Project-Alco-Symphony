@@ -2,19 +2,36 @@ export function createModalForCocktail(arr, container) {
   let ingredients;
   const markup = arr.map(item => {
     ingredients = item.ingredients;
-    return `<div class="modal-content" id="${item._id}">"<div class="cocktail-modal-thumb">
-          <img class="cocktail-modal-img" width='150px'src="${item.drinkThumb}" alt="${item.drink}" loading="lazy" />
-          </div>
-          <h3 class="cocktail-modal-name">${item.drink}</h3>
+    return `
+   <button
+      class="pop_up_modal_close_btn"
+      type="button"
+      aria-label="close menu review"
+      data-first-modal-close
+    >
+      <svg class="pop_up_modal_close_icon" width="24" height="24">
+        <use href="./images/icons.svg#icon-x-close"></use>
+      </svg>
+    </button>
+    <div class="cocktail-img-and-ingredients">
+      <div class="cocktail-modal-thumb">
+        <img class="cocktail-modal-img" width='150px'src="${item.drinkThumb}" alt="${item.drink}" loading="lazy" />
+      </div>
+      <div class="modal-ingredients-container">
+        <h3 class="cocktail-modal-name">${item.drink}</h3>
         <h4 class="cocktail-modal-ingredients">Ingredients:</h4>
         <p class="modal-text">Per cocktail</p>
         <ul class="cocktail-modal-list">
         </ul>
-        <h4 class="cocktail-modal-instructions">Instructions:</h4>
-        <p class="modal-instructions">${item.instructions}</p>
+      </div>
+    </div>
+        <div class="cocktail-modal-instructions">
+        <h4 class="modal-instructions-title">Instructions:</h4>
+        <p class="modal-instructions-text">${item.instructions}</p>
+        </div>
         <p style="display: none;">${item.description}</p>
-        <button type="button" class="modal-cocktail-btn add-to-fav">Add to favorite</button>
-        <button type="button" class="modal-cocktail-btn modal-cocktail-back">Back</button></div`;
+        <button type="button" id="${item._id}" class="modal-cocktail-btn add-to-fav">Add to favorite</button>
+        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button></div`;
   });
   container.innerHTML = markup;
   return ingredients;

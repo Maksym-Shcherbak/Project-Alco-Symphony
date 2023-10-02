@@ -1,11 +1,13 @@
+import '../pop_up/pop_up_open';
+
 const cocktailsList = document.querySelector('.cocktails-cards');
 const backdrop = document.querySelector('.backdrop');
 const modal = document.querySelector('.modal');
 const closeBtn = document.querySelector('.cross');
 // console.log(cocktailsList);
-cocktailsList.addEventListener('click', onLearnMoreBtnClick);
+// cocktailsList.addEventListener('click', onLearnMoreBtnClick);
 
-closeBtn.addEventListener('click', onCloseBtnClick);
+// closeBtn.addEventListener('click', onCloseBtnClick);
 
 function onCloseBtnClick() {
   backdrop.classList.toggle('js_open_backdrop');
