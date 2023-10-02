@@ -7,7 +7,6 @@ function myFunction(e) {
 
 // Close the dropdown if the user clicks outside of it
 window.onclick = function (e) {
-  console.log(e.target);
   if (
     !e.target.matches('.mob-dropbtn') &
     !e.target.matches('.mob-menu-icon-drop') &
