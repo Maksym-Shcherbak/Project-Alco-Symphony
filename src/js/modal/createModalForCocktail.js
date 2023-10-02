@@ -89,7 +89,7 @@ function saveToLocalStorage(key, value) {
   }
 }
 
-function removeFromLocalStorage(key, cocktailId) {
+export function removeFromLocalStorage(key, cocktailId) {
   try {
     const arrayFavCocktails = JSON.parse(localStorage.getItem(key));
     for (let index = 0; index < arrayFavCocktails.length; index++) {

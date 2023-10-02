@@ -27,7 +27,7 @@ const options = {
 
 const favCocktailsPagination = new PaginationForCocktails(container, options);
 
-function renderCocktailsBySearch(array) {
+export function renderCocktailsBySearch(array) {
   parts = favCocktailsPagination.createCardsPerPage(array);
   favCocktailsPagination.hidePagination(
     options.itemsPerPage,
@@ -42,7 +42,7 @@ function renderCocktailsBySearch(array) {
   );
 }
 
-renderCocktailsBySearch(storageCocktailArr);
+
 
   
   

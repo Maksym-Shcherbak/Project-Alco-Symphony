@@ -1,10 +1,13 @@
 import { renderFavCocktails } from './favorite-cocktails-render';
+import { removeFromLocalStorage } from '../modal/createModalForCocktail';
+import { renderCocktailsBySearch } from '../favorite/fav-cocktails-pagination'
 
 
 const container = document.querySelector('.fav-cocktails-list');
 export let storageCocktailArr = getFromLocalStorage('favorite');
 const hideContainer = document.querySelector('.not-found-cocktails-container');
-const deleteBtns = document.querySelectorAll('.delete-btn')
+const listFavCocktail = document.querySelector('.fav-cocktails-list');
+
 
 
 function getFromLocalStorage(key) {
@@ -19,62 +22,24 @@ function getFromLocalStorage(key) {
 }
 
 if (storageCocktailArr && storageCocktailArr.length > 0) {
-  renderFavCocktails(storageCocktailArr, container);
+  renderCocktailsBySearch(storageCocktailArr)
   hideContainer.classList.add('visually-hidden')
 }
 
-
-function removeFromLocalStorage(index) {
-  if (!storageCocktailArr || storageCocktailArr.length === 0)
-    return;
-  
-  storageCocktailArr.splice(index, 1);
-  // getFromLocalStorage('favorite');
-  localStorage.setItem('favorite', JSON.stringify(storageCocktailArr));
-  renderFavCocktails(storageCocktailArr, container);
-
-}
-deleteBtns.forEach((btn) => {
- btn.addEventListener('click', () => {
-  const listItem = btn.closest('.fav-cocktail-card');
-    const index = Array.from(container.children).indexOf(listItem);
-    removeFromLocalStorage(index)
-})
+listFavCocktail.addEventListener('click', (event) => {
+  if (event.target.classList.contains('delete-btn')) {
+    const id = event.target.closest('li').id;
+    console.log(id)
+    let updateLocalStorage = getFromLocalStorage('favorite');
+    if (updateLocalStorage && updateLocalStorage.length > 0) {
+      removeFromLocalStorage('favorite', id);
+      updateLocalStorage = getFromLocalStorage('favorite');
+      renderCocktailsBySearch(updateLocalStorage);
+    }
+    if (updateLocalStorage.length === 0) {
+      hideContainer.classList.remove('visually-hidden')
+    }
+  }
 })
 
-
-
-// function removeFromLocalStorage(key, value) {
-//   try {
-//     const findIndex = getFromLocalStorage(key).indexOf(value);
-//     getFromLocalStorage(key).splice(findIndex, 1);
-//     localStorage.setItem(key, JSON.stringify(getFromLocalStorage(key)));
-//   } 
-//   catch (error) {
-//     console.log(error.message);
-//   }
-//   return;
-// }
-
-// deleteBtn.addEventListener('click', removeFromLocalStorage)
-
-
-
-
-// function removeFromLocalStorage() {
-//   const id = this.closest('.fav-cocktail-card').dataset.id;
-//   const updatedCocktailArr = storageCocktailArr.filter(item => item.id !== id);
-//   localStorage.setItem('favorite', JSON.stringify(updatedCocktailArr));
-//   storageCocktailArr = updatedCocktailArr;
-
-//   this.closest('.fav-cocktail-card').remove();
-// }
-
-// if (deleteBtn) {
-//   deleteBtn.addEventListener('click', function(event) {
-//   if (event.target.classList.contains('delete-btn')) {
-//     removeFromLocalStorage.call(event.target);
-//   }
-// });
-// }
 

@@ -2,7 +2,7 @@ export function renderFavCocktails(cocktailArray, container) {
   const markup = cocktailArray
     .map((item) => {
       return `
-        <li class="fav-cocktail-card">
+        <li class="fav-cocktail-card" id="${item.id}">
         <div class="fav-cocktail-card-info">
           <div class="fav-cocktail-card-container">
             <img class="fav-cocktail-img" src="${item.img}" alt="${item.title}">

@@ -23,7 +23,7 @@
   align-items: center;
   margin-left: auto;
   margin-right: auto;
-  padding-bottom: 140px;
+  /* padding-bottom: 140px; */
 }
 
 .favorite-cocktails-subtitle {
@@ -135,9 +135,6 @@
 
 @media screen and (max-width: 767px) {
 
-  .favorite-cocktails {
-      padding-bottom: 100px;
-    }
 
   .favorite-cocktails-container {
     padding-top: 80px;
@@ -147,7 +144,7 @@
     font-size: 24px;
     line-height: 1.2;
     margin-left: 20px;
-    margin-bottom: 140px;
+    margin-bottom: 40px;
   }
 
   .not-found-cocktails-container {
@@ -175,7 +172,7 @@
       justify-content: center;
       align-items: center;
       row-gap: 20px;
-      margin-bottom: 80px;
+      margin-bottom: 40px;
       display: flex;
     }
 
@@ -187,6 +184,10 @@
 /* <----------Tablet-----------> */
 
 @media screen and (min-width: 768px) {
+.favorite-cocktails {
+    padding-bottom: 100px;
+  }
+
   .favorite-cocktails-container {
     padding-top: 110px;
   }
@@ -220,7 +221,6 @@
 
 .fav-cocktails-list {
     flex-flow: wrap;
-    justify-content: space-between;
     align-items: center;
     gap: 32px 16px;
     display: flex;
