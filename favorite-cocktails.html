@@ -18,10 +18,10 @@
       referrerpolicy="no-referrer"
     />
     
-    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/favorite-cocktails-4c005d54.js"></script>
-    <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/darktheme-da897bfa.js">
+    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/favorite-cocktails-0fd290d3.js"></script>
+    <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/darktheme-22353e3b.js">
     <link rel="stylesheet" href="/Project-Alco-Symphony/assets/darktheme-a0b14d8a.css">
-    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/favorite-cocktails-00fc72d7.css">
+    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/favorite-cocktails-2bd35bc6.css">
   </head>
   <body>
     <header class="header" id="page-header">
@@ -41,7 +41,7 @@
                 height="6"
                 aria-label="menu"
               >
-                <use href="/Project-Alco-Symphony/assets/sprite-83c0ca9e.svg#icon-Vector-22"></use>
+                <use href="/Project-Alco-Symphony/assets/sprite-a0951f9c.svg#icon-Vector-22"></use>
               </svg>
               <i class="fa fa-caret-down"></i>
             </button>
@@ -60,7 +60,7 @@
         <a class="header-logo-link list" href="./index.html">
           DRINKIFY
           <svg class="logo-icon" width="21" height="21" aria-label="logo-ikons">
-            <use href="/Project-Alco-Symphony/assets/sprite-83c0ca9e.svg#icon-cocktail"></use>
+            <use href="/Project-Alco-Symphony/assets/sprite-a0951f9c.svg#icon-cocktail"></use>
           </svg>
         </a>
       </div>
@@ -88,7 +88,7 @@
         height="32"
         aria-label="menu"
       >
-        <use href="/Project-Alco-Symphony/assets/sprite-83c0ca9e.svg#icon-paragraph-justify"></use>
+        <use href="/Project-Alco-Symphony/assets/sprite-a0951f9c.svg#icon-align-justify-3"></use>
       </svg>
     </button>
   </div>
@@ -96,8 +96,8 @@
   <div class="mobile-menu js-menu-container js-menu-container">
     <div class="container mobail-menu-container">
       <button class="mobile-close-btn js-close-menu">
-        <svg class="mobile-menu-close-icon" width="32" height="32">
-          <use href="/Project-Alco-Symphony/assets/sprite-83c0ca9e.svg#icon-x"></use>
+        <svg class="mobile-menu-close-icon">
+          <use href="/Project-Alco-Symphony/assets/sprite-a0951f9c.svg#icon-x"></use>
         </svg>
       </button>
 
@@ -110,13 +110,13 @@
             height="18"
             aria-label="logo-ikons"
           >
-            <use href="/Project-Alco-Symphony/assets/sprite-83c0ca9e.svg#icon-cocktail"></use>
+            <use href="/Project-Alco-Symphony/assets/sprite-a0951f9c.svg#icon-cocktail"></use>
           </svg>
         </a>
-      </div>
-      <!-- //mob switch -->
-      <div class="mobile-switch">
-        <input class="mobile-imput" type="checkbox" />
+        <!-- //mob switch -->
+        <div class="mobile-switch">
+          <input class="mobile-imput" type="checkbox" />
+        </div>
       </div>
 
       <ul class="mobile-list">
@@ -124,30 +124,35 @@
           <a class="mobile-menu-link" href="./index.html">Home</a>
         </li>
         <li class="mobile-item">
-          <a class="mobile-menu-link" href=" ">Favorite</a>
+          <div class="mob-dropdown">
+            <button class="mob-dropbtn" id="mob-dropbtn">
+              <span class="mob-dropbtn-text">Favorite</span>
+              <svg
+                class="mob-menu-icon-drop"
+                width="12"
+                height="6"
+                aria-label="menu"
+              >
+                <use href="/Project-Alco-Symphony/assets/sprite-a0951f9c.svg#icon-Vector-27"></use>
+              </svg>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="mob-dropdown-content" id="mob-myDropdown">
+              <a class="mob-fav-link" href="./favorite-cocktails.html"
+                >Favorite coctails</a
+              >
+              <a class="mob-fav-ingr" href="./favorite-ingredients.html"
+                >Favorite ingridients</a
+              >
+            </div>
+          </div>
         </li>
       </ul>
-      <!-- //mob dropdown-->
-      <div class="mob-dropdown">
-        <button class="mob-dropbtn">
-          <svg
-            class="mob-menu-icon-drop"
-            width="12"
-            height="6"
-            aria-label="menu"
-          >
-            <use href="/Project-Alco-Symphony/assets/sprite-83c0ca9e.svg#icon-Vector-22"></use>
-          </svg>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="mob-dropdown-content" id="mob-myDropdown">
-          <a class="mob-fav-link" href="/favorite-cocktails.html"
-            >Favorite coctails</a
-          >
-          <a class="mob-fav-ingr" href="/favorite-ingredients.html"
-            >Favorite ingridients</a
-          >
-        </div>
+
+      <div class="header-img">
+        <svg class="modal-icon-img" width="50" height="50" aria-label="img">
+          <use href="/Project-Alco-Symphony/assets/sprite-a0951f9c.svg#icon-7"></use>
+        </svg>
       </div>
     </div>
   </div>
