@@ -1,0 +1,285 @@
+/* Reset styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+p:last-child {
+  margin-bottom: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+}
+
+button {
+  padding: 0;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  margin: 0;
+}
+
+/* Main button opcional */
+.main_button {
+  width: 100px;
+  height: 100px;
+  margin: 100px 100px;
+  background: #7e8fdd;
+  color: white;
+  font-family: Poppins;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 18px;
+  margin-bottom: 8px;
+  border-radius: 50px;
+  border-width: 0px;
+  transition: background 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.main_button:hover,
+.main_button:focus {
+  background: #6e7fcf;
+}
+
+/* POP-UP MODAL */
+/* Main */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: all 0.5s ease-in-out;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 375px) {
+  .ingredients_modal_window {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f8f9ff;
+    width: 295px;
+    height: 536px;
+    border-radius: 20px;
+    padding: 40px 20px;
+  }
+
+  .ingredients_modal_close_btn {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    cursor: pointer;
+  }
+
+  .ingredients_modal_close_icon {
+    width: 22px;
+    height: 22px;
+    stroke: #111111;
+  }
+
+  /* Title and description */
+  .ingredients_modal_title_list {
+    border-bottom: 1px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-color: rgba(36, 36, 36, 0.1);
+    border-style: solid;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .ingredients_modal_title {
+    color: #242424;
+    font-family: Poppins;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+  }
+
+  .ingredients_modal_desc {
+    color: rgba(36, 36, 36, 0.5);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+
+  /* Main description */
+  .ingredients_modal_main_desc {
+    color: rgba(36, 36, 36, 0.5);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 40px;
+    width: 295px;
+    height: 160px;
+  }
+
+  .ingredients_modal_bold_desc {
+    color: #242424;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+  }
+
+  /* Ingredients */
+  .ingredients_modal_ingredients_list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .ingredients_modal_ingredients_link::before {
+    content: "\2022";
+    display: inline-block;
+    width: 1em;
+  }
+
+  .ingredients_modal_ingredients_link {
+    color: rgba(36, 36, 36, 0.8);
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 18px;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ingredients_modal_ingredients_link:hover,
+  .ingredients_modal_ingredients_link:focus {
+    color: #7e8fdd;
+  }
+
+  /* Buttons */
+  .ingredients_modal_functional_btn_list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+  }
+
+  .ingredients_modal_functional_btn {
+    width: 295px;
+    height: 48px;
+    border-width: 0px;
+    border-radius: 12px;
+    background: #7e8fdd;
+    color: #fdfdff;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ingredients_modal_functional_btn:hover,
+  .ingredients_modal_functional_btn:focus {
+    background: #6e7fcf;
+  }
+
+  .ingredients_modal_back_btn {
+    width: 295px;
+    height: 48px;
+    border-width: 0px;
+    border-radius: 12px;
+    background: rgba(36, 36, 36, 0.1);
+    color: #242424;
+    font-family: Poppins;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px; /* 142.857% */
+    letter-spacing: 0.28px;
+    text-transform: uppercase;
+    transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .ingredients_modal_back_btn:hover,
+  .ingredients_modal_back_btn:focus {
+    background: rgba(36, 36, 36, 0.2);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .ingredients_modal_window {
+    width: 560px;
+    height: 420px;
+    padding: 40px;
+  }
+
+  .ingredients_modal_main_desc {
+    width: 520px;
+    height: 100px;
+  }
+
+  .ingredients_modal_functional_btn_list {
+    flex-direction: row;
+    justify-content: flex-start;
+  }
+
+  .ingredients_modal_functional_btn {
+    width: 251px;
+    height: 56px;
+  }
+  .ingredients_modal_back_btn {
+    width: 172px;
+    height: 56px;
+  }
+}
