@@ -316,7 +316,10 @@ function modalOpen(event, DOMElement) {
 }
 function backButtonListener() {
   closeModal(modalElement);
-  renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+  renderIngradients(
+    pagination.createCardsPerPage(favoriteIngradientsArray)[0],
+    ingradientsListElement
+  );
 }
 function closeModal(DOMElement) {
   DOMElement.classList.remove('open');

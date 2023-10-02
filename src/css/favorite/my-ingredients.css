@@ -115,13 +115,7 @@
     line-height: 1.2;
   }
 }
-@media screen and (min-width: 1280px) {
-  .favorite-ingradients-list .title {
-    margin-top: 44px;
-    column-gap: 44px;
-    row-gap: 24px;
-  }
-}
+
 .favorite-ingradients-list .alcohol {
   margin-bottom: 14px;
 
