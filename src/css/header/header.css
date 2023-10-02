@@ -165,7 +165,7 @@
 .mob-dropdown {
   float: left;
   position: absolute;
-  right: 40%;
+  right: 37%;
 }
 
 .mob-dropdown .mob-dropbtn {
@@ -177,8 +177,8 @@
   border: none;
   outline: none;
   margin: 0;
-  width: 94px;
-  height: 24px;
+  /* width: 94px;
+  height: 24px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -252,16 +252,44 @@
     display: none;
   }
 }
-
+/*             //планшет */
 @media screen and (min-width: 768px) {
   .mobile-title {
     padding-top: 24px;
-    padding-right: 34px;
+    padding-right: 40px;
     margin-bottom: 251px;
+  }
+  .mobile-menu-close-icon {
+    width: 40px;
+    height: 40px;
+  }
+  .mobile-close-btn {
+    width: 40px;
+    height: 40px;
   }
   .mobile-menu-open-icon {
     width: 40px;
     height: 40px;
+  }
+  .menu-logo-link {
+    font-size: 22px;
+    line-height: 24px;
+  }
+  .mob-dropdown {
+    float: left;
+    position: absolute;
+    right: 45%;
+  }
+  .mobile-item {
+    font-size: 24px;
+    line-height: 32px;
+  }
+  .mob-dropdown .mob-dropbtn {
+    gap: 10px;
+  }
+  .mob-dropbtn-text {
+    font-size: 24px;
+    line-height: 32px;
   }
 }
 
