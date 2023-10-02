@@ -1,6 +1,7 @@
 .flex-container {
   display: flex;
   align-items: baseline;
+  position: relative;
 }
 .nav {
   display: flex;
