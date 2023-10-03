@@ -1,14 +1,13 @@
 import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
-import { renderFavCoctails} from './favorite-coctails-render';
+import { renderFavCocktails } from './favorite-cocktails-render';
+import { storageCocktailArr } from './local-storage';
 import { PaginationForCocktails } from '../CocktailAPI/pagination'
-import { load } from './favorite-coctails-render';
-
 
 
 const container = document.getElementById('tui-pagination-container');
 let parts = null;
-const cocktailList = document.querySelector('.fav-coctails-list');
+const cocktailList = document.querySelector('.fav-cocktails-list');
 
 const quantity = getVisiblePages();
 
@@ -28,22 +27,22 @@ const options = {
 
 const favCocktailsPagination = new PaginationForCocktails(container, options);
 
-function renderCocktailsBySearch(array) {
+export function renderCocktailsBySearch(array) {
   parts = favCocktailsPagination.createCardsPerPage(array);
   favCocktailsPagination.hidePagination(
     options.itemsPerPage,
     container
   );
-  renderFavCoctails(parts[0], cocktailList);
+  renderFavCocktails(parts[0], cocktailList);
 
     favCocktailsPagination.changePageByClick(
     parts,
     cocktailList,
-    renderFavCoctails,
+    renderFavCocktails,
   );
 }
 
-renderCocktailsBySearch(load("favorite"));
+
 
   
   
