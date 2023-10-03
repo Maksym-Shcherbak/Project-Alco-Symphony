@@ -1,0 +1,7 @@
+.favoriteIcon {
+  pointer-events: none;
+}
+
+.cocktail-card.enable .favoriteIcon {
+  fill: #fdfdff;
+}

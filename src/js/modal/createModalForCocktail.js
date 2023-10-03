@@ -97,6 +97,7 @@ export function removeFromLocalStorage(key, cocktailId) {
       if (cocktailId === id) {
         arrayFavCocktails.splice(index, 1);
         localStorage.setItem(key, JSON.stringify(arrayFavCocktails));
+        const arrayCocktails = JSON.parse(localStorage.getItem(key));
       }
     }
   } catch (error) {
