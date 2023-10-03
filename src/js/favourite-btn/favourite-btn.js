@@ -18,7 +18,7 @@ function load(key) {
 }
 export const loaddedArr = load('favorite');
 
-function setIconFavorite() {
+export function setIconFavorite() {
   if (loaddedArr) {
     console.log('yes');
     loaddedArr.forEach(item => {
