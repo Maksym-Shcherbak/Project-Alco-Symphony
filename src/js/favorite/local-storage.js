@@ -1,6 +1,6 @@
 import { renderFavCocktails } from './favorite-cocktails-render';
 import { removeFromLocalStorage } from '../modal/createModalForCocktail';
-import { renderCocktailsBySearch } from '../favorite/fav-cocktails-pagination'
+import { renderCocktailsBySearch } from '../favorite/fav-cocktails-pagination';
 
 
 const container = document.querySelector('.fav-cocktails-list');
@@ -27,9 +27,9 @@ if (storageCocktailArr && storageCocktailArr.length > 0) {
 }
 
 listFavCocktail.addEventListener('click', (event) => {
-  if (event.target.classList.contains('delete-btn')) {
+  if (event.target.classList.contains('delete-btn') || event.target.classList.contains('delete-btn-icon')) {
     const id = event.target.closest('li').id;
-    console.log(id)
+  
     let updateLocalStorage = getFromLocalStorage('favorite');
     if (updateLocalStorage && updateLocalStorage.length > 0) {
       removeFromLocalStorage('favorite', id);
@@ -39,7 +39,8 @@ listFavCocktail.addEventListener('click', (event) => {
     if (updateLocalStorage.length === 0) {
       hideContainer.classList.remove('visually-hidden')
     }
-  }
+  } 
 })
+
 
 
