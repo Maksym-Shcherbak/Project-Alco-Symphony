@@ -20,10 +20,12 @@ const paginationForCocktails = new PaginationForCocktails(container, options);
 
 const cocktailsApi = new CocktailsAPI(quantity.quantityOfCocktails);
 
+
 cocktailsApi.getRandomCocktails().then(data => {
   createCocktailCards(data, cocktailList);
   createModal();
 });
+
 
 export function renderCocktailsBySearch(arrayOfCocktails) {
   parts = paginationForCocktails.createCardsPerPage(arrayOfCocktails);
