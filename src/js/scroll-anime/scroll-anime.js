@@ -1,6 +1,6 @@
 window.addEventListener('scroll', function () {
   let button = document.querySelector('.upbtn');
-  if (window.scrollY > 100) {
+  if (window.scrollY > 500) {
     button.style.display = 'block';
   } else {
     button.style.display = 'none';

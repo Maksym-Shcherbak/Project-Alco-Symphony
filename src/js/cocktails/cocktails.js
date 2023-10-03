@@ -3,6 +3,7 @@ import { createCocktailCards } from './renderCocktails';
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
 import { getQuantityOfCocktails } from './getQuantityOfCocktails';
 import { createModal } from '../pop_up/pop_up_open';
+import { setIconFavorite } from '../favourite-btn/favourite-btn';
 
 const cocktailList = document.querySelector('.cocktails-cards');
 const container = document.getElementById('tui-pagination-container');
@@ -20,12 +21,11 @@ const paginationForCocktails = new PaginationForCocktails(container, options);
 
 const cocktailsApi = new CocktailsAPI(quantity.quantityOfCocktails);
 
-
 cocktailsApi.getRandomCocktails().then(data => {
   createCocktailCards(data, cocktailList);
   createModal();
+  setIconFavorite();
 });
-
 
 export function renderCocktailsBySearch(arrayOfCocktails) {
   parts = paginationForCocktails.createCardsPerPage(arrayOfCocktails);
