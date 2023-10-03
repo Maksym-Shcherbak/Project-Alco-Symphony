@@ -1,1 +1,0 @@
-import"./scroll-anime-8f9df49c.js";async function n(){const{Map:t}=await google.maps.importLibrary("maps");new t(document.getElementById("map"),{center:{lat:50.42496555405263,lng:30.53408527758109},zoom:20})}n();
