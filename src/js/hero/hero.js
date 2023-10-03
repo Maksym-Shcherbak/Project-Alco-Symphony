@@ -6,6 +6,18 @@ import {
 
 const customKeyboard = document.querySelector('.custom-keyboard');
 const form = document.querySelector('.search-form');
+const buttonEl = document.querySelector('.first-button');
+
+buttonEl.addEventListener('click', moveToCoctails);
+
+function moveToCoctails() {
+  const sectionCoctails = document.querySelector('.drinkify-cocktails');
+  const sectionPosition = sectionCoctails.offsetTop;
+  window.scrollTo({
+    top: sectionPosition,
+    behavior: 'smooth',
+  });
+}
 
 window.addEventListener('resize', resizeHandler);
 

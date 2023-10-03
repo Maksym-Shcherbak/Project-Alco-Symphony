@@ -43,6 +43,21 @@
   border-color: rgba(126, 143, 221, 1);
 }
 
+.dark-mode .favorite-cocktails-title,
+.dark-mode .favorite-cocktails-subtitle {
+  color: #FDFDFF;
+}
+
+.dark-mode .fav-cocktail-card {
+  background-color: #232330;;
+}
+
+.dark-mode .fav-cocktail-titile,
+.dark-mode .fav-cocktail-description {
+  color: #FDFDFF;
+}
+
+
 @media screen and (min-width: 768px) {
   .dark-mode {
     background: url(../img/background/dark-theme/tablet-bg@2x.webp) 0px 0px /

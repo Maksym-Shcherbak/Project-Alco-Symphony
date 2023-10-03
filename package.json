@@ -15,9 +15,10 @@
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
   "license": "ISC",
   "dependencies": {
+    "@googlemaps/js-api-loader": "^1.16.2",
     "aos": "^2.3.4",
     "axios": "^1.5.1",
-    "lodash": "^4.17.21",
+    "body-scroll-lock": "^4.0.0-beta.0",
     "notiflix": "^3.2.6",
     "slim-select": "^2.6.0",
     "tui-pagination": "^3.4.1",
