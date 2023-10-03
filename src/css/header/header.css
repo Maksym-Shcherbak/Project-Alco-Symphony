@@ -12,10 +12,15 @@
   position: relative;
 }
 .nav {
+
+  flex-direction: row;
+  /* padding-left: 32px;
+  padding-top: 12px; */
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
-}
+
 
 .header-logo-link {
   font-weight: 600;
