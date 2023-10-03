@@ -102,6 +102,8 @@
   }
 }
 .favorite-ingradients-list .title {
+  pointer-events: none;
+
   margin-bottom: 4px;
 
   font-size: 18px;
@@ -117,6 +119,8 @@
 }
 
 .favorite-ingradients-list .alcohol {
+  pointer-events: none;
+
   margin-bottom: 14px;
 
   color: rgba(36, 36, 36, 0.5);
@@ -125,6 +129,8 @@
   line-height: 1.28571;
 }
 .favorite-ingradients-list .description {
+  pointer-events: none;
+
   margin-bottom: 20px;
 
   overflow: hidden;
