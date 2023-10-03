@@ -1,4 +1,4 @@
-.footer .container {
+.footer {
   background: #7e8fdd;
   width: auto;
 }
@@ -59,16 +59,16 @@
 .logo-icon {
   display: flex;
 }
+.social-list {
+  margin-top: 16px;
+  gap: 14px;
+}
+.footer-container {
+  padding-top: 40px;
+}
 
 /* +++++++++++++++++++++++++MOBILE++++++++++++++++++++ */
 @media screen and (min-width: 375px) {
-  .footer-container {
-    padding-top: 40px;
-  }
-  .social-list {
-    margin-top: 16px;
-    gap: 14px;
-  }
 }
 /* +++++++++++++++++++++++++/MOBILE++++++++++++++++++++ */
 
