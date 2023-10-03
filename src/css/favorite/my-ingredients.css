@@ -102,6 +102,8 @@
   }
 }
 .favorite-ingradients-list .title {
+  pointer-events: none;
+
   margin-bottom: 4px;
 
   font-size: 18px;
@@ -115,14 +117,10 @@
     line-height: 1.2;
   }
 }
-@media screen and (min-width: 1280px) {
-  .favorite-ingradients-list .title {
-    margin-top: 44px;
-    column-gap: 44px;
-    row-gap: 24px;
-  }
-}
+
 .favorite-ingradients-list .alcohol {
+  pointer-events: none;
+
   margin-bottom: 14px;
 
   color: rgba(36, 36, 36, 0.5);
@@ -131,6 +129,8 @@
   line-height: 1.28571;
 }
 .favorite-ingradients-list .description {
+  pointer-events: none;
+
   margin-bottom: 20px;
 
   overflow: hidden;
