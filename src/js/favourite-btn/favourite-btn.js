@@ -8,7 +8,7 @@ const coctailsList = document.querySelector('.cocktails-cards');
 
 let arr = [];
 
-function load(key) {
+export function load(key) {
   try {
     const value = localStorage.getItem(key);
     return value === null ? undefined : JSON.parse(value);
@@ -16,9 +16,9 @@ function load(key) {
     console.log(error.message);
   }
 }
-export const loaddedArr = load('favorite');
 
 export function setIconFavorite() {
+  const loaddedArr = load('favorite');
   if (loaddedArr) {
     console.log('yes');
     loaddedArr.forEach(item => {
@@ -30,18 +30,17 @@ export function setIconFavorite() {
     });
   }
 }
-setIconFavorite();
 
 coctailsList.addEventListener('click', favBtnClick);
 
 function favBtnClick(event) {
   if (event.target.classList.contains('cocktail-card-button')) {
-    if (event.target.closest('li').classList.contains('enable')) {
+    if (event.target.closest('li').classList.contains('enabled')) {
       const id = event.target.closest('li').id;
       removeFromLocalStorage('favorite', id);
-      event.target.closest('li').classList.remove('enable');
+      event.target.closest('li').classList.remove('enabled');
     } else {
-      event.target.closest('li').classList.add('enable');
+      event.target.closest('li').classList.add('enabled');
       const object = {
         id: event.target.closest('li').id,
         img: event.target.closest('li').children[0].children[0].children[0].src,
