@@ -74,7 +74,7 @@ body {
     transform: translate(-50%, -50%);
     background-color: #f8f9ff;
     width: 335px;
-    height: 865px;
+    /* height: 865px; */
     border-radius: 20px;
     padding: 40px 20px;
   }
@@ -217,6 +217,7 @@ body {
   }
 
   .add-to-fav {
+    margin-bottom: 14px;
     color: #fdfdff;
     background: #7e8fdd;
     transition: background 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -246,7 +247,7 @@ body {
 
   .modal {
     width: 560px;
-    height: 529px;
+    /* height: 529px; */
     padding: 40px;
   }
 

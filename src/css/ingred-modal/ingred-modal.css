@@ -89,13 +89,10 @@
   width: 22px;
   height: 22px;
 }
-/* 
-.ingred-modal-btn-icon {
-  stroke: #242424;
-} */
 
 .modal-ing-btn.add-to-fav {
   padding: 14px 20px;
+  margin-bottom: 14px;
   border-radius: 12px;
   background-color: #7e8fdd;
   color: #fdfdff;
@@ -108,8 +105,8 @@
     background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.modal-to-favorite-btn:hover,
-.modal-to-favorite-btn:focus {
+.modal-ing-btn.add-to-fav:hover,
+.modal-ing-btn.add-to-fav:focus {
   background-color: #6e7fcf;
 }
 
@@ -132,19 +129,5 @@
 
   .ingred-desc {
     max-height: 100px;
-  }
-
-  .modal-ing-btn.modal-cocktail-back {
-    padding: 14px 28px;
-    border-radius: 12px;
-    background-color: #7e8fdd;
-    color: #fdfdff;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: 1.4;
-    letter-spacing: 0.28px;
-    text-transform: uppercase;
-    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1),
-      background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 }
