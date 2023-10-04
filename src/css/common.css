@@ -53,13 +53,13 @@ body {
 
 @media screen and (min-width: 375px) {
   .container {
-    width: 335px;
+    width: 375px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .container {
-    width: 704px;
+    width: 768px;
     padding: 0 32px;
   }
 
@@ -72,7 +72,7 @@ body {
 
 @media screen and (min-width: 1280px) {
   .container {
-    width: 1080px;
+    width: 1280px;
     padding: 0 100px;
   }
 

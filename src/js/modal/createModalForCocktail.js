@@ -4,14 +4,16 @@ import {
   createListIngredients,
 } from './renderMarkupModalForCocktail';
 import { getIngredient } from './createModalIngredient';
-import { createModal } from '../pop_up/pop_up_open';
+// import { createModal } from '../pop_up/pop_up_open';
 import { load } from '../favourite-btn/favourite-btn';
+import { DrinkifyModal } from '../pop_up/pop_up_open';
 
 const cocktailsList = document.querySelector('.cocktails-cards');
 const modal = document.querySelector('.modal-content');
 const backdrop = document.querySelector('.backdrop');
 let arr = [];
 const cocktailAPI = new CocktailsAPI();
+const drinkifyModal = new DrinkifyModal();
 
 cocktailsList.addEventListener('click', getCocktailById);
 
@@ -25,8 +27,8 @@ async function getCocktailById(e) {
     const ingredientsList = document.querySelector('.cocktail-modal-list');
     createListIngredients(ingredients, ingredientsList);
     setStateFavorite();
+    drinkifyModal.selectCloseModalButton();
     ingredientsList.addEventListener('click', getIngredient);
-    createModal();
     onToFavorite();
   }
 }

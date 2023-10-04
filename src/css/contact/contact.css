@@ -1,7 +1,7 @@
-@import url('../common.css');
 @import url('../reset.css');
 @import url('../header/header.css');
 @import url('../footer/footer.css');
+@import url('../common.css');
 @import url('../scroll-anime/scrollanime.css');
 @import url('../darktheme.css');
 ul {
@@ -22,8 +22,8 @@ a {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-  background-color: #f8f9ff;
   font-family: 'Poppins', sans-serif;
+  margin-bottom: 20px;
 }
 .contact_page .h2_header {
   text-align: center;
@@ -45,6 +45,9 @@ a {
 }
 /* Стили для блока .employee */
 .employee {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: calc(50% - 35px);
   background-color: #7e8fdd;
   margin-bottom: 15px;
@@ -100,6 +103,9 @@ p {
   font-size: 30px;
   margin-top: 40px;
 }
+.our_staff {
+  margin-bottom: 20px;
+}
 .number {
   display: flex;
   align-items: center;
@@ -135,6 +141,7 @@ p {
     text-align: center;
     font-size: 40px;
     margin-top: 40px;
+    margin-bottom: 20px;
   }
   .employee {
     width: 341px;
