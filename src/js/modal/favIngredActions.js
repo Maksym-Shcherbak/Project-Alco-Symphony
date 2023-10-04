@@ -76,19 +76,3 @@ export function removeFromLocalStorage(key, ingredId) {
     console.log(error.message);
   }
 }
-
-function setStateFavorite() {
-  const loaddedArr = load('favorite');
-  const cocktailModalBtn = document.querySelector('.add-to-fav');
-  console.log(cocktailModalBtn);
-  const cocktailId = cocktailModalBtn.id;
-  console.log(cocktailId);
-  if (loaddedArr) {
-    loaddedArr.forEach(item => {
-      if (item.id === cocktailId) {
-        cocktailModalBtn.classList.add('added');
-        cocktailModalBtn.textContent = 'Remove from favorite';
-      }
-    });
-  }
-}

@@ -15,7 +15,7 @@ const cocktailAPI = new CocktailsAPI();
 
 cocktailsList.addEventListener('click', getCocktailById);
 
-async function getCocktailById(e) {
+export async function getCocktailById(e) {
   if (e.target.classList.contains('cocktail-card-learn')) {
     const cocktailId = e.target.closest('li').id;
     const favoriteBtn = e.target.nextElementSibling;
