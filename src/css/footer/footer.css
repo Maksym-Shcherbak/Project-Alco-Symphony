@@ -1,5 +1,6 @@
-.footer .container {
+.footer {
   background: #7e8fdd;
+  width: auto;
 }
 .logo {
   color: #fdfdff;
@@ -14,10 +15,12 @@
   height: 18px;
   width: 71px;
   gap: 4px;
+  /* margin-right: 8px; */
 }
 .logo-icon {
-  display: flex;
-  flex-direction: row;
+  /* display: flex;
+  align-items: baseline;
+  justify-content: flex-start; */
 }
 .social-link {
   color: #fdfdff;
@@ -34,8 +37,10 @@
 }
 .footer-container {
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
+
 .social-list-icon {
   color: #fdfdff;
   height: 32px;
@@ -48,23 +53,30 @@
 .social-list-link {
   color: #fdfdff;
 }
+.cocktail-icon {
+  fill: #9cdfdf;
+}
+.logo-icon {
+  display: flex;
+}
+.social-list {
+  margin-top: 16px;
+  gap: 14px;
+}
+.footer-container {
+  padding-top: 40px;
+}
+
 /* +++++++++++++++++++++++++MOBILE++++++++++++++++++++ */
 @media screen and (min-width: 375px) {
-  .footer-container {
-    padding-top: 40px;
-  }
-  .social-list {
-    margin-top: 16px;
-    gap: 14px;
-  }
 }
 /* +++++++++++++++++++++++++/MOBILE++++++++++++++++++++ */
 
 /* +++++++++++++++++++++++++TABLET++++++++++++++++++++ */
 @media screen and (min-width: 768px) {
   .footer-container {
-    padding-left: 12px;
-    padding-right: 70px;
+    /* padding-left: 12px;
+    padding-right: 70px; */
     padding-top: 32px;
   }
   .logo {
@@ -99,9 +111,10 @@
 /* +++++++++++++++++++++++++DESKTOP++++++++++++++++++++ */
 @media screen and (min-width: 1200px) {
   .footer-container {
-    padding-left: 80px;
-    padding-right: 138px;
+    /* padding-left: 80px;
+    padding-right: 138px; */
     padding-top: 40px;
+    max-width: 1080px;
     /* height: 191px; */
   }
 }

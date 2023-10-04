@@ -7,7 +7,7 @@ export let storageCocktailArr = getFromLocalStorage('favorite');
 const hideContainer = document.querySelector('.not-found-cocktails-container');
 const listFavCocktail = document.querySelector('.fav-cocktails-list');
 
-function getFromLocalStorage(key) {
+export function getFromLocalStorage(key) {
   try {
     const value = localStorage.getItem(key);
     return JSON.parse(value);

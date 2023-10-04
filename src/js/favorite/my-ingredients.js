@@ -285,8 +285,10 @@ function setModalElement() {
   modalElement = document.querySelector('.ingradient-modal');
 }
 function ingradientListListener(event) {
-  if (event.target.nodeName !== 'BUTTON') {
-    console.log(event);
+  if (
+    event.target.nodeName !== 'LI' ||
+    event.target.className !== 'read-more-button'
+  ) {
     return;
   }
   if (event.srcElement.className === 'remove-button') {
@@ -297,8 +299,8 @@ function ingradientListListener(event) {
     );
     return;
   }
-
   modalOpen(event, modalElement);
+
   modalElement
     .querySelector('.back-button')
     .addEventListener('click', backButtonListener);
@@ -316,7 +318,10 @@ function modalOpen(event, DOMElement) {
 }
 function backButtonListener() {
   closeModal(modalElement);
-  renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+  renderIngradients(
+    pagination.createCardsPerPage(favoriteIngradientsArray)[0],
+    ingradientsListElement
+  );
 }
 function closeModal(DOMElement) {
   DOMElement.classList.remove('open');
@@ -361,7 +366,7 @@ function renderIngradients(ingradientsArray, DOMElement) {
     if (alcohol.toLowerCase() === 'yes') {
       alcoholNonalcoholMarkup = 'Alcoholic';
     }
-    const markup = `<li>
+    const markup = `<li data-name="${title}">
     <h2 class="title">${title}</h2>
       <p class="alcohol">${alcoholNonalcoholMarkup}</p>
       <p class="description">${description}</p>
@@ -376,6 +381,8 @@ function renderIngradients(ingradientsArray, DOMElement) {
   }
 }
 function renderIngradientModal(ingradientsArray, DOMElement, event) {
+  DOMElement.innerHTML = '';
+
   for (let index = 0; index < ingradientsArray.length; index++) {
     const { title, abv, type, country, flavour, description } =
       ingradientsArray[index];
