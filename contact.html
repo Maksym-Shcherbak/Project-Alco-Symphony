@@ -2,31 +2,60 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/Project-Alco-Symphony/favic.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Drinkify App</title>
-
+    <title>contact page</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&family=Poppins:ital,wght@0,400;0,500;0,600;1,400&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
-      integrity="sha512-4xo8blKMVCiXpTaLzQSLSw3KFOVPWhm/TRtuPVc4WG6kUgjH6J03IBuG7JZPkcWMxJ5huwaBpOpnwYElP/m6wg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    
-    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/index-2520e432.js"></script>
+    <script>
+      (g => {
+        var h,
+          a,
+          k,
+          p = 'The Google Maps JavaScript API',
+          c = 'google',
+          l = 'importLibrary',
+          q = '__ib__',
+          m = document,
+          b = window;
+        b = b[c] || (b[c] = {});
+        var d = b.maps || (b.maps = {}),
+          r = new Set(),
+          e = new URLSearchParams(),
+          u = () =>
+            h ||
+            (h = new Promise(async (f, n) => {
+              await (a = m.createElement('script'));
+              e.set('libraries', [...r] + '');
+              for (k in g)
+                e.set(
+                  k.replace(/[A-Z]/g, t => '_' + t[0].toLowerCase()),
+                  g[k]
+                );
+              e.set('callback', c + '.maps.' + q);
+              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
+              d[q] = f;
+              a.onerror = () => (h = n(Error(p + ' could not load.')));
+              a.nonce = m.querySelector('script[nonce]')?.nonce || '';
+              m.head.append(a);
+            }));
+        d[l]
+          ? console.warn(p + ' only loads once. Ignoring:', g)
+          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
+      })({
+        key: 'AIzaSyDC5qC38Dlsq_sEEHeuPB-4KriRluwLxo8',
+        v: 'weekly',
+        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
+        // Add other bootstrap parameters as needed, using camel case.
+      });
+    </script>
+    <script type="module" crossorigin src="/Project-Alco-Symphony/assets/contact-45b638ca.js"></script>
     <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/scroll-anime-d84dcb17.js">
-    <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/createModalForCocktail-4f2a8055.js">
-    <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/pagination-4d028742.js">
-    <link rel="modulepreload" crossorigin href="/Project-Alco-Symphony/assets/notiflix-notify-aio-519c4b03.js">
-    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/pagination-a0b14d8a.css">
-    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/index-fb2ad7ab.css">
+    <link rel="stylesheet" href="/Project-Alco-Symphony/assets/contact-5d9b7c2f.css">
   </head>
   <body>
     <header class="header" id="page-header">
@@ -178,98 +207,108 @@
   </div>
 </header>
 
+    <div class="contact_page">
+      <div class="emp">
+        <h2 class="h2_header">OUR STAFF</h2>
+        <div class="emp_details">
+          <div class="employee">
+            <img
+              src="/Project-Alco-Symphony/assets/maksyn_shcherbakov-c9661314.png"
+              alt="Максим Щербак"
+            />
+            <h3>Max Shcherbakov</h3>
+            <p>Team Lead</p>
+          </div>
+          <div class="employee">
+            <img
+              src="/Project-Alco-Symphony/assets/ekaterina_vasileva-d327a30f.png"
+              alt="Фото Сотрудника 2"
+            />
+            <h3>Ekaterina Vasileva</h3>
+            <p>Scrum Master</p>
+          </div>
+          <div class="employee">
+            <img
+              src="/Project-Alco-Symphony/assets/bogdan_paslawski-fc048bec.png"
+              alt="Фото Сотрудника 3"
+            />
+            <h3>Bogdan Paslawski</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/denis_egorov-156bdd8b.png" alt="Фото Сотрудника 4" />
+            <h3>Denys Ehorov</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/fox-27a9f591.png" alt="Фото Сотрудника 5" />
+            <h3>Oleksii Pohrebniak</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/illia_petov-265706da.png" alt="Фото Сотрудника 6" />
+            <h3>Illia Petrov</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/Olena-a8625468.png" alt="Фото Сотрудника 7" />
+            <h3>Olena Kaspruk</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/olha_chala-d9f734de.png" alt="Фото Сотрудника 8" />
+            <h3>Olha Chala</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img
+              src="/Project-Alco-Symphony/assets/valentyna_hutsuliak-4ef04f8e.png"
+              alt="Фото Сотрудника 9"
+            />
+            <h3>Valentyna Hutsuliak</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/bath_cat 1-dfb6355e.png" alt="Фото Сотрудника 10" />
+            <h3>Pavlo Kuchma</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/bald_cat 1-ca7bc212.png" alt="Фото Сотрудника 11" />
+            <h3>Lev Obodzintsky</h3>
+            <p>Developer</p>
+          </div>
+          <div class="employee">
+            <img src="/Project-Alco-Symphony/assets/cup_cat 2-b991813a.png" alt="Фото Сотрудника 12" />
+            <h3>Vladislav Vialov</h3>
+            <p>Developer</p>
+          </div>
+        </div>
+      </div>
 
-    <main>
-      <section class="hero">
-  <div class="hero-container container">
-    <div class="hero-taglines">
-      <h1 class="main-tagline title">
-        A party without <span>cocktails</span> <br />
-        is not like a party
-      </h1>
-      <p class="sub-tagline">
-        From classic sips to exotic mixes, we're your key to becoming a cocktail
-        wizard!
-      </p>
-      <button type="button" class="first-button">View cocktails</button>
+      <h2 class="h2_header">OUR LOCATION</h2>
+      <div id="map"></div>
+
+      <div class="contacts">
+        <h2 class="h2_header">CALL US</h2>
+        <ul class="phone-numbers">
+          <li>
+            <a href="tel:+380506195028"
+              ><button class="number">
+                <p class="btn_num">+380506195028</p>
+              </button></a
+            >
+          </li>
+          <li>
+            <a href="tel:+447563228513"
+              ><button class="number">
+                <p class="btn_num">+447563228513</p>
+              </button></a
+            >
+          </li>
+        </ul>
+      </div>
     </div>
-    <div class="hero-image">
-      <img
-        class="main-girl"
-        srcset="/Project-Alco-Symphony/assets/girl-small-4e4270b4.webp 375w, /Project-Alco-Symphony/assets/girl-small@2x-c813dd99.webp 750w, /Project-Alco-Symphony/assets/girl-small@3x-f8a87108.webp 1125w, /Project-Alco-Symphony/assets/girl-medium-1c380f14.webp 768w, /Project-Alco-Symphony/assets/girl-medium@2x-85808c7f.webp 1536w, /Project-Alco-Symphony/assets/girl-medium@3x-8ada24a4.webp 2304w, /Project-Alco-Symphony/assets/girl-large-5f0484ee.webp 1280w, /Project-Alco-Symphony/assets/girl-large@2x-14bb2a80.webp 2560w, /Project-Alco-Symphony/assets/girl-large@3x-7813e16b.webp 3840w"
-        sizes="(max-width: 767px) 375px,
-          (min-width: 768px) and (max-width: 1279px) 768px,
-          1280px"
-        src="/Project-Alco-Symphony/assets/girl-small-4e4270b4.webp"
-        alt="Girl with cocktail"
-      />
-      <svg width="96" height="96" class="right-star star">
-        <use href="/Project-Alco-Symphony/assets/sprite-e4ed62e5.svg#icon-star"></use>
-      </svg>
-      <svg width="25" height="25" class="left-star star">
-        <use href="/Project-Alco-Symphony/assets/sprite-e4ed62e5.svg#icon-star"></use>
-      </svg>
-      <div class="ellipse14"></div>
-      <div class="rectangle725"></div>
-      <p class="search-text">Search your favorite cocktail by ABC</p>
-      <div class="ellipse12"></div>
-      <div class="ellipse13"></div>
-    </div>
-  </div>
-</section>
-<section class="search">
-  <div class="container">
-    <h2 hidden="">Search Coctail</h2>
-    <div class="search-container">
-      <div class="custom-keyboard"></div>
-      <form class="search-form">
-        <input
-          type="text"
-          class="search-input"
-          placeholder="Search"
-          name="searchQuery"
-        />
-        <button type="submit" class="search-button" aria-label="Search coctail">
-          <svg width="16" height="16" class="search-icon">
-            <use href="/Project-Alco-Symphony/assets/sprite-e4ed62e5.svg#icon-search"></use>
-          </svg>
-        </button>
-      </form>
-    </div>
-  </div>
-</section>
-
-
-      <section class="drinkify-cocktails">
-  <div class="container">
-    <h2 class="drinkify-cocktails-title title">Cocktails</h2>
-    <ul class="cocktails-cards"></ul>
-    <div
-      id="tui-pagination-container"
-      class="tui-pagination visually-hidden"
-    ></div>
-  </div>
-</section>
-
-
-      <div class="backdrop is-hidden" data-first-modal>
-  <div class="modal">
-    <!-- <button
-      class="pop_up_modal_close_btn"
-      type="button"
-      aria-label="close menu review"
-      data-first-modal-close
-    >
-      <svg class="pop_up_modal_close_icon" width="24" height="24">
-        <use href="./images/icons.svg#icon-x-close"></use>
-      </svg>
-    </button> -->
-    <div class="modal-content"></div>
-  </div>
-</div>
-
-    </main>
-
     <footer class="footer">
   <div class="container">
     <div class="footer-container">
@@ -335,23 +374,6 @@
     </div>
   </div>
 </footer>
-
-
-    <div class="backdrop is-hidden" data-first-modal>
-  <div class="modal">
-    <!-- <button
-      class="pop_up_modal_close_btn"
-      type="button"
-      aria-label="close menu review"
-      data-first-modal-close
-    >
-      <svg class="pop_up_modal_close_icon" width="24" height="24">
-        <use href="./images/icons.svg#icon-x-close"></use>
-      </svg>
-    </button> -->
-    <div class="modal-content"></div>
-  </div>
-</div>
 
     
    <div class="upbtn"></div>
