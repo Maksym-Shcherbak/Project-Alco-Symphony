@@ -20,5 +20,5 @@ export async function getIngredient(e) {
   }
   // if (e.target.textContent === 'Back') {
   //   getCocktailById();
-  // }
+  // };
 }
