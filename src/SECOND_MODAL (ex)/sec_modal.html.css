@@ -39,8 +39,7 @@ body {
   margin: 0;
 }
 
-/* Main button opcional */
-.main_button {
+Main button opcional .main_button {
   width: 100px;
   height: 100px;
   margin: 100px 100px;
@@ -183,7 +182,7 @@ body {
   }
 
   .ingredients_modal_ingredients_link::before {
-    content: "\2022";
+    content: '\2022';
     display: inline-block;
     width: 1em;
   }

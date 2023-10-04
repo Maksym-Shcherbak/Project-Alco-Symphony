@@ -28,7 +28,7 @@ async function getCocktailById(e) {
   }
 }
 
-function onToFavorite() {
+export function onToFavorite() {
   const addBtn = document.querySelector('.add-to-fav');
   addBtn.addEventListener('click', addToFavorite);
 }
