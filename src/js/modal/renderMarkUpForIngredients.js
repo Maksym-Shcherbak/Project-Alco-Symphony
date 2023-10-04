@@ -2,7 +2,7 @@ export function renderModalForIngredient(arr, container) {
   let ingredients;
   const markup = arr.map(item => {
     ingredients = item.ingredients;
-    const noDataMsg = 'На жаль дані тимчасово відсутні.';
+    const noDataMsg = 'Sorry, no data available.';
     if (!item.abv) item.abv = 0;
     if (!item.country) item.country = noDataMsg;
     if (!item.description) item.description = noDataMsg;
