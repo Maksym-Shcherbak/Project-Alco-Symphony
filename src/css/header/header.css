@@ -410,8 +410,8 @@
     position: relative;
     outline: none;
     appearance: none;
-    width: 64px;
-    height: 32px;
+    width: 68px;
+    height: 36px;
     border: #242424 2px solid;
     background: transparent;
     border-radius: 34px;
@@ -425,18 +425,18 @@
   input[type='checkbox']::before {
     content: '';
     position: absolute;
+    border-radius: 100px;
     width: 26px;
     height: 26px;
-    border-radius: 100px;
-    top: 0;
-    left: 2px;
+    top: 3px;
+    left: 3px;
     background: #9cdfdf;
     transition: 0.5s;
     transform: scale(1.1);
   }
 
   input:checked[type='checkbox']::before {
-    left: 32px;
+    left: 34px;
   }
 
   /* //___выпадающее меню DESKTOP__________________________________________________ */
