@@ -22,13 +22,8 @@ a {
   justify-content: center;
   min-height: 100vh;
   margin: 0;
-<<<<<<< Updated upstream
-  background-color: #f8f9ff;
-  font-family: 'Poppins', sans-serif;
-=======
   font-family: 'Poppins', sans-serif;
   margin-bottom: 20px;
->>>>>>> Stashed changes
 }
 .contact_page .h2_header {
   text-align: center;
@@ -50,12 +45,9 @@ a {
 }
 /* Стили для блока .employee */
 .employee {
-<<<<<<< Updated upstream
-=======
   display: flex;
   flex-direction: column;
   align-items: center;
->>>>>>> Stashed changes
   width: calc(50% - 35px);
   background-color: #7e8fdd;
   margin-bottom: 15px;
@@ -110,12 +102,9 @@ p {
   text-align: center;
   font-size: 30px;
   margin-top: 40px;
-<<<<<<< Updated upstream
-=======
 }
 .our_staff {
   margin-bottom: 20px;
->>>>>>> Stashed changes
 }
 .number {
   display: flex;
@@ -152,10 +141,7 @@ p {
     text-align: center;
     font-size: 40px;
     margin-top: 40px;
-<<<<<<< Updated upstream
-=======
     margin-bottom: 20px;
->>>>>>> Stashed changes
   }
   .employee {
     width: 341px;
