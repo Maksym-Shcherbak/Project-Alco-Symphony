@@ -1,6 +1,4 @@
 
-
-
   .upbtn {
     transition: all 1s ease-in-out .5s;
     z-index: 9999;
@@ -35,10 +33,7 @@
   fill: var(--active-color);
   rotate: z 90deg;
   transform: scale(1.2);
-
 }
-
- 
 
 .header-logo-link{
   transition: all 1s ease-in-out .2s;
@@ -48,10 +43,8 @@
   transition: all 1s ease-in-out .2s;
 }
 .logo-icon:hover {
-
   fill: var(--active-color);
   transform: scale(1.5);
-
 }
 
  .ellipse12,
@@ -85,12 +78,14 @@ transition: all 1s ease-in-out .3s;
 }
 
 
-.cocktail-card-button:hover,
+
 .social-list-item:hover,
 .first-button:hover,
 .first-button:focus {
   transform: scale(1.2);
 }
+.mobile-menu-open-icon,
+.dropbtn-text,
 .big-keyboard,
 .social-list-icon,
 .fav-cocktail-card,
@@ -103,8 +98,15 @@ transition: all 1s ease-in-out .3s;
 .cocktail-card:hover{
   transform: translateY(-2.1rem);
 }
-.social-list-icon,
-.delete-btn:hover{
-  transform: scale(1.2);
+.social-list-icon:hover
+{
+  background-color: var(--violet-color);
+}
 
+.delete-btn:hover,
+.cocktail-card-button:hover{
+  background-color:rgb(98, 120, 218);
+}
+.dropbtn-text:hover{
+  color: var(--violet-color);
 }
