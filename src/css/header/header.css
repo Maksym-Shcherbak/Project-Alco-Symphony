@@ -1,11 +1,6 @@
 .header {
   padding: 20px 0;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  background: transparent; */
 }
-
 .flex-container {
   display: flex;
   justify-content: space-between;
@@ -184,12 +179,6 @@
 }
 /* //__________выпадающее меню моб_____________________________________________ */
 
-.mob-dropdown {
-  /* float: left;
-  position: absolute;
-  right: 37%; */
-}
-
 .mob-dropdown .mob-dropbtn {
   border: none;
   outline: none;
@@ -199,12 +188,10 @@
   cursor: pointer;
   border: none;
   outline: none;
-  /* width: 94px;
-  height: 24px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 4px; */
+  gap: 4px;
 }
 .mob-dropbtn-text {
   padding: 3px 0;
@@ -251,10 +238,10 @@
   height: 6px;
   border: 2px;
 }
-.mob-menu-icon-up {
-  display: none;
-  /* visibility: hidden; */
+.revers {
+  transform: rotate(180deg);
 }
+
 .mob-fav-link {
   padding-top: 18px;
 }
@@ -293,6 +280,7 @@
     width: 40px;
     height: 40px;
     right: 32px;
+    top: 11px;
   }
   .menu-logo-link {
     font-size: 22px;
@@ -316,14 +304,14 @@
   .modal-icon-img {
     display: flex;
     position: absolute;
-    /* width: 391px;
+    width: 391px;
     height: 391px;
-    top: 350px;
-    left: 391px; */
-    width: 291px;
-    height: 291px;
-    top: 445px;
-    left: 445px;
+    top: 580px;
+    left: 391px;
+    /* width: 291px;
+    height: 291px; */
+    /* top: 445px;
+    left: 445px; */
     opacity: 20%;
   }
   /*             //планшет фасад */
@@ -353,11 +341,14 @@
     left: 34px;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .header {
     padding: 30px 0;
   }
-
+  .mobile-menu {
+    display: none;
+  }
   .mobile-menu-open {
     display: none;
   }
