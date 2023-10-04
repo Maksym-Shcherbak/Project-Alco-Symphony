@@ -1,4 +1,4 @@
-import{P as f}from"./pagination-bbfe882d.js";import{c as k,r as m}from"./createModalForCocktail-4f2a8055.js";function s(t,e){const a=t.map(o=>`
+import{P as f}from"./pagination-e6820a6f.js";import{c as k,r as m}from"./createModalForCocktail-4f2a8055.js";function s(t,e){const a=t.map(o=>`
         <li class="fav-cocktail-card" id="${o.id}">
         <div class="fav-cocktail-card-info">
           <div class="fav-cocktail-card-container">
