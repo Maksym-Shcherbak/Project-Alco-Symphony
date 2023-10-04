@@ -3,11 +3,12 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { renderFavCocktails } from './favorite-cocktails-render';
 import { storageCocktailArr } from './local-storage';
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
-import { createModal } from '../pop_up/pop_up_open';
+import { DrinkifyModal } from '../pop_up/pop_up_open';
 
 const container = document.getElementById('tui-pagination-container');
 let parts = null;
 const cocktailList = document.querySelector('.fav-cocktails-list');
+const drinkifyModal = new DrinkifyModal();
 
 const quantity = getVisiblePages();
 
@@ -37,5 +38,5 @@ export function renderCocktailsBySearch(array) {
     cocktailList,
     renderFavCocktails
   );
-  createModal();
+  drinkifyModal.selectOpenModalButton();
 }
