@@ -41,7 +41,8 @@ body {
 
 /* POP-UP MODAL */
 /* Main */
-.backdrop {
+.backdrop,
+.backdrop-ingred {
   position: fixed;
   top: 0;
   left: 0;
@@ -300,17 +301,4 @@ body {
     width: 172px;
     height: 56px;
   }
-}
-
-.ingred-desc::-webkit-scrollbar {
-  width: 10px;
-  border-radius: 5px;
-}
-.ingred-desc::-webkit-scrollbar-track {
-  -webkit-box-shadow: inset 0 0 2px rgba(0, 0, 0, 0.3);
-}
-.ingred-desc::-webkit-scrollbar-thumb {
-  border-radius: 5px;
-  background-color: darkgrey;
-  outline: 1px solid slategrey;
 }
