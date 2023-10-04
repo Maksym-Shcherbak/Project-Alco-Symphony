@@ -1,39 +1,64 @@
+// import { load } from "../favorite/favorite-coctails-render";
+import {
+  saveToLocalStorage,
+  removeFromLocalStorage,
+} from '../modal/createModalForCocktail';
+
 const coctailsList = document.querySelector('.cocktails-cards');
 
-const arr = [];
+let arr = [];
 
-coctailsList.addEventListener('click', favBtnClick);
-
-function favBtnClick(event) {
-  let svg = null;
-  if (event.target.classList.contains('favoriteIcon')) {
-    svg = event.target;
-  } else if (event.target.classList.contains('cocktail-card-button')) {
-    svg = event.target.children[0];
-  }
-  svg.attributes.fill.value = '#fdfdff';
-  svg.classList.add('colorEnable');
-  console.dir(svg.attributes.fill.value);
-  const object = {
-    id: event.target.closest('li').id,
-    img: event.target.closest('li').children[0].children[0].children[0].src,
-    title: event.target.closest('li').children[0].children[1].textContent,
-    text: event.target.closest('li').children[0].children[2].textContent,
-    favorite: true,
-  };
-  arr.push(object);
-  console.log(object);
-  console.log(arr);
-  saveToLocalStorage('favorite', arr);
-}
-
-function saveToLocalStorage(key, value) {
+export function load(key) {
   try {
-    const parsedValue = JSON.stringify(value);
-    localStorage.setItem(key, parsedValue);
+    const value = localStorage.getItem(key);
+    return value === null ? undefined : JSON.parse(value);
   } catch (error) {
     console.log(error.message);
   }
 }
 
-function removeFavorite(id) {}
+export function setIconFavorite() {
+  const loaddedArr = load('favorite');
+  if (loaddedArr) {
+    console.log('yes');
+    loaddedArr.forEach(item => {
+      const savedCocktailCard = document.getElementById(item.id);
+      console.log(savedCocktailCard);
+      if (savedCocktailCard) {
+        savedCocktailCard.classList.add('enabled');
+      }
+    });
+  }
+}
+
+coctailsList.addEventListener('click', favBtnClick);
+
+function favBtnClick(event) {
+  if (event.target.classList.contains('cocktail-card-button')) {
+    if (event.target.closest('li').classList.contains('enabled')) {
+      const id = event.target.closest('li').id;
+      removeFromLocalStorage('favorite', id);
+      event.target.closest('li').classList.remove('enabled');
+    } else {
+      event.target.closest('li').classList.add('enabled');
+      const object = {
+        id: event.target.closest('li').id,
+        img: event.target.closest('li').children[0].children[0].children[0].src,
+        title: event.target.closest('li').children[0].children[1].textContent,
+        text: event.target.closest('li').children[0].children[2].textContent,
+        isInFavorite: 'true',
+      };
+      let savedCocktails = load('favorite') || [];
+      let isInCocktailsArray;
+      const id = event.target.closest('li').id;
+      if (savedCocktails.length !== 0) {
+        isInCocktailsArray = savedCocktails.some(item => item.id === id);
+      }
+      if (!isInCocktailsArray) {
+        arr.push(object, ...savedCocktails);
+        saveToLocalStorage('favorite', arr);
+        arr = [];
+      }
+    }
+  }
+}

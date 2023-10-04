@@ -1,20 +1,8 @@
 
 
 
-/* @media screen and (max-width: 768px) {
-    .buttonup-scroll {
-      width: 42px;
-      height: 42px;
-    }
-  
-    .buttonscroll.anima-up {
-      width: 32;
-      height: 32;
-    }
-  } */
-
-
   .upbtn {
+    transition: all 1s ease-in-out .5s;
     z-index: 9999;
     width: 50px;
     height: 50px;
@@ -35,3 +23,88 @@
   .upbtn:hover {
     transform: scale(1.2)!important;
   }
+
+
+.left-star,
+.right-star{
+  transition: all 1s ease-in-out .3s;
+}
+
+.left-star:hover,
+.right-star:hover {
+  fill: var(--active-color);
+  rotate: z 90deg;
+  transform: scale(1.2);
+
+}
+
+ 
+
+.header-logo-link{
+  transition: all 1s ease-in-out .2s;
+}
+
+.logo-icon{
+  transition: all 1s ease-in-out .2s;
+}
+.logo-icon:hover {
+
+  fill: var(--active-color);
+  transform: scale(1.5);
+
+}
+
+ .ellipse12,
+ .ellipse13{
+  transition: all 1s ease-in-out .1s;
+ }
+
+.ellipse12:hover,
+.ellipse13:hover {
+  rotate: z 45deg;
+  transform: scale(1.6);
+}
+
+.menu-item{
+transition: all 1s ease-in-out .3s;
+}
+
+.menu-item:hover {
+  transform: scale(1.1);
+  color: var(--violet-color);
+}
+.learn-more-btn,
+.cocktail-card-button,
+.social-list-item,
+.first-button{
+  transition: all 1s ease-in-out .3s;
+}
+.fav-cocktail-card-info,
+.cocktail-card-learn{
+  transition: all 1s ease-in-out .3s;
+}
+
+
+.cocktail-card-button:hover,
+.social-list-item:hover,
+.first-button:hover,
+.first-button:focus {
+  transform: scale(1.2);
+}
+.big-keyboard,
+.social-list-icon,
+.fav-cocktail-card,
+.delete-btn,
+.learn-more-btn,
+.cocktail-card{
+  transition: all 1s ease-in-out .2s;
+}
+.fav-cocktail-card-info:hover,
+.cocktail-card:hover{
+  transform: translateY(-2.1rem);
+}
+.social-list-icon,
+.delete-btn:hover{
+  transform: scale(1.2);
+
+}
