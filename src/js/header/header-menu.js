@@ -1,8 +1,8 @@
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock';
+// import {
+//   disableBodyScroll,
+//   enableBodyScroll,
+//   clearAllBodyScrollLocks,
+// } from 'body-scroll-lock';
 
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');

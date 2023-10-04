@@ -1,4 +1,7 @@
 const dropbtn = document.querySelector('.mob-dropbtn');
+// const iconDrop = document.querySelector('.mob-menu-icon-drop');
+// const iconUp = document.querySelector('.mob-menu-icon-up');
+
 dropbtn.addEventListener('click', myFunction);
 function myFunction(e) {
   if (e.currentTarget.nodeName === 'BUTTON')
@@ -20,3 +23,16 @@ window.onclick = function (e) {
     }
   }
 };
+dropbtn.addEventListener('click', e => {
+  if (
+    !e.target.matches('.mob-dropbtn') &
+    !e.target.matches('.mob-menu-icon-drop') &
+    !e.target.matches('.mob-dropbtn-text')
+  ) {
+    const iconDrop = document.getElementById('mob-icon-drop');
+    const iconUp = document.getElementById('mob-icon-up');
+
+    iconDrop.classList.add('is-hidden');
+    iconUp.classList.remove('is-hidden');
+  }
+});

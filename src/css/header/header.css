@@ -121,7 +121,7 @@
   width: 32px;
   height: 32px;
   fill: black;
-  top: 24px;
+  top: 19px;
   right: 12px;
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
@@ -244,8 +244,9 @@
   height: 6px;
   border: 2px;
 }
+
 .mob-menu-icon-up {
-  display: none;
+  /* display: none; */
   /* visibility: hidden; */
 }
 .mob-fav-link {
@@ -288,6 +289,7 @@
     width: 40px;
     height: 40px;
     right: 32px;
+    top: 11px;
   }
   .menu-logo-link {
     font-size: 22px;
