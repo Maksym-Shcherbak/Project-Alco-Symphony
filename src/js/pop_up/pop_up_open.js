@@ -1,11 +1,11 @@
 export class DrinkifyModal {
   constructor() {
     this.isModalOpen = false;
-    this.modals = ['data-first-modal'];
+    this.modal = ['data-first-modal'];
   }
 
   selectOpenModalButton() {
-    this.modals.forEach(element => {
+    this.modal.forEach(element => {
       const openModalSelector = element + '-open';
       const openModalBtns = document.querySelectorAll(`[${openModalSelector}]`);
       const modal = document.querySelector(`[${element}]`);
@@ -14,7 +14,7 @@ export class DrinkifyModal {
   }
 
   selectCloseModalButton() {
-    this.modals.forEach(element => {
+    this.modal.forEach(element => {
       const closeModalSelector = element + '-close';
       const closeModalBtns = document.querySelectorAll(
         `[${closeModalSelector}]`
@@ -29,13 +29,28 @@ export class DrinkifyModal {
       button.addEventListener('click', () => {
         document.body.classList.toggle('modal-open');
         modal.classList.toggle('is-hidden');
-        console.log('what da fuck');
+
         if (!this.isModalOpen) {
-          this.isModalOpen = true;
-        } else {
-          this.isModalOpen = false;
+          this.isOpen = true;
+          modal.addEventListener('click', this.closeOnBackdrop);
         }
       })
     );
+  }
+
+  closeOnBackdrop(event) {
+    if (event.target.classList.contains('backdrop')) {
+      event.target.classList.toggle('is-hidden');
+      document.body.classList.toggle('modal-open');
+      event.target.removeEventListener('click', this.closeOnBackdrop);
+    }
+  }
+
+  get isOpen() {
+    return this.isModalOpen;
+  }
+
+  set isOpen(newStage) {
+    this.isModalOpen = newStage;
   }
 }

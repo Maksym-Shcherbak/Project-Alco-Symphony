@@ -4,7 +4,6 @@ import {
   createListIngredients,
 } from './renderMarkupModalForCocktail';
 import { getIngredient } from './createModalIngredient';
-// import { createModal } from '../pop_up/pop_up_open';
 import { load } from '../favourite-btn/favourite-btn';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
 
@@ -22,7 +21,6 @@ async function getCocktailById(e) {
     const cocktailId = e.target.closest('li').id;
     const favoriteBtn = e.target.nextElementSibling;
     const cocktailInfo = await cocktailAPI.getFullCocktailInfo(cocktailId);
-    console.log(cocktailInfo);
     const ingredients = createModalForCocktail(cocktailInfo, modal);
     const ingredientsList = document.querySelector('.cocktail-modal-list');
     createListIngredients(ingredients, ingredientsList);
@@ -102,9 +100,7 @@ export function removeFromLocalStorage(key, cocktailId) {
 function setStateFavorite() {
   const loaddedArr = load('favorite');
   const cocktailModalBtn = document.querySelector('.add-to-fav');
-  console.log(cocktailModalBtn);
   const cocktailId = cocktailModalBtn.id;
-  console.log(cocktailId);
   if (loaddedArr) {
     loaddedArr.forEach(item => {
       if (item.id === cocktailId) {
