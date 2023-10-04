@@ -1,6 +1,7 @@
 import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
 import { renderCocktailsBySearch } from '../cocktails/cocktails';
 export { searchCoctailsByName, searchCoctailsByLetter };
+import { setIconFavorite } from '../favourite-btn/favourite-btn';
 
 const form = document.querySelector('.search-form');
 const cocktailsTitle = document.querySelector('.drinkify-cocktails-title');
@@ -22,6 +23,7 @@ async function searchCoctailsByName(e) {
     if (searchData) {
       renderCocktailsBySearch(searchData);
       cocktailsTitle.innerText = 'Searching results';
+      setIconFavorite();
     }
   } catch (error) {
     console.error(error);
@@ -43,6 +45,7 @@ async function searchCoctailsByLetter(letter) {
     if (searchData) {
       renderCocktailsBySearch(searchData);
       cocktailsTitle.innerText = 'Searching results';
+      setIconFavorite();
     }
   } catch (error) {
     console.error(error);

@@ -8,10 +8,14 @@
 
 .flex-container {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
   position: relative;
 }
 .nav {
+  flex-direction: row;
+  /* padding-left: 32px;
+  padding-top: 12px; */
+
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -45,6 +49,7 @@
   width: 29px;
   height: 25px;
 }
+
 .mobile-title {
   display: flex;
   align-items: center;
@@ -117,12 +122,9 @@
   justify-content: center;
 }
 .mobile-menu-open-icon {
-  position: absolute;
   width: 32px;
   height: 32px;
-  fill: black;
-  top: 24px;
-  right: 12px;
+  stroke: rgba(36, 36, 36, 1);
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu-close-icon {

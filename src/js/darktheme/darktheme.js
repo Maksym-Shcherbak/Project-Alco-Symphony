@@ -97,8 +97,9 @@
 // });
 
 // Get the toggle button and the body element
-const darkModeToggle = document.getElementById('darkModeToggle');
+// const darkModeToggle = document.getElementById('darkModeToggle');
 const body = document.body;
+const darkModeToggles = document.querySelectorAll('[data-switch]');
 
 // Define an object to map screen sizes to background image URLs
 const backgroundImageUrls = {
@@ -148,34 +149,35 @@ function getSavedModeFromLocalStorage() {
 }
 
 // Listen for changes on the toggle button
-darkModeToggle.addEventListener('change', () => {
-  const isDarkMode = darkModeToggle.checked;
+darkModeToggles.forEach(btn => {
+  btn.addEventListener('change', () => {
+    const isDarkMode = btn.checked;
 
-  if (isDarkMode) {
-    // If the toggle is checked, enable dark mode
-    body.classList.add('dark-mode');
-  } else {
-    // If the toggle is unchecked, disable dark mode
-    body.classList.remove('dark-mode');
-  }
+    if (isDarkMode) {
+      // If the toggle is checked, enable dark mode
+      body.classList.add('dark-mode');
+    } else {
+      // If the toggle is unchecked, disable dark mode
+      body.classList.remove('dark-mode');
+    }
 
-  // Determine the screen size based on the viewport width
-  const viewportWidth = window.innerWidth;
-  let screenSize = 'mobile'; // Default to mobile
+    // Determine the screen size based on the viewport width
+    const viewportWidth = window.innerWidth;
+    let screenSize = 'mobile'; // Default to mobile
 
-  if (viewportWidth >= 768 && viewportWidth < 1280) {
-    screenSize = 'tablet';
-  } else if (viewportWidth >= 1280) {
-    screenSize = 'desktop';
-  }
+    if (viewportWidth >= 768 && viewportWidth < 1280) {
+      screenSize = 'tablet';
+    } else if (viewportWidth >= 1280) {
+      screenSize = 'desktop';
+    }
 
-  // Set the background image based on screen size and mode
-  // setBackgroundImage(screenSize, isDarkMode);
+    // Set the background image based on screen size and mode
+    // setBackgroundImage(screenSize, isDarkMode);
 
-  // Save the current mode to local storage
-  saveModeToLocalStorage(isDarkMode);
+    // Save the current mode to local storage
+    saveModeToLocalStorage(isDarkMode);
+  });
 });
-
 // Initial setup: determine screen size and set background image
 window.addEventListener('DOMContentLoaded', () => {
   const viewportWidth = window.innerWidth;
@@ -189,20 +191,23 @@ window.addEventListener('DOMContentLoaded', () => {
 
   // Determine the saved mode from local storage
   const savedMode = getSavedModeFromLocalStorage();
+  // let isDarkMode;
 
   // If there's a saved mode, set it as the initial mode
   if (savedMode !== null) {
-    darkModeToggle.checked = savedMode;
-    if (darkModeToggle.checked) {
-      body.classList.add('dark-mode');
-    }
+    darkModeToggles.forEach(btn => {
+      btn.checked = savedMode;
+      if (btn.checked) {
+        body.classList.add('dark-mode');
+        // Determine the initial dark mode state based on the toggle's checked state
+        // isDarkMode = btn.checked;
+      }
+    });
   }
+});
 
-  // Determine the initial dark mode state based on the toggle's checked state
-  const isDarkMode = darkModeToggle.checked;
-
-  // Set the initial background image
-  // setBackgroundImage(screenSize, isDarkMode);
+darkModeToggles.forEach(btn => {
+  const isDarkMode = btn.checked;
 });
 
 // Check if the saved mode has expired (24 hours) and reset to light mode if needed
@@ -212,8 +217,10 @@ if (savedMode !== null) {
   if (modeDataString) {
     const modeData = JSON.parse(modeDataString);
     if (Date.now() > modeData.expirationTime) {
-      darkModeToggle.checked = false; // Reset to light mode
-      localStorage.removeItem('darkMode'); // Remove expired mode data
+      darkModeToggles.forEach(btn => {
+        btn.checked = false; // Reset to light mode
+        localStorage.removeItem('darkMode'); // Remove expired mode data
+      });
     }
   }
 }
