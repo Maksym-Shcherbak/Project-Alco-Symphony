@@ -146,8 +146,8 @@
   display: none;
 }
 .mobile-switch {
-  width: 50px;
-  height: 25px;
+  width: 53px;
+  height: 28px;
 }
 
 .mobile-imput[type='checkbox'] {
@@ -156,7 +156,7 @@
   appearance: none;
   width: 100%;
   height: 100%;
-  outline: #fdfdff 1.5px solid;
+  border: #fdfdff 1.5px solid;
   background: transparent;
   border-radius: 34px;
   transition: 0.5s;
@@ -172,7 +172,7 @@
   width: 21px;
   height: 21px;
   border-radius: 100px;
-  top: 2px;
+  top: 3px;
   left: 2px;
   background: #9cdfdf;
   transition: 0.5s;
@@ -334,19 +334,19 @@
   }
 
   .mobile-switch {
-    width: 64px;
-    height: 32px;
+    width: 68px;
+    height: 36px;
   }
 
   .mobile-imput[type='checkbox'] {
-    outline: #fdfdff 2px solid;
+    border: #fdfdff 2px solid;
   }
 
   .mobile-imput[type='checkbox']::before {
     width: 28px;
     height: 28px;
-    top: 2px;
-    left: 2px;
+    top: 3px;
+    left: 3px;
   }
 
   .mobile-imput:checked[type='checkbox']::before {
@@ -402,8 +402,8 @@
   }
   .switch {
     display: block;
-    width: 64px;
-    height: 32px;
+    width: 68px;
+    height: 36px;
   }
 
   input[type='checkbox'] {
