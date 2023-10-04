@@ -16,7 +16,7 @@ const drinkifyModal = new DrinkifyModal();
 
 cocktailsList.addEventListener('click', getCocktailById);
 
-async function getCocktailById(e) {
+export async function getCocktailById(e) {
   if (e.target.classList.contains('cocktail-card-learn')) {
     const cocktailId = e.target.closest('li').id;
     const favoriteBtn = e.target.nextElementSibling;
@@ -31,7 +31,7 @@ async function getCocktailById(e) {
   }
 }
 
-function onToFavorite() {
+export function onToFavorite() {
   const addBtn = document.querySelector('.add-to-fav');
   addBtn.addEventListener('click', addToFavorite);
 }
