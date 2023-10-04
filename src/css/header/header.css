@@ -15,7 +15,6 @@
   flex-direction: row;
   /* padding-left: 32px;
   padding-top: 12px; */
-
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -32,6 +31,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
+  padding: 7px 0;
 }
 .menu-logo-link {
   display: flex;
@@ -40,6 +40,7 @@
   line-height: 18px;
   letter-spacing: -1%;
   color: #fdfdff;
+  padding: 7px 0;
 }
 .menu-logo-icon {
   fill: #9cdfdf;
@@ -54,8 +55,6 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
-  padding-right: 48px;
   margin-bottom: 180px;
 }
 .mobile-list {
@@ -77,9 +76,11 @@
   display: block;
 }
 
-.mobail-menu-container {
+.container.mobail-menu-container {
   position: relative;
-  height: 1024px;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .mobile-menu {
   position: fixed;
@@ -98,8 +99,14 @@
   visibility: visible;
   pointer-events: auto;
 }
+
+.mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 .mobile-close-btn {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -107,8 +114,6 @@
   height: 32px;
   background-color: transparent;
   padding: 0;
-  top: 18px;
-  right: 20px;
   border: none;
 }
 .mobile-menu-open {
@@ -274,9 +279,7 @@
 /*             //планшет модальное окно */
 @media screen and (min-width: 768px) {
   .mobile-title {
-    padding-top: 24px;
-    padding-right: 40px;
-    margin-bottom: 251px;
+    margin-bottom: 250px;
   }
   .mobile-menu-close-icon {
     width: 40px;
