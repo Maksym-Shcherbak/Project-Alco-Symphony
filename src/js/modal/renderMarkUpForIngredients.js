@@ -46,10 +46,10 @@ export function renderModalForIngredient(arr, container) {
         </p>
       </li>
     </ul>
-    <button type="button" class="modal-to-favorite-btn add-to-fav-ing-btn" data-id="${item._id}">add to favorite</button>
-    <button type="button" class="modal-to-favorite-btn remove-from-fav-ing-btn" data-id="${item._id}">remove from favorite</button>
-    <button type="button" id="${item._id}" class="modal-cocktail-btn add-to-fav">Add to favorite</button>
-        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button>
+    <button type="button" id="${item._id}" class="modal-cocktail-btn add-to-fav">Add to favorite
+    </button>
+    <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back
+    </button>
     `;
   });
   container.innerHTML = markup;

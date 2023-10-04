@@ -1,9 +1,9 @@
 import { CocktailsAPI } from '../CocktailAPI/CocktailAPI';
-import { onToFavorite, removeFromLocalStorage } from './createModalForCocktail';
+import { onToFavorite, removeFromLocalStorage } from './favIngredActions';
 import { createModal } from '../pop_up/pop_up_open';
 import { renderModalForIngredient } from './renderMarkUpForIngredients';
 
-const cocktailAPI = new CocktailsAPI();
+export const cocktailAPI = new CocktailsAPI();
 const modal = document.querySelector('.modal-content');
 
 export async function getIngredient(e) {
