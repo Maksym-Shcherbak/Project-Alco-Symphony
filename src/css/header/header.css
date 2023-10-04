@@ -169,10 +169,10 @@
 .mobile-imput[type='checkbox']::before {
   content: '';
   position: absolute;
-  width: 23px;
-  height: 23px;
+  width: 21px;
+  height: 21px;
   border-radius: 100px;
-  top: 1px;
+  top: 2px;
   left: 2px;
   background: #9cdfdf;
   transition: 0.5s;
@@ -180,7 +180,7 @@
 }
 
 .mobile-imput:checked[type='checkbox']::before {
-  left: 25px;
+  left: 27px;
 }
 /* //__________выпадающее меню моб_____________________________________________ */
 
@@ -350,7 +350,7 @@
   }
 
   .mobile-imput:checked[type='checkbox']::before {
-    left: 33px;
+    left: 34px;
   }
 }
 @media screen and (min-width: 1280px) {
