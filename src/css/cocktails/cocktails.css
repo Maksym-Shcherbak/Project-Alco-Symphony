@@ -28,6 +28,10 @@
   box-shadow: 0px 4px 46px 0px rgba(0, 0, 0, 0.05);
 }
 
+.cocktail-card-info {
+  margin-bottom: 20px;
+}
+
 .cocktail-card-info-thumb {
   max-width: 307px;
   height: 257px;
@@ -114,12 +118,17 @@
   stroke: rgba(253, 253, 255, 1);
 }
 
-@media screen and (max-width: 375px) {
+@media screen and (max-width: 374px) {
   .cocktail-card {
     max-width: 335px;
   }
-}
 
+  .cocktail-card-learn {
+    max-width: 100%;
+    width: 232px;
+    padding: 14px 20px;
+  }
+}
 @media screen and (min-width: 375px) {
   .container {
     width: 375px;

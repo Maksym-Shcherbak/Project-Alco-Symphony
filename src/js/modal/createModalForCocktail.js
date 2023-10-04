@@ -61,9 +61,6 @@ async function addToFavorite(event) {
     if (savedCocktails.length !== 0) {
       isInCocktailsArray = savedCocktails.some(item => item.id === id);
     }
-    // else {
-    //   isInCocktailsArray = true;
-    // }
     if (!isInCocktailsArray) {
       arr.push(...cocktail, ...savedCocktails);
       saveToLocalStorage('favorite', arr);
