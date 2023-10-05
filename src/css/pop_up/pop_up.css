@@ -274,7 +274,8 @@ body {
     height: 569px;
   }
 
-  .cocktail-modal-img {
+  .cocktail-modal-list {
+    overflow: hidden;
   }
 
   .cocktail-img-and-ingredients {
