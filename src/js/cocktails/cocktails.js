@@ -36,9 +36,12 @@ export function renderCocktailsBySearch(arrayOfCocktails) {
     container
   );
   createCocktailCards(parts[0], cocktailList);
+  drinkifyModal.selectOpenModalButton();
   paginationForCocktails.changePageByClick(
     parts,
     cocktailList,
-    createCocktailCards
+    createCocktailCards,
+    DrinkifyModal,
+    setIconFavorite
   );
 }

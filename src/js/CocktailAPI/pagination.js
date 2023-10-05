@@ -34,11 +34,14 @@ export class PaginationForCocktails {
     return this.chunks;
   }
 
-  changePageByClick(arr, container, renderPage) {
+  changePageByClick(arr, container, renderPage, classModal, setStage) {
     this.pagination.on('afterMove', event => {
       const currentPage = event.page;
       const index = currentPage - 1;
       renderPage(arr[index], container);
+      setStage();
+      const modal = new classModal();
+      modal.selectOpenModalButton();
     });
   }
 

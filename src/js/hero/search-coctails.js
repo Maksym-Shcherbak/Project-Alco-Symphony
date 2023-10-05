@@ -26,7 +26,7 @@ async function searchCoctailsByName(e) {
       renderCocktailsBySearch(searchData);
       cocktailsTitle.innerText = 'Searching results';
       setIconFavorite();
-      drinkifyModal.selectOpenModalButton();
+      // drinkifyModal.selectOpenModalButton();
     }
   } catch (error) {
     console.error(error);
@@ -49,7 +49,7 @@ async function searchCoctailsByLetter(letter) {
       renderCocktailsBySearch(searchData);
       cocktailsTitle.innerText = 'Searching results';
       setIconFavorite();
-      drinkifyModal.selectOpenModalButton();
+      // drinkifyModal.selectOpenModalButton();
     }
   } catch (error) {
     console.error(error);
