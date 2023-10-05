@@ -10,6 +10,7 @@ const cocktailList = document.querySelector('.cocktails-cards');
 const container = document.getElementById('tui-pagination-container');
 const noFoundBlock = document.querySelector('.not-found-cocktails-container');
 let parts = null;
+
 const drinkifyModal = new DrinkifyModal();
 
 const quantity = getQuantityOfCocktails();
