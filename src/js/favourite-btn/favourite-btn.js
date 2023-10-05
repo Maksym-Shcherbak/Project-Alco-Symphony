@@ -1,12 +1,10 @@
 import Notiflix from 'notiflix';
 
-
 // import { load } from "../favorite/favorite-coctails-render";
 import {
   saveToLocalStorage,
   removeFromLocalStorage,
 } from '../modal/createModalForCocktail';
-
 
 const coctailsList = document.querySelector('.cocktails-cards');
 
@@ -26,7 +24,6 @@ export function setIconFavorite() {
   if (loaddedArr) {
     loaddedArr.forEach(item => {
       const savedCocktailCard = document.getElementById(item.id);
-      console.log(savedCocktailCard);
       if (savedCocktailCard) {
         savedCocktailCard.classList.add('enabled');
       }
@@ -42,8 +39,7 @@ function favBtnClick(event) {
       const id = event.target.closest('li').id;
       removeFromLocalStorage('favorite', id);
       event.target.closest('li').classList.remove('enabled');
-      Notiflix.Notify.warning('The coctail has been removed from favorite')
-
+      Notiflix.Notify.warning('The coctail has been removed from favorite');
     } else {
       event.target.closest('li').classList.add('enabled');
       const object = {
@@ -53,7 +49,7 @@ function favBtnClick(event) {
         text: event.target.closest('li').children[0].children[2].textContent,
         isInFavorite: 'true',
       };
-      Notiflix.Notify.success('The coctail has been added to favorite')
+      Notiflix.Notify.success('The coctail has been added to favorite');
       let savedCocktails = load('favorite') || [];
       let isInCocktailsArray;
       const id = event.target.closest('li').id;

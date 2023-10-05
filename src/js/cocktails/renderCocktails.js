@@ -1,5 +1,4 @@
 export const createCocktailCards = (arr, container) => {
-  console.log(arr);
   const markup = arr
     .map(item => {
       if (item._id) {
