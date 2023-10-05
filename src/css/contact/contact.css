@@ -1,9 +1,11 @@
+@import url('../fonts.css');
 @import url('../reset.css');
+@import url('../common.css');
 @import url('../header/header.css');
 @import url('../footer/footer.css');
-@import url('../common.css');
 @import url('../scroll-anime/scrollanime.css');
 @import url('../darktheme.css');
+
 ul {
   list-style: none;
   padding: 0;

@@ -119,6 +119,11 @@
   bottom: 139px;
 }
 
+.search {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
 .search-icon {
   fill: rgb(36, 36, 36, 1);
 }
@@ -138,10 +143,6 @@
   left: 100px;
 }
 
-.big-keyboard {
-  margin-bottom: 40px;
-}
-
 .custom-keyboard {
   display: flex;
   align-items: center;
@@ -149,7 +150,6 @@
 
 /* перебиття кастомного селекта */
 .ss-main {
-  margin-top: 40px;
   width: 90px !important;
   height: 34px !important;
   padding: 4px 14px !important;
@@ -217,7 +217,6 @@
   align-items: center;
   flex-direction: column;
   gap: 40px;
-  margin-bottom: 40px;
 }
 
 .search-form {
@@ -340,6 +339,11 @@
     right: 114px;
   }
 
+  .search {
+    padding-top: 100px;
+    padding-bottom: 50px;
+  }
+
   .search-text {
     width: 198px;
     font-size: 16px;
@@ -383,8 +387,7 @@
     width: 664px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 100px;
-    margin-bottom: 50px;
+    gap: 50px;
   }
 
   .search-form {
