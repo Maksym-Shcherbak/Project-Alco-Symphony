@@ -12,6 +12,8 @@ const modal = document.querySelector('.cocktail-modal');
 const backdrop = document.querySelector('.backdrop');
 let arr = [];
 const cocktailAPI = new CocktailsAPI();
+const ingredientModal = document.querySelector('.ingredient-modal');
+const cocktailModal = document.querySelector('.cocktail-modal');
 const drinkifyModal = new DrinkifyModal();
 
 cocktailsList.addEventListener('click', getCocktailById);
@@ -19,12 +21,13 @@ cocktailsList.addEventListener('click', getCocktailById);
 export async function getCocktailById(e) {
   if (e.target.classList.contains('cocktail-card-learn')) {
     const cocktailId = e.target.closest('li').id;
-    const favoriteBtn = e.target.nextElementSibling;
     const cocktailInfo = await cocktailAPI.getFullCocktailInfo(cocktailId);
     const ingredients = createModalForCocktail(cocktailInfo, modal);
     const ingredientsList = document.querySelector('.cocktail-modal-list');
     createListIngredients(ingredients, ingredientsList);
     setStateFavorite('favorite', 'add-to-fav');
+    ingredientModal.classList.add('visually-hidden');
+    cocktailModal.classList.remove('visually-hidden');
     drinkifyModal.selectCloseModalButton();
     ingredientsList.addEventListener('click', getIngredient);
     onToFavorite();
@@ -89,7 +92,6 @@ export function removeFromLocalStorage(key, cocktailId) {
       if (cocktailId === id) {
         arrayFavCocktails.splice(index, 1);
         localStorage.setItem(key, JSON.stringify(arrayFavCocktails));
-        const arrayCocktails = JSON.parse(localStorage.getItem(key));
       }
     }
   } catch (error) {

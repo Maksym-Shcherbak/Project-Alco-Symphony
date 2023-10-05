@@ -15,13 +15,12 @@ export async function getIngredient(e) {
     e.preventDefault();
     const id = e.target.closest('li').id;
     const ingredient = await cocktailAPI.getIngredients(id);
-    cocktailModal.style.display = 'none';
     renderModalForIngredient(ingredient, ingredientModal);
+    ingredientModal.classList.remove('visually-hidden');
+    cocktailModal.classList.add('visually-hidden');
     setStateFavorite('ingredients', 'modal-ing-btn');
     drinkifyModal.selectCloseModalButton();
     onToFavoriteIngredient('modal-ing-btn');
-    const addToFavIng = document.querySelector('.modal-ing-btn');
-    console.log(addToFavIng);
     backBtnIngedientsListener('modal-ingredient-back');
   }
 }

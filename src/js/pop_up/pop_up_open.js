@@ -1,5 +1,5 @@
 export class DrinkifyModal {
-  constructor() {
+  constructor(modalContent) {
     this.isModalOpen = false;
     this.modal = ['data-first-modal'];
   }
@@ -29,7 +29,6 @@ export class DrinkifyModal {
       button.addEventListener('click', () => {
         document.body.classList.toggle('modal-open');
         modal.classList.toggle('is-hidden');
-
         if (!this.isModalOpen) {
           this.isOpen = true;
           modal.addEventListener('click', this.closeOnBackdrop);
