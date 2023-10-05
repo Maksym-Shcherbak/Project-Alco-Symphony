@@ -1,4 +1,4 @@
-import"./scroll-anime-e49ab394.js";import{D as m,r as k}from"./createModalForCocktail-1d83f197.js";import{P as p,n as d}from"./notiflix-notify-aio-cb93d3ba.js";function s(t,e){const o=t.map(i=>`
+import"./scroll-anime-2b5c9651.js";import{D as m,r as k}from"./createModalForCocktail-1d83f197.js";import{P as p,n as d}from"./notiflix-notify-aio-cb93d3ba.js";function s(t,e){const o=t.map(i=>`
         <li class="fav-cocktail-card" id="${i.id}">
         <div class="fav-cocktail-card-info">
           <div class="fav-cocktail-card-container">
