@@ -31,8 +31,9 @@ var Xe=(e,t,n)=>{if(!t.has(e))throw TypeError("Cannot "+n)};var N=(e,t,n)=>(Xe(e
         <p class="modal-instructions-text">${s.instructions}</p>
         </div>
         <p style="display: none;">${s.description}</p>
+        <div class="cocktail-modal-buttons-list">
         <button type="button" id="${s._id}" class="modal-cocktail-btn add-to-fav">Add to favorite</button>
-        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button></div>`));return t.innerHTML=r,n}function hn(e,t){const n=e.map(r=>{let s="";return r.measure&&(s=r.measure),`<li class="cocktail-modal-item" id="${r.ingredientId}">
+        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button>`));return t.innerHTML=r,n}function hn(e,t){const n=e.map(r=>{let s="";return r.measure&&(s=r.measure),`<li class="cocktail-modal-item" id="${r.ingredientId}">
         <p class="item-text">
           <span class="ingredients-measure">${s}</span><a class="modal-cocktail-ingredient link" href="#">${r.title}</a>
         </p>
