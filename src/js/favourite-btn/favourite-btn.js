@@ -20,7 +20,6 @@ export function load(key) {
 export function setIconFavorite() {
   const loaddedArr = load('favorite');
   if (loaddedArr) {
-    console.log('yes');
     loaddedArr.forEach(item => {
       const savedCocktailCard = document.getElementById(item.id);
       console.log(savedCocktailCard);

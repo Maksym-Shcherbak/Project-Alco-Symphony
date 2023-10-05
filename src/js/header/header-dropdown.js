@@ -1,6 +1,7 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 const dropbtn = document.querySelector('.dropbtn');
+
 dropbtn.addEventListener('click', myFunction);
 function myFunction(e) {
   if (e.currentTarget.nodeName === 'BUTTON')

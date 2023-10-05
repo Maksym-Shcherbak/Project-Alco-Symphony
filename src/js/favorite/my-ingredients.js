@@ -380,6 +380,7 @@ function renderIngradients(ingradientsArray, DOMElement) {
     DOMElement.insertAdjacentHTML('beforeend', markup);
   }
 }
+
 function renderIngradientModal(ingradientsArray, DOMElement, event) {
   DOMElement.innerHTML = '';
 
