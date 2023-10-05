@@ -41,13 +41,9 @@ body {
 
 /* POP-UP MODAL */
 
-/* Main backdrop */
-.backdrop {
-
 /* Main */
 .backdrop,
 .backdrop-ingred {
-
   position: fixed;
   top: 0;
   left: 0;
@@ -242,7 +238,7 @@ body {
     /* height: 529px; */
     padding: 40px;
   }
-  
+
   .pop_up_pic {
     width: 288px;
   }
