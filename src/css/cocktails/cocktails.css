@@ -118,6 +118,31 @@
   stroke: rgba(253, 253, 255, 1);
 }
 
+.not-found-cocktails-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.favorite-cocktails-subtitle {
+  width: 244px;
+  text-align: center;
+  font-style: normal;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 400;
+}
+
+.favorite-cocktails-subtitle-span {
+  color: #9cdfdf;
+  font-style: italic;
+  font-size: 18px;
+  line-height: 1.33;
+  font-weight: 400;
+}
+
 @media screen and (max-width: 374px) {
   .cocktail-card {
     max-width: 335px;
@@ -198,6 +223,26 @@
   .cocktail-card-button {
     width: 56px;
     height: 56px;
+  }
+
+  .not-found-cocktails-container {
+    width: 370px;
+    gap: 40px;
+  }
+
+  .not-found-img {
+    width: 234px;
+    height: 201px;
+  }
+
+  .favorite-cocktails-subtitle {
+    font-size: 24px;
+    line-height: 1.17;
+  }
+
+  .favorite-cocktails-subtitle-span {
+    font-size: 24px;
+    line-height: 1.17;
   }
 }
 
