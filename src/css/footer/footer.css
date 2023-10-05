@@ -2,6 +2,13 @@
   background: #7e8fdd;
   width: auto;
 }
+
+.social-list-icon:hover,
+.social-list-icon:focus {
+  color: rgba(253, 253, 255, 1);
+  background-color: rgba(126, 143, 221, 1);
+}
+
 .logo {
   color: #fdfdff;
   font-family: Poppins;
