@@ -230,6 +230,7 @@
 // );
 
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
+
 import '../../js/header/header';
 import '../../js/scroll-anime/scroll-anime';
 import '../../js/notification/notification';
@@ -238,7 +239,8 @@ import '../../js/darktheme/darktheme';
 let favoriteIngradientsArray = [];
 let parts;
 let currentIngradient;
-let modalElement;
+const modalElement = document.querySelector('.ingredient-modal');
+const backdrop = document.querySelector('.backdrop');
 const paginationElement = document.getElementById('tui-pagination-container');
 const ingradientsListElement = document.querySelector(
   '.favorite-ingradients-list'
@@ -256,16 +258,16 @@ const pagination = new PaginationForCocktails(
   paginationElement,
   PAGINATION_OPTIONS
 );
+const svgIcon = './img/sprite.svg';
 document.addEventListener('DOMContentLoaded', event => {
   favoriteIngradientsArray =
-    JSON.parse(localStorage.getItem('favorite-ingradients')) || [];
+    JSON.parse(localStorage.getItem('ingredients')) || [];
 
   if (favoriteIngradientsArray.length !== 0) {
     noFoundElement.classList.add('hidden');
     ingradientsListElement.classList.remove('hidden');
   }
 
-  setModalElement();
   parts = pagination.createCardsPerPage(favoriteIngradientsArray);
 
   renderIngradients(parts[0], ingradientsListElement);
@@ -281,15 +283,26 @@ ingradientsListElement.addEventListener(
   ingradientListListener
 );
 
-function setModalElement() {
-  modalElement = document.querySelector('.ingradient-modal');
-}
 function ingradientListListener(event) {
   if (
-    event.target.nodeName !== 'LI' ||
-    event.target.className !== 'read-more-button'
+    event.target.nodeName === 'LI' ||
+    event.target.classList.contains('read-more-button')
   ) {
-    return;
+    modalOpen(event, modalElement);
+    modalElement
+      .querySelector('.back-button')
+      .addEventListener('click', backButtonListener);
+    modalElement
+      .querySelector('.remove-button')
+      .addEventListener('click', removeButtonListener);
+
+    modalElement
+      .querySelector('.add-button')
+      .addEventListener('click', addButtonListener);
+    modalElement
+      .querySelector('.close-button')
+      .addEventListener('click', closeModal);
+    backdrop.addEventListener('click', closeModal);
   }
   if (event.srcElement.className === 'remove-button') {
     removeButtonListener(event);
@@ -299,22 +312,13 @@ function ingradientListListener(event) {
     );
     return;
   }
-  modalOpen(event, modalElement);
-
-  modalElement
-    .querySelector('.back-button')
-    .addEventListener('click', backButtonListener);
-  modalElement
-    .querySelector('.remove-button')
-    .addEventListener('click', removeButtonListener);
-
-  modalElement
-    .querySelector('.add-button')
-    .addEventListener('click', addButtonListener);
 }
 function modalOpen(event, DOMElement) {
+  console.log(event);
+
   renderIngradientModal(favoriteIngradientsArray, DOMElement, event);
-  DOMElement.classList.add('open');
+
+  backdrop.classList.toggle('is-hidden');
 }
 function backButtonListener() {
   closeModal(modalElement);
@@ -324,10 +328,11 @@ function backButtonListener() {
   );
 }
 function closeModal(DOMElement) {
-  DOMElement.classList.remove('open');
+  backdrop.classList.toggle('is-hidden');
   DOMElement.innerHTML = '';
 }
 function removeButtonListener(event) {
+  console.log(event);
   event.target.classList.add('hidden');
   if (event.target.nextElementSibling) {
     event.target.nextElementSibling.classList.remove('hidden');
@@ -338,7 +343,7 @@ function removeButtonListener(event) {
     if (event.target.dataset.name === title) {
       favoriteIngradientsArray.splice(index, 1);
       localStorage.setItem(
-        'favorite-ingradients',
+        'ingredients',
         JSON.stringify(favoriteIngradientsArray)
       );
     }
@@ -348,10 +353,7 @@ function addButtonListener(event) {
   event.target.classList.add('hidden');
   event.target.previousElementSibling.classList.remove('hidden');
   favoriteIngradientsArray.push(currentIngradient);
-  localStorage.setItem(
-    'favorite-ingradients',
-    JSON.stringify(favoriteIngradientsArray)
-  );
+  localStorage.setItem('ingredients', JSON.stringify(favoriteIngradientsArray));
 }
 function renderIngradients(ingradientsArray, DOMElement) {
   if (ingradientsArray.length === 0) {
@@ -373,13 +375,14 @@ function renderIngradients(ingradientsArray, DOMElement) {
        <div class="buttons-container">
          <button type="button" data-name="${title}" class="read-more-button">Read more</button>
          <button class="remove-button" type="button" data-name="${title}" > <svg class="trash-icon" width="18px" height="18px">
-          <use href="./img/sprite.svg#icon-trash"></use>
+          <use href="${svgIcon}#icon-trash"></use>
         </svg></button>
        </div>
       </li>`;
     DOMElement.insertAdjacentHTML('beforeend', markup);
   }
 }
+
 function renderIngradientModal(ingradientsArray, DOMElement, event) {
   DOMElement.innerHTML = '';
 
@@ -388,21 +391,57 @@ function renderIngradientModal(ingradientsArray, DOMElement, event) {
       ingradientsArray[index];
     if (event.target.dataset.name === title) {
       currentIngradient = ingradientsArray[index];
-      const markup = `<h2 class="title">${title}</h2>
-      <p class="type">${type}</p>
-      <div>
-        <p class="description">${description}</p>
-        <ul class="list">
-          <li>Type: ${type}</li>
-          <li>Country of origin: ${country}</li>
-          <li>Alcohol by volume: ${abv}%</li>
-          <li> Flavour: ${flavour}</li>
-        </ul>
-      </div>
-      <button class="remove-button" type="button" data-name="${title}" >Remove from favorite</button>
+      const markup = ` <button
+      class="pop_up_modal_close_btn close-button"
+      type="button"
+      aria-label="close menu review"
+      data-first-modal-close
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18" stroke="#242424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 6L18 18" stroke="#242424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+    <h3 class="ingred-header">${title}</h3>
+    <p class="ingred-type">${type}</p>
+    <p class="ingred-desc">${description}</p>
+
+    <ul class="ingred-desc-list">
+      <li class="desc-item">
+        <p class="item-text">
+          <span class="item-inner-title">Type: </span>${type}
+        </p>
+      </li>
+      <li class="desc-item">
+        <p class="item-text">
+          <span class="item-inner-title">Country of origin: </span>${country}
+        </p>
+      </li>
+      <li class="desc-item">
+        <p class="item-text">
+          <span class="item-inner-title">Alcohol by volume: </span>${abv} %
+        </p>
+      </li>
+      <li class="desc-item">
+        <p class="item-text">
+          <span class="item-inner-title">Flavour: </span>${flavour}
+        </p>
+      </li>
+    </ul>
+    <button class="remove-button" type="button" data-name="${title}" >Remove from favorite</button>
        <button class="add-button hidden" type="button" data-name="${title}" >Add tofavorite</button>
-      <button class="back-button" type="button">Back</button>`;
+      <button class="back-button" type="button">Back</button>
+    `;
       DOMElement.insertAdjacentHTML('beforeend', markup);
+    }
+  }
+}
+function setIngradient(array, event) {
+  for (let index = 0; index < array.length; index++) {
+    const { title } = array[index];
+    if (event.target.dataset.name === title) {
+      currentIngradient = array[index];
+      return [currentIngradient];
     }
   }
 }

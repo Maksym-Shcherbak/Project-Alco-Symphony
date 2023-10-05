@@ -1,8 +1,4 @@
-import {
-  disableBodyScroll,
-  enableBodyScroll,
-  clearAllBodyScrollLocks,
-} from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 
 (() => {
   const mobileMenu = document.querySelector('.js-menu-container');
@@ -20,11 +16,6 @@ import {
       disableBodyScroll(document.body);
     }
   };
-  //   const scrollLockMethod = !isMenuOpen
-  //     ? 'disableBodyScroll'
-  //     : 'enableBodyScroll';
-  //   bodyScrollLock[scrollLockMethod](document.body);
-  // };
 
   openMenuBtn.addEventListener('click', toggleMenu);
   closeMenuBtn.addEventListener('click', toggleMenu);

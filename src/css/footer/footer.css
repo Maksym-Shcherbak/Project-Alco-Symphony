@@ -2,6 +2,7 @@
   background: #7e8fdd;
   width: auto;
 }
+
 .logo {
   color: #fdfdff;
   font-family: Poppins;
@@ -21,6 +22,12 @@
   /* display: flex;
   align-items: baseline;
   justify-content: flex-start; */
+}
+
+.social-list-link:hover .social-list-icon,
+.social-list-link:focus .social-list-icon {
+  /* background: #9cdfdf; */
+  stroke: #9cdfdf;
 }
 .social-link {
   color: #fdfdff;
@@ -51,6 +58,7 @@
   flex-direction: row;
 }
 .social-list-link {
+  display: block;
   color: #fdfdff;
 }
 .cocktail-icon {

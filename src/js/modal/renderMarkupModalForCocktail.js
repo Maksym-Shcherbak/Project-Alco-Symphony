@@ -33,9 +33,7 @@ export function createModalForCocktail(arr, container) {
         <p style="display: none;">${item.description}</p>
         <div class="cocktail-modal-buttons-list">
         <button type="button" id="${item._id}" class="modal-cocktail-btn add-to-fav">Add to favorite</button>
-        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button>
-        </div>
-        </div`;
+        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button>`;
   });
   container.innerHTML = markup;
   return ingredients;

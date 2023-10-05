@@ -3,14 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>contact page</title>
-    <link rel="stylesheet" href="./css/contact/contact.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
+    <title>Contact page</title>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css"
@@ -18,129 +11,89 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
-    <script>
-      (g => {
-        var h,
-          a,
-          k,
-          p = 'The Google Maps JavaScript API',
-          c = 'google',
-          l = 'importLibrary',
-          q = '__ib__',
-          m = document,
-          b = window;
-        b = b[c] || (b[c] = {});
-        var d = b.maps || (b.maps = {}),
-          r = new Set(),
-          e = new URLSearchParams(),
-          u = () =>
-            h ||
-            (h = new Promise(async (f, n) => {
-              await (a = m.createElement('script'));
-              e.set('libraries', [...r] + '');
-              for (k in g)
-                e.set(
-                  k.replace(/[A-Z]/g, t => '_' + t[0].toLowerCase()),
-                  g[k]
-                );
-              e.set('callback', c + '.maps.' + q);
-              a.src = `https://maps.${c}apis.com/maps/api/js?` + e;
-              d[q] = f;
-              a.onerror = () => (h = n(Error(p + ' could not load.')));
-              a.nonce = m.querySelector('script[nonce]')?.nonce || '';
-              m.head.append(a);
-            }));
-        d[l]
-          ? console.warn(p + ' only loads once. Ignoring:', g)
-          : (d[l] = (f, ...n) => r.add(f) && u().then(() => d[l](f, ...n)));
-      })({
-        key: 'AIzaSyDC5qC38Dlsq_sEEHeuPB-4KriRluwLxo8',
-        v: 'weekly',
-        // Use the 'v' parameter to indicate the version to use (weekly, beta, alpha, etc.).
-        // Add other bootstrap parameters as needed, using camel case.
-      });
-    </script>
+    <link rel="stylesheet" href="./css/contact/contact.css" />
   </head>
   <body>
     <load src="partials/header/header.html" />
-    <div class="contact_page">
-      <div class="emp">
-        <h2 class="h2_header our_staff">OUR STAFF</h2>
-        <div class="emp_details">
-          <div class="employee">
+    <section class="our-staff"> 
+      <div class="contact_page container">
+    
+        <h2 class="h2_header">OUR STAFF</h2>
+        <ul class="emp_details">
+          <li class="employee">
             <img
               src="./img/contact/maksyn_shcherbakov.png"
               alt="Максим Щербак"
             />
             <h3>Maksym Shcherbak</h3>
             <p>Team Lead</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img
               src="./img/contact/ekaterina_vasileva.png"
               alt="Фото Сотрудника 2"
             />
             <h3>Ekaterina Vasileva</h3>
             <p>Scrum Master</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img
               src="./img/contact/bogdan_paslawski.png"
               alt="Фото Сотрудника 3"
             />
             <h3>Bogdan Paslawski</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/denis_egorov.png" alt="Фото Сотрудника 4" />
             <h3>Denys Yehorov</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/fox.png" alt="Фото Сотрудника 5" />
             <h3>Oleksii Pohrebniak</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/illia_petov.png" alt="Фото Сотрудника 6" />
             <h3>Illia Petrov</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/Olena.png" alt="Фото Сотрудника 7" />
             <h3>Olena Kaspruk</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/olha_chala.png" alt="Фото Сотрудника 8" />
             <h3>Olha Chala</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img
               src="./img/contact/valentyna_hutsuliak.png"
               alt="Фото Сотрудника 9"
             />
             <h3>Valentyna Hutsuliak</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/bath_cat 1.png" alt="Фото Сотрудника 10" />
             <h3>Pavlo Kuchma</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/bald_cat 1.png" alt="Фото Сотрудника 11" />
             <h3>Lev Obodzintsky</h3>
             <p>Developer</p>
-          </div>
-          <div class="employee">
+          </li>
+          <li class="employee">
             <img src="./img/contact/cup_cat 2.png" alt="Фото Сотрудника 12" />
             <h3>Vladislav Vialov</h3>
             <p>Developer</p>
-          </div>
-        </div>
-      </div>
+          </li>
+        </ul>
+      </ul>
 
       <h2 class="h2_header">OUR LOCATION</h2>
       <div id="map"></div>
@@ -164,7 +117,9 @@
           </li>
         </ul>
       </div>
-    </div>
+    
+  </section>
+   
     <load src="partials/footer/footer.html" />
     <load src="partials/scroll-anime/scroll-anime.html" />
     <script type="module" src="./js/contact/contact.js"></script>

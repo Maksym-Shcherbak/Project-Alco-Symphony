@@ -4,36 +4,37 @@ import {
   createListIngredients,
 } from './renderMarkupModalForCocktail';
 import { getIngredient } from './createModalIngredient';
-// import { createModal } from '../pop_up/pop_up_open';
 import { load } from '../favourite-btn/favourite-btn';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
 
 const cocktailsList = document.querySelector('.cocktails-cards');
-const modal = document.querySelector('.modal-content');
+const modal = document.querySelector('.cocktail-modal');
 const backdrop = document.querySelector('.backdrop');
 let arr = [];
 const cocktailAPI = new CocktailsAPI();
+const ingredientModal = document.querySelector('.ingredient-modal');
+const cocktailModal = document.querySelector('.cocktail-modal');
 const drinkifyModal = new DrinkifyModal();
 
 cocktailsList.addEventListener('click', getCocktailById);
 
-async function getCocktailById(e) {
+export async function getCocktailById(e) {
   if (e.target.classList.contains('cocktail-card-learn')) {
     const cocktailId = e.target.closest('li').id;
-    const favoriteBtn = e.target.nextElementSibling;
     const cocktailInfo = await cocktailAPI.getFullCocktailInfo(cocktailId);
-    console.log(cocktailInfo);
     const ingredients = createModalForCocktail(cocktailInfo, modal);
     const ingredientsList = document.querySelector('.cocktail-modal-list');
     createListIngredients(ingredients, ingredientsList);
-    setStateFavorite();
+    setStateFavorite('favorite', 'add-to-fav');
+    ingredientModal.classList.add('visually-hidden');
+    cocktailModal.classList.remove('visually-hidden');
     drinkifyModal.selectCloseModalButton();
     ingredientsList.addEventListener('click', getIngredient);
     onToFavorite();
   }
 }
 
-function onToFavorite() {
+export function onToFavorite() {
   const addBtn = document.querySelector('.add-to-fav');
   addBtn.addEventListener('click', addToFavorite);
 }
@@ -91,7 +92,6 @@ export function removeFromLocalStorage(key, cocktailId) {
       if (cocktailId === id) {
         arrayFavCocktails.splice(index, 1);
         localStorage.setItem(key, JSON.stringify(arrayFavCocktails));
-        const arrayCocktails = JSON.parse(localStorage.getItem(key));
       }
     }
   } catch (error) {
@@ -99,12 +99,10 @@ export function removeFromLocalStorage(key, cocktailId) {
   }
 }
 
-function setStateFavorite() {
-  const loaddedArr = load('favorite');
-  const cocktailModalBtn = document.querySelector('.add-to-fav');
-  console.log(cocktailModalBtn);
+export function setStateFavorite(key, className) {
+  const loaddedArr = load(key);
+  const cocktailModalBtn = document.querySelector(`.${className}`);
   const cocktailId = cocktailModalBtn.id;
-  console.log(cocktailId);
   if (loaddedArr) {
     loaddedArr.forEach(item => {
       if (item.id === cocktailId) {
