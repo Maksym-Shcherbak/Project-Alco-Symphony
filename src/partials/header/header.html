@@ -62,7 +62,7 @@
         height="32"
         aria-label="menu"
       >
-        <use href="/img/sprite.svg#icon-paragraph-justify"></use>
+        <use href="/img/sprite.svg#icon-align-justify-3"></use>
       </svg>
     </button>
   </div>
@@ -70,7 +70,7 @@
   <div class="mobile-menu js-menu-container js-menu-container">
     <div class="container mobail-menu-container">
       <button class="mobile-close-btn js-close-menu">
-        <svg class="mobile-menu-close-icon" width="32" height="32">
+        <svg class="mobile-menu-close-icon">
           <use href="/img/sprite.svg#icon-x"></use>
         </svg>
       </button>
@@ -87,10 +87,10 @@
             <use href="/img/sprite.svg#icon-cocktail"></use>
           </svg>
         </a>
-      </div>
-      <!-- //mob switch -->
-      <div class="mobile-switch">
-        <input class="mobile-imput" type="checkbox" />
+        <!-- //mob switch -->
+        <div class="mobile-switch">
+          <input class="mobile-imput" type="checkbox" />
+        </div>
       </div>
 
       <ul class="mobile-list">
@@ -98,30 +98,35 @@
           <a class="mobile-menu-link" href="./index.html">Home</a>
         </li>
         <li class="mobile-item">
-          <a class="mobile-menu-link" href=" ">Favorite</a>
+          <div class="mob-dropdown">
+            <button class="mob-dropbtn" id="mob-dropbtn">
+              <span class="mob-dropbtn-text">Favorite</span>
+              <svg
+                class="mob-menu-icon-drop"
+                width="12"
+                height="6"
+                aria-label="menu"
+              >
+                <use href="/img/sprite.svg#icon-Vector-27"></use>
+              </svg>
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="mob-dropdown-content" id="mob-myDropdown">
+              <a class="mob-fav-link" href="./favorite-cocktails.html"
+                >Favorite coctails</a
+              >
+              <a class="mob-fav-ingr" href="./favorite-ingredients.html"
+                >Favorite ingridients</a
+              >
+            </div>
+          </div>
         </li>
       </ul>
-      <!-- //mob dropdown-->
-      <div class="mob-dropdown">
-        <button class="mob-dropbtn">
-          <svg
-            class="mob-menu-icon-drop"
-            width="12"
-            height="6"
-            aria-label="menu"
-          >
-            <use href="/img/sprite.svg#icon-Vector-22"></use>
-          </svg>
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="mob-dropdown-content" id="mob-myDropdown">
-          <a class="mob-fav-link" href="/favorite-cocktails.html"
-            >Favorite coctails</a
-          >
-          <a class="mob-fav-ingr" href="/favorite-ingredients.html"
-            >Favorite ingridients</a
-          >
-        </div>
+
+      <div class="header-img">
+        <svg class="modal-icon-img" width="50" height="50" aria-label="img">
+          <use href="/img/sprite.svg#icon-7"></use>
+        </svg>
       </div>
     </div>
   </div>
