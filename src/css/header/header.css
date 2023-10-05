@@ -87,7 +87,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  z-index: 999;
+  z-index: 998;
 }
 .mobile-menu.is-open {
   opacity: 1;
@@ -167,15 +167,15 @@
   width: 21px;
   height: 21px;
   border-radius: 100px;
-  top: 2px;
-  left: 2px;
+  top: 10%;
+  left: 5%;
   background: #9cdfdf;
   transition: 0.5s;
   transform: scale(1.1);
 }
 
 .mobile-imput:checked[type='checkbox']::before {
-  left: 27px;
+  left: 55%;
 }
 /* //__________выпадающее меню моб_____________________________________________ */
 
@@ -206,11 +206,13 @@
   display: none;
   position: absolute;
   text-align: center;
+  background-color: #7e8fdd;
   width: 192px;
   height: 80px;
   z-index: 1;
-  top: 32px;
+  top: 28px;
   left: -45px;
+  z-index: 999;
 }
 
 .mob-dropdown-content a {

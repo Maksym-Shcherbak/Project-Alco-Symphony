@@ -27,10 +27,26 @@
   --button-dark-hover: rgba(36, 36, 36, 0.2);
 }
 
+html,
+body {
+  min-height: 100vh;
+}
+
 body {
   background: url(../img/background/light-theme/mobile-bg@2x.webp) 0px 0px /
       100% 100%,
     lightgray 100% 100% / cover no-repeat;
+
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex: 0 0 auto;
 }
 
 .container {
