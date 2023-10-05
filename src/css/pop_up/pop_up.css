@@ -73,8 +73,8 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     background-color: #f8f9ff;
-    width: 315px;
-    max-height: 100%;
+    width: 335px;
+    max-height: 90%;
     border-radius: 20px;
     padding: 40px 20px;
   }
@@ -131,6 +131,26 @@ body {
     display: flex;
     flex-direction: column;
     gap: 8px;
+    width: 100%;
+    height: 122px;
+    overflow: auto;
+  }
+
+  .cocktail-modal-list::-webkit-scrollbar {
+    width: 8px;
+  }
+  .cocktail-modal-list::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background: rgba(36, 36, 36, 0.2);
+  }
+  .cocktail-modal-list::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background: #7e8fdd;
+  }
+  .cocktail-modal-list::-webkit-scrollbar-thumb:hover {
+    background: #242424;
   }
 
   .item-text {
@@ -150,6 +170,7 @@ body {
 
   .ingredients-measure {
     color: #7e8fdd;
+    margin-right: 4px;
   }
 
   .item-text::before {
@@ -182,7 +203,26 @@ body {
     font-style: normal;
     font-weight: 400;
     line-height: 20px;
-    max-height: 107px;
+    width: 100%;
+    height: 100px;
+    overflow: auto;
+  }
+
+  .modal-instructions-text::-webkit-scrollbar {
+    width: 8px;
+  }
+  .modal-instructions-text::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background: rgba(36, 36, 36, 0.2);
+  }
+  .modal-instructions-text::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background: #7e8fdd;
+  }
+  .modal-instructions-text::-webkit-scrollbar-thumb:hover {
+    background: #242424;
   }
 
   /* Modal buttons */
@@ -230,7 +270,11 @@ body {
 @media screen and (min-width: 768px) {
   /* Additional styles for modal 768px... */
   .modal {
-    width: 560px;
+    width: 600px;
+    height: 569px;
+  }
+
+  .cocktail-modal-img {
   }
 
   .cocktail-img-and-ingredients {
@@ -246,6 +290,10 @@ body {
 
   .cocktail-modal-instructions {
     margin-top: 0px;
+  }
+
+  .modal-instructions-text {
+    height: 60px;
   }
 
   .cocktail-modal-buttons-list {
