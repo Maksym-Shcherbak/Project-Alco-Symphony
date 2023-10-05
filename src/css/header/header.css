@@ -1,20 +1,17 @@
-
 .header {
   padding: 20px 0;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  background: transparent; */
 }
-
 .flex-container {
   display: flex;
-  align-items: baseline;
+  justify-content: space-between;
   position: relative;
 }
 .nav {
+  flex-direction: row;
+  /* padding-left: 32px;
+  padding-top: 12px; */
   display: flex;
-  align-items: baseline;
+  align-items: center;
   justify-content: flex-start;
 }
 
@@ -29,8 +26,7 @@
   justify-content: center;
   align-items: center;
   gap: 8px;
-  padding-top: 29px;
-  padding-left: 12px;
+  padding: 7px 0;
 }
 .menu-logo-link {
   display: flex;
@@ -39,6 +35,7 @@
   line-height: 18px;
   letter-spacing: -1%;
   color: #fdfdff;
+  padding: 7px 0;
 }
 .menu-logo-icon {
   fill: #9cdfdf;
@@ -48,19 +45,15 @@
   width: 29px;
   height: 25px;
 }
+
 .mobile-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 20px;
-  padding-right: 48px;
   margin-bottom: 180px;
 }
 .mobile-list {
-  display: flex;
-  flex-direction: column;
-  row-gap: 14px;
-  align-items: center;
+  text-align: center;
 }
 .mobile-item {
   font-weight: 400;
@@ -69,9 +62,20 @@
   letter-spacing: 2%;
   color: #fdfdff;
 }
-.mobail-menu-container {
+
+.mobile-item.contact {
+  display: none;
+}
+
+.mobile-item.contact.show {
+  display: block;
+}
+
+.container.mobail-menu-container {
   position: relative;
-  height: 1024px;
+  height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 .mobile-menu {
   position: fixed;
@@ -83,14 +87,21 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+  z-index: 998;
 }
 .mobile-menu.is-open {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
 }
+
+.mobile-controls {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
 .mobile-close-btn {
-  position: absolute;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,8 +109,6 @@
   height: 32px;
   background-color: transparent;
   padding: 0;
-  top: 18px;
-  right: 20px;
   border: none;
 }
 .mobile-menu-open {
@@ -113,12 +122,9 @@
   justify-content: center;
 }
 .mobile-menu-open-icon {
-  position: absolute;
   width: 32px;
   height: 32px;
-  fill: black;
-  top: 24px;
-  right: 12px;
+  stroke: rgba(36, 36, 36, 1);
   transition: stroke 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .mobile-menu-close-icon {
@@ -135,8 +141,8 @@
   display: none;
 }
 .mobile-switch {
-  width: 50px;
-  height: 25px;
+  width: 53px;
+  height: 28px;
 }
 
 .mobile-imput[type='checkbox'] {
@@ -158,38 +164,30 @@
 .mobile-imput[type='checkbox']::before {
   content: '';
   position: absolute;
-  width: 20px;
-  height: 20px;
+  width: 21px;
+  height: 21px;
   border-radius: 100px;
-  top: 1px;
-  left: 1px;
+  top: 10%;
+  left: 5%;
   background: #9cdfdf;
   transition: 0.5s;
   transform: scale(1.1);
 }
 
 .mobile-imput:checked[type='checkbox']::before {
-  left: 26px;
+  left: 55%;
 }
 /* //__________выпадающее меню моб_____________________________________________ */
-
-.mob-dropdown {
-  float: left;
-  position: absolute;
-  right: 37%;
-}
 
 .mob-dropdown .mob-dropbtn {
   border: none;
   outline: none;
-
+  margin: 0 auto;
+  position: relative;
   background-color: inherit;
   cursor: pointer;
   border: none;
   outline: none;
-  margin: 0;
-  /* width: 94px;
-  height: 24px; */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -208,11 +206,13 @@
   display: none;
   position: absolute;
   text-align: center;
+  background-color: #7e8fdd;
   width: 192px;
   height: 80px;
   z-index: 1;
-  top: 32px;
+  top: 28px;
   left: -45px;
+  z-index: 999;
 }
 
 .mob-dropdown-content a {
@@ -240,6 +240,10 @@
   height: 6px;
   border: 2px;
 }
+.revers {
+  transform: rotate(180deg);
+}
+
 .mob-fav-link {
   padding-top: 18px;
 }
@@ -264,9 +268,7 @@
 /*             //планшет модальное окно */
 @media screen and (min-width: 768px) {
   .mobile-title {
-    padding-top: 24px;
-    padding-right: 40px;
-    margin-bottom: 251px;
+    margin-bottom: 250px;
   }
   .mobile-menu-close-icon {
     width: 40px;
@@ -280,16 +282,13 @@
     width: 40px;
     height: 40px;
     right: 32px;
+    top: 11px;
   }
   .menu-logo-link {
     font-size: 22px;
     line-height: 24px;
   }
-  .mob-dropdown {
-    float: left;
-    position: absolute;
-    right: 40%;
-  }
+
   .mobile-item {
     font-size: 24px;
     line-height: 32px;
@@ -307,14 +306,14 @@
   .modal-icon-img {
     display: flex;
     position: absolute;
-    /* width: 391px;
+    width: 391px;
     height: 391px;
-    top: 350px;
-    left: 391px; */
-    width: 291px;
-    height: 291px;
-    top: 445px;
-    left: 445px;
+    top: 580px;
+    left: 391px;
+    /* width: 291px;
+    height: 291px; */
+    /* top: 445px;
+    left: 445px; */
     opacity: 20%;
   }
   /*             //планшет фасад */
@@ -323,13 +322,35 @@
     font-size: 22px;
     line-height: 24px;
   }
+
+  .mobile-switch {
+    width: 68px;
+    height: 36px;
+  }
+
+  .mobile-imput[type='checkbox'] {
+    border: #fdfdff 2px solid;
+  }
+
+  .mobile-imput[type='checkbox']::before {
+    width: 28px;
+    height: 28px;
+    top: 2px;
+    left: 3px;
+  }
+
+  .mobile-imput:checked[type='checkbox']::before {
+    left: 34px;
+  }
 }
 
 @media screen and (min-width: 1280px) {
   .header {
     padding: 30px 0;
   }
-
+  .mobile-menu {
+    display: none;
+  }
   .mobile-menu-open {
     display: none;
   }
@@ -339,8 +360,9 @@
   }
   .nav {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: flex-start;
+    gap: 280px;
   }
 
   .flex-container {
@@ -372,16 +394,17 @@
     display: flex;
   }
   .switch {
-    width: 64px;
-    height: 32px;
+    display: block;
+    width: 68px;
+    height: 36px;
   }
 
   input[type='checkbox'] {
     position: relative;
     outline: none;
     appearance: none;
-    width: 64px;
-    height: 32px;
+    width: 68px;
+    height: 36px;
     border: #242424 2px solid;
     background: transparent;
     border-radius: 34px;
@@ -395,26 +418,26 @@
   input[type='checkbox']::before {
     content: '';
     position: absolute;
+    border-radius: 100px;
     width: 26px;
     height: 26px;
-    border-radius: 100px;
-    top: 0;
-    left: 2px;
+    top: 3px;
+    left: 3px;
     background: #9cdfdf;
     transition: 0.5s;
     transform: scale(1.1);
   }
 
   input:checked[type='checkbox']::before {
-    left: 32px;
+    left: 34px;
   }
 
   /* //___выпадающее меню DESKTOP__________________________________________________ */
 
   .dropdown {
-    float: left;
-    /* overflow: hidden; */
-    margin-right: 302px;
+    /* float: left;
+    /* overflow: hidden; 
+    margin-right: 302px; */
     position: relative;
   }
 

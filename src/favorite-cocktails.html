@@ -22,10 +22,10 @@
   <body>
     <load src="partials/header/header.html" />
     <main>
-      <section class="favorite-coctails">
-        <div class="favorite-coctails-container container">
-          <h2 class="favorite-coctails-title">Favorite cocktails</h2>
-          <ul class="fav-coctails-list"></ul>
+      <section class="favorite-cocktails">
+        <div class="favorite-cocktails-container container">
+          <h2 class="favorite-cocktails-title">Favorite cocktails</h2>
+          <ul class="fav-cocktails-list cocktails-cards"></ul>
           <div class="not-found-cocktails-container">
             <picture>
               <source
@@ -49,19 +49,16 @@
                 loading="lazy"
               />
             </picture>
-            <p class="favorite-coctails-subtitle">
+            <p class="favorite-cocktails-subtitle">
               You haven't added any
-              <span class="favorite-coctails-subtitle-span"
+              <span class="favorite-cocktails-subtitle-span"
                 >favorite cocktails</span
               >
               yet
             </p>
           </div>
         </div>
-        <div
-          id="tui-pagination-container"
-          class="tui-pagination visually-hidden"
-        ></div>
+        <div id="tui-pagination-container" class="tui-pagination visually-hidden"></div>
       </section>
     </main>
     <load src="partials/footer/footer.html" />

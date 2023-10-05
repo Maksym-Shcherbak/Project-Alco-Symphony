@@ -2,6 +2,35 @@
   <div class="container">
     <h2 class="drinkify-cocktails-title title">Cocktails</h2>
     <ul class="cocktails-cards"></ul>
+    <div class="not-found-cocktails-container">
+      <picture>
+        <source
+          srcset="
+            ./img/cocktail-shaker/not-found-cocktails/rafiki.webp    1x,
+            ./img/cocktail-shaker/not-found-cocktails/rafiki@2x.webp 2x
+          "
+          media="(min-width: 768px)"
+        />
+        <source
+          srcset="
+            ./img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp    1x,
+            ./img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob@2x.webp 2x
+          "
+          media="(min-width: 280px)"
+        />
+        <img
+          class="not-found-img"
+          src="./img/cocktail-shaker/not-found-cocktails-mobile/rafiki-mob.webp"
+          alt="cocktail-picture"
+          loading="lazy"
+        />
+      </picture>
+      <p class="favorite-cocktails-subtitle">
+        Sorry, we
+        <span class="favorite-cocktails-subtitle-span">didn’t find</span>
+        any cocktail for you
+      </p>
+    </div>
     <div
       id="tui-pagination-container"
       class="tui-pagination visually-hidden"

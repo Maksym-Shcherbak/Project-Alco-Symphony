@@ -9,8 +9,9 @@ export function createModalForCocktail(arr, container) {
       aria-label="close menu review"
       data-first-modal-close
     >
-      <svg class="pop_up_modal_close_icon" width="24" height="24">
-        <use href="./images/icons.svg#icon-x-close"></use>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+        <path d="M18 6L6 18" stroke="#242424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <path d="M6 6L18 18" stroke="#242424" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
     </button>
     <div class="cocktail-img-and-ingredients">
@@ -30,8 +31,9 @@ export function createModalForCocktail(arr, container) {
         <p class="modal-instructions-text">${item.instructions}</p>
         </div>
         <p style="display: none;">${item.description}</p>
+        <div class="cocktail-modal-buttons-list">
         <button type="button" id="${item._id}" class="modal-cocktail-btn add-to-fav">Add to favorite</button>
-        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button></div`;
+        <button type="button" class="modal-cocktail-btn modal-cocktail-back" data-first-modal-close>Back</button>`;
   });
   container.innerHTML = markup;
   return ingredients;

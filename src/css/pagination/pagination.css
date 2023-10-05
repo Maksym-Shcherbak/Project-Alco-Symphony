@@ -3,7 +3,6 @@
   justify-content: center;
   /* gap: 8px; */
   height: 32px;
-  margin: 40px 0;
 }
 
 div.tui-pagination .tui-page-btn {
@@ -71,7 +70,7 @@ div.tui-pagination .tui-ico-prev {
 @media screen and (min-width: 768px) {
   #tui-pagination-container {
     height: 40px;
-    margin: 64px 0;
+    margin-top: 64px;
   }
 
   div.tui-pagination .tui-page-btn {
@@ -101,7 +100,7 @@ div.tui-pagination .tui-ico-prev {
 
 @media screen and (min-width: 1280px) {
   #tui-pagination-container {
-    margin: 44px 0;
+    margin-top: 64px ;
   }
 
   div.tui-pagination .tui-page-btn {

@@ -258,7 +258,7 @@ const pagination = new PaginationForCocktails(
 );
 document.addEventListener('DOMContentLoaded', event => {
   favoriteIngradientsArray =
-    JSON.parse(localStorage.getItem('favorite-ingradients')) || [];
+    JSON.parse(localStorage.getItem('ingredients')) || [];
 
   if (favoriteIngradientsArray.length !== 0) {
     noFoundElement.classList.add('hidden');
@@ -285,8 +285,10 @@ function setModalElement() {
   modalElement = document.querySelector('.ingradient-modal');
 }
 function ingradientListListener(event) {
-  if (event.target.nodeName !== 'BUTTON') {
-    console.log(event);
+  if (
+    event.target.nodeName !== 'LI' ||
+    event.target.className !== 'read-more-button'
+  ) {
     return;
   }
   if (event.srcElement.className === 'remove-button') {
@@ -297,8 +299,8 @@ function ingradientListListener(event) {
     );
     return;
   }
-
   modalOpen(event, modalElement);
+
   modalElement
     .querySelector('.back-button')
     .addEventListener('click', backButtonListener);
@@ -316,7 +318,10 @@ function modalOpen(event, DOMElement) {
 }
 function backButtonListener() {
   closeModal(modalElement);
-  renderIngradients(favoriteIngradientsArray, ingradientsListElement);
+  renderIngradients(
+    pagination.createCardsPerPage(favoriteIngradientsArray)[0],
+    ingradientsListElement
+  );
 }
 function closeModal(DOMElement) {
   DOMElement.classList.remove('open');
@@ -333,7 +338,7 @@ function removeButtonListener(event) {
     if (event.target.dataset.name === title) {
       favoriteIngradientsArray.splice(index, 1);
       localStorage.setItem(
-        'favorite-ingradients',
+        'ingredients',
         JSON.stringify(favoriteIngradientsArray)
       );
     }
@@ -343,10 +348,7 @@ function addButtonListener(event) {
   event.target.classList.add('hidden');
   event.target.previousElementSibling.classList.remove('hidden');
   favoriteIngradientsArray.push(currentIngradient);
-  localStorage.setItem(
-    'favorite-ingradients',
-    JSON.stringify(favoriteIngradientsArray)
-  );
+  localStorage.setItem('ingredients', JSON.stringify(favoriteIngradientsArray));
 }
 function renderIngradients(ingradientsArray, DOMElement) {
   if (ingradientsArray.length === 0) {
@@ -361,7 +363,7 @@ function renderIngradients(ingradientsArray, DOMElement) {
     if (alcohol.toLowerCase() === 'yes') {
       alcoholNonalcoholMarkup = 'Alcoholic';
     }
-    const markup = `<li>
+    const markup = `<li data-name="${title}">
     <h2 class="title">${title}</h2>
       <p class="alcohol">${alcoholNonalcoholMarkup}</p>
       <p class="description">${description}</p>
@@ -375,7 +377,10 @@ function renderIngradients(ingradientsArray, DOMElement) {
     DOMElement.insertAdjacentHTML('beforeend', markup);
   }
 }
+
 function renderIngradientModal(ingradientsArray, DOMElement, event) {
+  DOMElement.innerHTML = '';
+
   for (let index = 0; index < ingradientsArray.length; index++) {
     const { title, abv, type, country, flavour, description } =
       ingradientsArray[index];
