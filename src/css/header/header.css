@@ -1,11 +1,6 @@
 .header {
   padding: 20px 0;
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  background: transparent; */
 }
-
 .flex-container {
   display: flex;
   justify-content: space-between;
@@ -92,7 +87,7 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  z-index: 999;
+  z-index: 998;
 }
 .mobile-menu.is-open {
   opacity: 1;
@@ -172,23 +167,17 @@
   width: 21px;
   height: 21px;
   border-radius: 100px;
-  top: 3px;
-  left: 2px;
+  top: 10%;
+  left: 5%;
   background: #9cdfdf;
   transition: 0.5s;
   transform: scale(1.1);
 }
 
 .mobile-imput:checked[type='checkbox']::before {
-  left: 27px;
+  left: 55%;
 }
 /* //__________выпадающее меню моб_____________________________________________ */
-
-.mob-dropdown {
-  /* float: left;
-  position: absolute;
-  right: 37%; */
-}
 
 .mob-dropdown .mob-dropbtn {
   border: none;
@@ -199,12 +188,10 @@
   cursor: pointer;
   border: none;
   outline: none;
-  /* width: 94px;
-  height: 24px; */
   display: flex;
   justify-content: center;
   align-items: center;
-  /* gap: 4px; */
+  gap: 4px;
 }
 .mob-dropbtn-text {
   padding: 3px 0;
@@ -219,11 +206,13 @@
   display: none;
   position: absolute;
   text-align: center;
+  background-color: #7e8fdd;
   width: 192px;
   height: 80px;
   z-index: 1;
-  top: 32px;
+  top: 28px;
   left: -45px;
+  z-index: 999;
 }
 
 .mob-dropdown-content a {
@@ -251,10 +240,10 @@
   height: 6px;
   border: 2px;
 }
-.mob-menu-icon-up {
-  display: none;
-  /* visibility: hidden; */
+.revers {
+  transform: rotate(180deg);
 }
+
 .mob-fav-link {
   padding-top: 18px;
 }
@@ -293,6 +282,7 @@
     width: 40px;
     height: 40px;
     right: 32px;
+    top: 11px;
   }
   .menu-logo-link {
     font-size: 22px;
@@ -316,14 +306,14 @@
   .modal-icon-img {
     display: flex;
     position: absolute;
-    /* width: 391px;
+    width: 391px;
     height: 391px;
-    top: 350px;
-    left: 391px; */
-    width: 291px;
-    height: 291px;
-    top: 445px;
-    left: 445px;
+    top: 580px;
+    left: 391px;
+    /* width: 291px;
+    height: 291px; */
+    /* top: 445px;
+    left: 445px; */
     opacity: 20%;
   }
   /*             //планшет фасад */
@@ -345,7 +335,7 @@
   .mobile-imput[type='checkbox']::before {
     width: 28px;
     height: 28px;
-    top: 3px;
+    top: 2px;
     left: 3px;
   }
 
@@ -353,11 +343,14 @@
     left: 34px;
   }
 }
+
 @media screen and (min-width: 1280px) {
   .header {
     padding: 30px 0;
   }
-
+  .mobile-menu {
+    display: none;
+  }
   .mobile-menu-open {
     display: none;
   }

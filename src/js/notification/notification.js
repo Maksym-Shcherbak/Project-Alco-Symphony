@@ -32,6 +32,25 @@ export const endListOfPictures = () => {
   });
 };
 
+
+export const deleteFavCocktail = () => {
+  Notify.info('The cocktail has been removed from your favorites cocktails!', {
+    position: 'right-top',
+    cssAnimationDuration: 800,
+    cssAnimationStyle: 'from-top',
+    fontSize: '18px',
+  }
+  )
+}
+
+
+export const errorFromLS = () => {
+  Notify.failure('Ooops...Something went wrong!Please try again.', {
+    position: 'right-top',
+    cssAnimationDuration: 800,
+    fontSize: '18px',
+  })
+}
 // -------------------------------------------
 // function handleCardButtonClick() {
 //   Notiflix.Notify.success('Mmm, great choice!');

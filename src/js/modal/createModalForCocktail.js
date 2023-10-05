@@ -4,14 +4,15 @@ import {
   createListIngredients,
 } from './renderMarkupModalForCocktail';
 import { getIngredient } from './createModalIngredient';
-import { createModal } from '../pop_up/pop_up_open';
 import { load } from '../favourite-btn/favourite-btn';
+import { DrinkifyModal } from '../pop_up/pop_up_open';
 
 const cocktailsList = document.querySelector('.cocktails-cards');
-const modal = document.querySelector('.modal-content');
+const modal = document.querySelector('.cocktail-modal');
 const backdrop = document.querySelector('.backdrop');
 let arr = [];
 const cocktailAPI = new CocktailsAPI();
+const drinkifyModal = new DrinkifyModal();
 
 cocktailsList.addEventListener('click', getCocktailById);
 
@@ -20,13 +21,12 @@ export async function getCocktailById(e) {
     const cocktailId = e.target.closest('li').id;
     const favoriteBtn = e.target.nextElementSibling;
     const cocktailInfo = await cocktailAPI.getFullCocktailInfo(cocktailId);
-    console.log(cocktailInfo);
     const ingredients = createModalForCocktail(cocktailInfo, modal);
     const ingredientsList = document.querySelector('.cocktail-modal-list');
     createListIngredients(ingredients, ingredientsList);
-    setStateFavorite();
+    setStateFavorite('favorite', 'add-to-fav');
+    drinkifyModal.selectCloseModalButton();
     ingredientsList.addEventListener('click', getIngredient);
-    createModal();
     onToFavorite();
   }
 }
@@ -97,12 +97,10 @@ export function removeFromLocalStorage(key, cocktailId) {
   }
 }
 
-function setStateFavorite() {
-  const loaddedArr = load('favorite');
-  const cocktailModalBtn = document.querySelector('.add-to-fav');
-  console.log(cocktailModalBtn);
+export function setStateFavorite(key, className) {
+  const loaddedArr = load(key);
+  const cocktailModalBtn = document.querySelector(`.${className}`);
   const cocktailId = cocktailModalBtn.id;
-  console.log(cocktailId);
   if (loaddedArr) {
     loaddedArr.forEach(item => {
       if (item.id === cocktailId) {

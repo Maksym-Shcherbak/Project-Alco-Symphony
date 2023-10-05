@@ -3,11 +3,13 @@ import 'tui-pagination/dist/tui-pagination.css';
 import { renderFavCocktails } from './favorite-cocktails-render';
 import { storageCocktailArr } from './local-storage';
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
-import { createModal } from '../pop_up/pop_up_open';
+import { DrinkifyModal } from '../pop_up/pop_up_open';
+import { setIconFavorite } from '../favourite-btn/favourite-btn';
 
 const container = document.getElementById('tui-pagination-container');
 let parts = null;
 const cocktailList = document.querySelector('.fav-cocktails-list');
+const drinkifyModal = new DrinkifyModal();
 
 const quantity = getVisiblePages();
 
@@ -31,11 +33,13 @@ export function renderCocktailsBySearch(array) {
   parts = favCocktailsPagination.createCardsPerPage(array);
   favCocktailsPagination.hidePagination(options.itemsPerPage, container);
   renderFavCocktails(parts[0], cocktailList);
+  drinkifyModal.selectOpenModalButton();
 
   favCocktailsPagination.changePageByClick(
     parts,
     cocktailList,
-    renderFavCocktails
+    renderFavCocktails,
+    DrinkifyModal,
+    setIconFavorite
   );
-  createModal();
 }
