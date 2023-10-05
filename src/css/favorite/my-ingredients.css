@@ -5,6 +5,11 @@
 @import url('../scroll-anime/scrollanime.css');
 @import url('../pagination/pagination.css');
 @import url('../darktheme.css');
+/* @import url('../modal/modal.css'); */
+@import url('../pop_up/pop_up.css');
+
+@import url('../ingred-modal/ingred-modal.css');
+
 .favorite-ingadients-section {
   padding: 80px 0;
 
