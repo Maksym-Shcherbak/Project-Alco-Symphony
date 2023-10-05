@@ -8,12 +8,10 @@ import {
 export function onToFavoriteIngredient(className) {
   const addBtn = document.querySelector(`.${className}`);
   addBtn.addEventListener('click', addToFavorite);
-  console.log(addBtn);
 }
 // функцію додавання до улюблених довелося написати окрему, оскільки змінні інші, та звернення на бекенд інше
 async function addToFavorite(event) {
   if (event.target.classList.contains('added')) {
-    console.log(event.target.id);
     const id = event.target.id;
     const ingredCard = document.getElementById(id);
     removeFromLocalStorage('ingredients', id);
@@ -21,12 +19,10 @@ async function addToFavorite(event) {
     event.target.classList.remove('added');
     ingredCard.classList.remove('enabled');
   } else {
-    console.log(event.target.id);
     const id = event.target.id;
     const ingredCard = document.getElementById(id);
     const ingredlArr = await cocktailAPI.getIngredients(id);
     const ingred = ingredlArr.map(item => {
-      console.log(item);
       return {
         id: item._id,
         abv: item.abv,
