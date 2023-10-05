@@ -31,8 +31,9 @@ async function addToFavorite(event) {
         id: item._id,
         abv: item.abv,
         country: item.country,
-        title: item.drink,
+        title: item.title,
         description: item.description,
+        alcohol: item.alcohol,
         flavour: item.flavour,
         type: item.type,
       };

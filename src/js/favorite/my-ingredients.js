@@ -258,7 +258,7 @@ const pagination = new PaginationForCocktails(
 );
 document.addEventListener('DOMContentLoaded', event => {
   favoriteIngradientsArray =
-    JSON.parse(localStorage.getItem('favorite-ingradients')) || [];
+    JSON.parse(localStorage.getItem('ingredients')) || [];
 
   if (favoriteIngradientsArray.length !== 0) {
     noFoundElement.classList.add('hidden');
@@ -338,7 +338,7 @@ function removeButtonListener(event) {
     if (event.target.dataset.name === title) {
       favoriteIngradientsArray.splice(index, 1);
       localStorage.setItem(
-        'favorite-ingradients',
+        'ingredients',
         JSON.stringify(favoriteIngradientsArray)
       );
     }
@@ -348,10 +348,7 @@ function addButtonListener(event) {
   event.target.classList.add('hidden');
   event.target.previousElementSibling.classList.remove('hidden');
   favoriteIngradientsArray.push(currentIngradient);
-  localStorage.setItem(
-    'favorite-ingradients',
-    JSON.stringify(favoriteIngradientsArray)
-  );
+  localStorage.setItem('ingredients', JSON.stringify(favoriteIngradientsArray));
 }
 function renderIngradients(ingradientsArray, DOMElement) {
   if (ingradientsArray.length === 0) {
