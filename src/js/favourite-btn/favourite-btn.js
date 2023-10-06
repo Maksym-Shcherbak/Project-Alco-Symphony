@@ -6,8 +6,6 @@ import {
   removeFromLocalStorage,
 } from '../modal/createModalForCocktail';
 
-const coctailsList = document.querySelector('.cocktails-cards');
-
 let arr = [];
 
 export function load(key) {
@@ -31,9 +29,7 @@ export function setIconFavorite() {
   }
 }
 
-coctailsList.addEventListener('click', favBtnClick);
-
-function favBtnClick(event) {
+export function favBtnClick(event) {
   if (event.target.classList.contains('cocktail-card-button')) {
     if (event.target.closest('li').classList.contains('enabled')) {
       const id = event.target.closest('li').id;

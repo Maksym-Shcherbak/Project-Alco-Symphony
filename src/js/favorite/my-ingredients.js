@@ -1,234 +1,3 @@
-// let favoriteIngradientsArray = [
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin3',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari4',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin5',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari6',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin7',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari8',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin9',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari10',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin11',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari12',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin13',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari14',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-//   {
-//     _id: '64aebb7f82d96cc69e0eb4a6',
-//     title: 'Gin15',
-//     ingredientThumb:
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin.png',
-//     'thumb-medium':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Medium.png',
-//     'thumb-small':
-//       'https://res.cloudinary.com/dy7bjyqln/image/upload/v1695419232/drinkify/ingredients/Gin-Small.png',
-//     abv: '40',
-//     alcohol: 'Yes',
-//     description:
-//       'Gin is liquor which derives its predominant flavour from juniper berries (Juniperus communis). From its earliest origins in the Middle Ages, gin has evolved over the course of a millennium from a herbal medicine to an object of commerce in the spirits industry. Gin was developed on the basis of the older jenever, and became popular in Great Britain (particularly in London) when William of Orange, leader of the Dutch Republic, occupied the English, Scottish, and Irish thrones with his wife Mary. Gin is one of the broadest categories of spirits, represented by products of various origins, styles, and flavour profiles that all revolve around juniper as a common ingredient.',
-//     type: 'Gin',
-//     flavour: 'English-style gin, citrus, juniper',
-//     country: 'United States',
-//   },
-//   {
-//     _id: '64f1d5cc69d8333cf130fc22',
-//     title: 'Campari16',
-//     description:
-//       'A famous aperitif that is a bitter, red, herbal liqueur, well-known for its distinctive flavor and vibrant red color. Often used in cocktails.',
-//     type: 'Liqueur',
-//     alcohol: 'Yes',
-//     abv: '24-28.5',
-//     flavour: 'Bitter and Herbal',
-//     country: 'Italy',
-//   },
-// ];
-// localStorage.setItem(
-//   'favorite-ingradients',
-//   JSON.stringify(favoriteIngradientsArray)
-// );
-
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
 
 import '../../js/header/header';
@@ -250,7 +19,6 @@ const noFoundElement = document.querySelector('.no-ingradients-wrapper');
 const PAGINATION_OPTIONS = {
   totalItems: 0,
   itemsPerPage: 6,
-
   page: 1,
 };
 
@@ -302,7 +70,8 @@ function ingradientListListener(event) {
     modalElement
       .querySelector('.close-button')
       .addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', backdropListener);
+    document.addEventListener('keydown', KeyboardEventListener);
   }
   if (event.srcElement.className === 'remove-button') {
     removeButtonListener(event);
@@ -314,25 +83,35 @@ function ingradientListListener(event) {
   }
 }
 function modalOpen(event, DOMElement) {
-  console.log(event);
-
   renderIngradientModal(favoriteIngradientsArray, DOMElement, event);
 
-  backdrop.classList.toggle('is-hidden');
+  backdrop.classList.remove('is-hidden');
+  document.body.classList.add('modal-open');
+}
+function KeyboardEventListener(event) {
+  if (event.keyCode === 27) {
+    closeModal(modalElement);
+    document.removeEventListener('keydown', KeyboardEventListener);
+  }
 }
 function backButtonListener() {
   closeModal(modalElement);
+}
+function closeModal(DOMElement) {
+  backdrop.classList.add('is-hidden');
+  document.body.classList.remove('modal-open');
+  DOMElement.innerHTML = '';
   renderIngradients(
     pagination.createCardsPerPage(favoriteIngradientsArray)[0],
     ingradientsListElement
   );
 }
-function closeModal(DOMElement) {
-  backdrop.classList.toggle('is-hidden');
-  DOMElement.innerHTML = '';
+function backdropListener(event) {
+  if (event.target.classList.contains('backdrop')) {
+    closeModal(modalElement);
+  }
 }
 function removeButtonListener(event) {
-  console.log(event);
   event.target.classList.add('hidden');
   if (event.target.nextElementSibling) {
     event.target.nextElementSibling.classList.remove('hidden');
@@ -387,8 +166,14 @@ function renderIngradientModal(ingradientsArray, DOMElement, event) {
   DOMElement.innerHTML = '';
 
   for (let index = 0; index < ingradientsArray.length; index++) {
-    const { title, abv, type, country, flavour, description } =
+    let { title, abv, type, country, flavour, description } =
       ingradientsArray[index];
+    const noDataMsg = 'Sorry, no data available.';
+    if (!abv) abv = 0;
+    if (!country) country = noDataMsg;
+    if (!description) description = noDataMsg;
+    if (!flavour) flavour = noDataMsg;
+    if (!type) type = noDataMsg;
     if (event.target.dataset.name === title) {
       currentIngradient = ingradientsArray[index];
       const markup = ` <button
@@ -429,19 +214,9 @@ function renderIngradientModal(ingradientsArray, DOMElement, event) {
       </li>
     </ul>
     <button class="remove-button" type="button" data-name="${title}" >Remove from favorite</button>
-       <button class="add-button hidden" type="button" data-name="${title}" >Add tofavorite</button>
       <button class="back-button" type="button">Back</button>
     `;
       DOMElement.insertAdjacentHTML('beforeend', markup);
-    }
-  }
-}
-function setIngradient(array, event) {
-  for (let index = 0; index < array.length; index++) {
-    const { title } = array[index];
-    if (event.target.dataset.name === title) {
-      currentIngradient = array[index];
-      return [currentIngradient];
     }
   }
 }

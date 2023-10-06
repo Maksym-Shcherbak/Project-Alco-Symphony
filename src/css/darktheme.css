@@ -16,10 +16,23 @@
 .dark-mode .favorite-ingradients-title,
 .dark-mode .favorite-ingradients-list .description,
 .dark-mode .favorite-ingradients-list .read-more-button,
-.dark-mode .dropbtn-text {
+.dark-mode .dropbtn-text,
+.dark-mode .ingredient-modal .back-button,
+.dark-mode .ingredient-modal .ingred-header,
+.dark-mode .cocktail-modal .cocktail-modal-name,
+.dark-mode .cocktail-modal .cocktail-modal-ingredients,
+.dark-mode .cocktail-modal .modal-cocktail-ingredient,
+.dark-mode .cocktail-modal .modal-instructions-title,
+.dark-mode .cocktail-modal .modal-cocktail-back,
+.dark-mode .ingredient-modal .modal-ingredient-back {
   color: rgba(253, 253, 255, 1);
 }
-
+.dark-mode .cocktail-modal .modal-cocktail-ingredient:hover {
+  color: #7e8fdd;
+}
+.dark-mode .ingredient-modal .item-text {
+  color: rgba(253, 253, 255, 0.8);
+}
 .dark-mode .star,
 .dark-mode .search-icon,
 .dark-mode .mobile-menu-open-icon {
@@ -38,7 +51,19 @@
 .dark-mode .search-input::placeholder {
   color: rgba(253, 253, 255, 0.2);
 }
-
+.dark-mode .ingredient-modal .back-button,
+.dark-mode .cocktail-modal .modal-cocktail-back,
+.dark-mode .ingredient-modal .modal-ingredient-back {
+  background-color: rgba(253, 253, 255, 0.1);
+}
+.dark-mode .ingredient-modal .back-button:hover,
+.dark-mode .ingredient-modal .back-button:focus,
+.dark-mode .cocktail-modal .modal-cocktail-back:hover,
+.dark-mode .cocktail-modal .modal-cocktail-back:focus,
+.dark-mode .ingredient-modal .modal-ingredient-back:hover,
+.dark-mode .ingredient-modal .modal-ingredient-back:focus {
+  background-color: rgba(253, 253, 255, 0.2);
+}
 .dark-mode .cocktail-card,
 .dark-mode .favorite-ingradients-list li {
   background-color: rgb(35, 35, 48, 1);
@@ -53,7 +78,8 @@
   color: #fdfdff;
 }
 
-.dark-mode .fav-cocktail-card {
+.dark-mode .fav-cocktail-card,
+.dark-mode .modal {
   background-color: #232330;
 }
 
@@ -77,6 +103,10 @@
       black 100% 100% / cover no-repeat;
   }
 }
-.dark-mode .favorite-ingradients-list .alcohol {
+.dark-mode .favorite-ingradients-list .alcohol,
+.dark-mode .ingredient-modal .ingred-desc,
+.dark-mode .ingredient-modal .ingred-type,
+.dark-mode .cocktail-modal .modal-text,
+.dark-mode .cocktail-modal .modal-instructions-text {
   color: rgba(253, 253, 255, 0.5);
 }

@@ -3,7 +3,7 @@ import { createCocktailCards } from './renderCocktails';
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
 import { getQuantityOfCocktails } from './getQuantityOfCocktails';
 // import { createModal } from '../pop_up/pop_up_open';
-import { setIconFavorite } from '../favourite-btn/favourite-btn';
+import { setIconFavorite, favBtnClick } from '../favourite-btn/favourite-btn';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
 
 const cocktailList = document.querySelector('.cocktails-cards');
@@ -37,6 +37,8 @@ async function renderRandomCocktails() {
 }
 
 renderRandomCocktails();
+
+cocktailList.addEventListener('click', favBtnClick);
 
 export function renderCocktailsBySearch(arrayOfCocktails) {
   parts = paginationForCocktails.createCardsPerPage(arrayOfCocktails);

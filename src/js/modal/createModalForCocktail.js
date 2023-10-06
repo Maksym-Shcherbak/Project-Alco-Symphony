@@ -6,10 +6,16 @@ import {
 import { getIngredient } from './createModalIngredient';
 import { load } from '../favourite-btn/favourite-btn';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
+export {
+  getCocktailById,
+  onToFavorite,
+  saveToLocalStorage,
+  removeFromLocalStorage,
+  setStateFavorite,
+};
 
 const cocktailsList = document.querySelector('.cocktails-cards');
 const modal = document.querySelector('.cocktail-modal');
-const backdrop = document.querySelector('.backdrop');
 let arr = [];
 const cocktailAPI = new CocktailsAPI();
 const ingredientModal = document.querySelector('.ingredient-modal');
@@ -18,7 +24,7 @@ const drinkifyModal = new DrinkifyModal();
 
 cocktailsList.addEventListener('click', getCocktailById);
 
-export async function getCocktailById(e) {
+async function getCocktailById(e) {
   if (e.target.classList.contains('cocktail-card-learn')) {
     const cocktailId = e.target.closest('li').id;
     const cocktailInfo = await cocktailAPI.getFullCocktailInfo(cocktailId);
@@ -34,7 +40,7 @@ export async function getCocktailById(e) {
   }
 }
 
-export function onToFavorite() {
+function onToFavorite() {
   const addBtn = document.querySelector('.add-to-fav');
   addBtn.addEventListener('click', addToFavorite);
 }
@@ -75,7 +81,7 @@ async function addToFavorite(event) {
   }
 }
 
-export function saveToLocalStorage(key, value) {
+function saveToLocalStorage(key, value) {
   try {
     const parsedValue = JSON.stringify(value);
     localStorage.setItem(key, parsedValue);
@@ -84,7 +90,7 @@ export function saveToLocalStorage(key, value) {
   }
 }
 
-export function removeFromLocalStorage(key, cocktailId) {
+function removeFromLocalStorage(key, cocktailId) {
   try {
     const arrayFavCocktails = JSON.parse(localStorage.getItem(key));
     for (let index = 0; index < arrayFavCocktails.length; index++) {
@@ -99,7 +105,7 @@ export function removeFromLocalStorage(key, cocktailId) {
   }
 }
 
-export function setStateFavorite(key, className) {
+function setStateFavorite(key, className) {
   const loaddedArr = load(key);
   const cocktailModalBtn = document.querySelector(`.${className}`);
   const cocktailId = cocktailModalBtn.id;

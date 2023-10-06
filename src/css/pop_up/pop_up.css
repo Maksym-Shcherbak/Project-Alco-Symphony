@@ -62,8 +62,9 @@ body {
   pointer-events: none;
 }
 
-.modal-open {
+body.modal-open {
   overflow: hidden;
+  pointer-events: none;
 }
 
 @media screen and (min-width: 320px) {
@@ -248,7 +249,7 @@ body {
 @media screen and (min-width: 768px) {
   /* Additional styles for modal 768px... */
   .modal {
-    width: 560px;
+    width: 600px;
     /* height: 529px; */
     padding: 40px;
   }
