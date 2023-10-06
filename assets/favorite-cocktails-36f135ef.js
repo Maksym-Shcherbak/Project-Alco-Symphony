@@ -1,4 +1,4 @@
-import"./scroll-anime-88519c89.js";import{s as k,r as m}from"./createModalForCocktail-4fac5448.js";import{P as C,D as d,e as p,d as h}from"./pagination-6498ef43.js";function s(t,a){const e=t.map(o=>`
+import"./scroll-anime-88519c89.js";import{s as k,r as m}from"./createModalForCocktail-6cb2c04a.js";import{P as C,D as d,e as p,d as h}from"./pagination-6498ef43.js";function s(t,a){const e=t.map(o=>`
         <li class="fav-cocktail-card" id="${o.id}">
         <div class="fav-cocktail-card-info">
           <div class="fav-cocktail-card-container">
