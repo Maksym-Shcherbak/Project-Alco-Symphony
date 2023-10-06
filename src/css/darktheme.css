@@ -39,7 +39,8 @@
   fill: rgba(253, 253, 255, 1);
 }
 
-.dark-mode .mobile-menu-open-icon {
+.dark-mode .mobile-menu-open-icon,
+.dark-mode .pop_up_modal_close_btn svg {
   stroke: rgba(253, 253, 255, 1);
 }
 

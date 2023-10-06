@@ -95,6 +95,12 @@ body.modal-open {
     cursor: pointer;
   }
 
+  .pop_up_modal_close_btn svg {
+    width: 22px;
+    height: 22px;
+    stroke: #111111;
+  }
+
   .pop_up_modal_close_icon {
     width: 22px;
     height: 22px;
