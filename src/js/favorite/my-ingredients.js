@@ -302,7 +302,8 @@ function ingradientListListener(event) {
     modalElement
       .querySelector('.close-button')
       .addEventListener('click', closeModal);
-    backdrop.addEventListener('click', closeModal);
+    backdrop.addEventListener('click', backdropListener);
+    document.addEventListener('keydown', KeyboardEventListener);
   }
   if (event.srcElement.className === 'remove-button') {
     removeButtonListener(event);
@@ -314,25 +315,35 @@ function ingradientListListener(event) {
   }
 }
 function modalOpen(event, DOMElement) {
-  console.log(event);
-
   renderIngradientModal(favoriteIngradientsArray, DOMElement, event);
 
-  backdrop.classList.toggle('is-hidden');
+  backdrop.classList.remove('is-hidden');
+  document.body.classList.add('modal-open');
+}
+function KeyboardEventListener(event) {
+  if (event.keyCode === 27) {
+    closeModal(modalElement);
+    document.removeEventListener('keydown', KeyboardEventListener);
+  }
 }
 function backButtonListener() {
   closeModal(modalElement);
+}
+function closeModal(DOMElement) {
+  backdrop.classList.add('is-hidden');
+  document.body.classList.remove('modal-open');
+  DOMElement.innerHTML = '';
   renderIngradients(
     pagination.createCardsPerPage(favoriteIngradientsArray)[0],
     ingradientsListElement
   );
 }
-function closeModal(DOMElement) {
-  backdrop.classList.toggle('is-hidden');
-  DOMElement.innerHTML = '';
+function backdropListener(event) {
+  if (event.target.classList.contains('backdrop')) {
+    closeModal(modalElement);
+  }
 }
 function removeButtonListener(event) {
-  console.log(event);
   event.target.classList.add('hidden');
   if (event.target.nextElementSibling) {
     event.target.nextElementSibling.classList.remove('hidden');
@@ -387,8 +398,14 @@ function renderIngradientModal(ingradientsArray, DOMElement, event) {
   DOMElement.innerHTML = '';
 
   for (let index = 0; index < ingradientsArray.length; index++) {
-    const { title, abv, type, country, flavour, description } =
+    let { title, abv, type, country, flavour, description } =
       ingradientsArray[index];
+    const noDataMsg = 'Sorry, no data available.';
+    if (!abv) abv = 0;
+    if (!country) country = noDataMsg;
+    if (!description) description = noDataMsg;
+    if (!flavour) flavour = noDataMsg;
+    if (!type) type = noDataMsg;
     if (event.target.dataset.name === title) {
       currentIngradient = ingradientsArray[index];
       const markup = ` <button
@@ -433,15 +450,6 @@ function renderIngradientModal(ingradientsArray, DOMElement, event) {
       <button class="back-button" type="button">Back</button>
     `;
       DOMElement.insertAdjacentHTML('beforeend', markup);
-    }
-  }
-}
-function setIngradient(array, event) {
-  for (let index = 0; index < array.length; index++) {
-    const { title } = array[index];
-    if (event.target.dataset.name === title) {
-      currentIngradient = array[index];
-      return [currentIngradient];
     }
   }
 }
