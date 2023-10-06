@@ -61,8 +61,23 @@ ingradientsListElement.addEventListener('click', event => {
     let updateLocalStorage = getFromLocalStorage('ingredients');
     renderIngradients(updateLocalStorage, ingradientsListElement);
     deleteFavCocktail();
-    drinkifyModal.selectOpenModalButton();
-    ingradientsListElement.addEventListener('click', getIngredientInfo);
+    if (updateLocalStorage && updateLocalStorage.length > 0) {
+      parts = pagination.createCardsPerPage(updateLocalStorage);
+      renderIngradients(parts[0], ingradientsListElement);
+      drinkifyModal.selectOpenModalButton();
+      ingradientsListElement.addEventListener('click', getIngredientInfo);
+      pagination.changePageByClick(
+        parts,
+        ingradientsListElement,
+        renderIngradients,
+        DrinkifyModal
+      );
+      noFoundElement.classList.add('hidden');
+      drinkifyModal.selectOpenModalButton();
+      ingradientsListElement.addEventListener('click', getIngredientInfo);
+    } else {
+      noFoundElement.classList.remove('hidden');
+    }
   }
 });
 
