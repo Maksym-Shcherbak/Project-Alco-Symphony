@@ -5,6 +5,7 @@ export const successRequest = quantity => {
   Notify.success(`Great choice! We found ${quantity} cocktail.`, {
     cssAnimationStyle: 'zoom',
     position: 'center-top',
+    showOnlyTheLastOne: true,
   });
 };
 
@@ -14,6 +15,7 @@ export const badRequest = () => {
     {
       cssAnimationStyle: 'zoom',
       position: 'center-top',
+      showOnlyTheLastOne: true,
     }
   );
 };
@@ -22,6 +24,7 @@ export const needSearchQuery = () => {
   Notify.info('Please, write something', {
     cssAnimationStyle: 'zoom',
     position: 'center-top',
+    showOnlyTheLastOne: true,
   });
 };
 
@@ -29,9 +32,9 @@ export const endListOfPictures = () => {
   Notify.info("We're sorry, but you've reached the end of search results", {
     cssAnimationStyle: 'zoom',
     position: 'center-top',
+    showOnlyTheLastOne: true,
   });
 };
-
 
 export const deleteFavCocktail = () => {
   Notify.info('The cocktail has been removed from your favorites cocktails!', {
@@ -39,18 +42,28 @@ export const deleteFavCocktail = () => {
     cssAnimationDuration: 800,
     cssAnimationStyle: 'from-top',
     fontSize: '18px',
-  }
-  )
-}
-
+    showOnlyTheLastOne: true,
+  });
+};
 
 export const errorFromLS = () => {
   Notify.failure('Ooops...Something went wrong!Please try again.', {
     position: 'right-top',
     cssAnimationDuration: 800,
     fontSize: '18px',
-  })
-}
+    showOnlyTheLastOne: true,
+  });
+};
+
+export const addCocktailToFav = () => {
+  Notify.success('The coctail has been added to favorite', {
+    position: 'right-top',
+    cssAnimationDuration: 800,
+    fontSize: '18px',
+    showOnlyTheLastOne: true,
+  });
+};
+
 // -------------------------------------------
 // function handleCardButtonClick() {
 //   Notiflix.Notify.success('Mmm, great choice!');

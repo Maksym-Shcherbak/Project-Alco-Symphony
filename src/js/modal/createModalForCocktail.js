@@ -6,6 +6,10 @@ import {
 import { getIngredient } from './createModalIngredient';
 import { load } from '../favourite-btn/favourite-btn';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
+import {
+  deleteFavCocktail,
+  addCocktailToFav,
+} from '../notification/notification';
 export {
   getCocktailById,
   onToFavorite,
@@ -53,6 +57,7 @@ async function addToFavorite(event) {
     event.target.textContent = 'Add to favorite';
     event.target.classList.remove('added');
     cocktailCard.classList.remove('enabled');
+    deleteFavCocktail();
   } else {
     const id = event.target.id;
     const cocktailCard = document.getElementById(id);
@@ -77,6 +82,7 @@ async function addToFavorite(event) {
       event.target.textContent = 'Remove from favorite';
       event.target.classList.add('added');
       cocktailCard.classList.add('enabled');
+      addCocktailToFav();
     }
   }
 }

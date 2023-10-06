@@ -36,3 +36,20 @@ listFavCocktail.addEventListener('click', event => {
     }
   }
 });
+
+const removeModalButton = document.querySelector('.added');
+removeByButton(removeModalButton);
+
+function removeByButton(element) {
+  element.addEventListener('click', e => {
+    const id = e.target.id;
+    removeFromLocalStorage('favorite', id);
+    let updateLocalStorage = getFromLocalStorage('favorite');
+    renderCocktailsBySearch(updateLocalStorage);
+    deleteFavCocktail();
+    drinkifyModal.selectOpenModalButton();
+    // listFavCocktail.addEventListener('click', getIngredientInfo);
+    backdrop.classList.add('is-hidden');
+    body.classList.remove('modal-open');
+  });
+}

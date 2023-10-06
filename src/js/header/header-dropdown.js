@@ -9,15 +9,17 @@ function myFunction(e) {
 }
 
 // Close the dropdown if the user clicks outside of it
-window.onclick = function (e) {
+window.addEventListener('click', e => {
   if (
-    !e.target.matches('.dropbtn') &
-    !e.target.matches('.menu-icon-drop') &
-    !e.target.matches('.dropbtn-text')
+    e.target.matches('.dropbtn') ||
+    e.target.matches('.menu-icon-drop') ||
+    e.target.matches('.dropbtn-text')
   ) {
+    return;
+  } else {
     const myDropdown = document.getElementById('myDropdown');
     if (myDropdown.classList.contains('show')) {
       myDropdown.classList.remove('show');
     }
   }
-};
+});

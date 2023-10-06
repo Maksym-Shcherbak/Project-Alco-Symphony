@@ -179,6 +179,10 @@
 }
 /* //__________выпадающее меню моб_____________________________________________ */
 
+.mob-dropdown {
+  position: relative;
+}
+
 .mob-dropdown .mob-dropbtn {
   border: none;
   outline: none;
@@ -210,8 +214,8 @@
   width: 192px;
   height: 80px;
   z-index: 1;
-  top: 28px;
-  left: -45px;
+  top: 25px;
+  left: 70px;
   z-index: 999;
 }
 
@@ -301,7 +305,7 @@
     line-height: 32px;
   }
   .mob-dropdown-content {
-    left: -35px;
+    left: 250px;
   }
   .modal-icon-img {
     display: flex;
