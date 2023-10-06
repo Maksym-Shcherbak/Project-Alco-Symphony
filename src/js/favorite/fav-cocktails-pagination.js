@@ -1,4 +1,3 @@
-import Pagination from 'tui-pagination';
 import 'tui-pagination/dist/tui-pagination.css';
 import { renderFavCocktails } from './favorite-cocktails-render';
 import { storageCocktailArr } from './local-storage';

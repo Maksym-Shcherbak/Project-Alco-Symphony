@@ -1,5 +1,5 @@
 export class DrinkifyModal {
-  constructor(modalContent) {
+  constructor() {
     this.isModalOpen = false;
     this.modal = ['data-first-modal'];
   }

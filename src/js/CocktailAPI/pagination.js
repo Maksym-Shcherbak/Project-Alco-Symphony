@@ -39,7 +39,9 @@ export class PaginationForCocktails {
       const currentPage = event.page;
       const index = currentPage - 1;
       renderPage(arr[index], container);
-      setStage();
+      if (setStage) {
+        setStage();
+      }
       const modal = new classModal();
       modal.selectOpenModalButton();
     });
