@@ -37,8 +37,8 @@ listFavCocktail.addEventListener('click', event => {
   }
 });
 
-const removeModalButton = document.querySelector('.added');
-removeByButton(removeModalButton);
+// const removeModalButton = document.querySelector('.added');
+// removeByButton(removeModalButton);
 
 function removeByButton(element) {
   element.addEventListener('click', e => {
