@@ -305,6 +305,7 @@
     line-height: 32px;
   }
   .mob-dropdown-content {
+    top: 28px;
     left: 250px;
   }
   .modal-icon-img {
