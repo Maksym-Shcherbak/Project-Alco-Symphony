@@ -71,8 +71,7 @@
 }
 
 .desc-item {
-  margin-bottom: 0px;
-  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1); */
   margin-bottom: 8px;
 }
 
@@ -81,6 +80,11 @@
   font-size: 14px;
   font-weight: 400;
   line-height: 1.7;
+}
+
+.ingred-desc-list .item-text:focus,
+.ingred-desc-list .item-text:hover {
+  color: rgba(36, 36, 36, 0.8);
 }
 
 .ingred-modal-x-btn {
