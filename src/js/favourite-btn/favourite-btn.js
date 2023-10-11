@@ -2,6 +2,7 @@ import {
   deleteFavCocktail,
   addCocktailToFav,
 } from '../notification/notification';
+import { getFullDescription } from '../cocktails/full-description-cocktail';
 
 // import { load } from "../favorite/favorite-coctails-render";
 import {
@@ -61,5 +62,13 @@ export function favBtnClick(event) {
         arr = [];
       }
     }
+  }
+  if (event.target.classList.contains('cocktail-card')) {
+    const fullDescriptionPar = event.target.children[0].children[2];
+    const fullDescription = fullDescriptionPar.textContent;
+    const drinkNameTitle = fullDescriptionPar.previousElementSibling;
+    const drinkName = drinkNameTitle.textContent;
+    const drinkImgSrc = drinkNameTitle.previousElementSibling.children[0].src;
+    getFullDescription(fullDescription, drinkImgSrc, drinkName);
   }
 }

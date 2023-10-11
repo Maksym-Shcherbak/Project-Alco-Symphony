@@ -77,9 +77,14 @@ body.modal-open {
     transform: translate(-50%, -50%);
     background-color: #f8f9ff;
     width: 335px;
-    /* height: 865px; */
+    max-height: 905px;
     border-radius: 20px;
     padding: 40px 20px;
+    overflow: hidden;
+  }
+
+  .cocktail-full-info {
+    overflow-y: auto;
   }
 
   .pop_up_modal_close_btn {
@@ -256,8 +261,34 @@ body.modal-open {
   /* Additional styles for modal 768px... */
   .modal {
     width: 600px;
-    /* height: 529px; */
+    height: 569px;
     padding: 40px;
+  }
+
+  .full-description {
+    height: 125px;
+    overflow-y: auto;
+  }
+
+  .full-description::-webkit-scrollbar {
+    width: 8px;
+    /* border-radius: 4px; */
+  }
+
+  .full-description::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+    background: rgba(36, 36, 36, 0.2);
+  }
+
+  .full-description::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    background: #7e8fdd;
+  }
+
+  .full-description::-webkit-scrollbar-thumb:hover {
+    background: #242424;
   }
 
   .pop_up_pic {
