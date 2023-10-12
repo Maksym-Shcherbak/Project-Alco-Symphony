@@ -67,6 +67,10 @@ body.modal-open {
   pointer-events: none;
 }
 
+.ingredients-measure {
+  margin-right: 5px;
+}
+
 @media screen and (min-width: 320px) {
   /* New version */
   /* Structure */

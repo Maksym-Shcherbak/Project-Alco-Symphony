@@ -82,11 +82,6 @@
   line-height: 1.7;
 }
 
-.ingred-desc-list .item-text:focus,
-.ingred-desc-list .item-text:hover {
-  color: rgba(36, 36, 36, 0.8);
-}
-
 .ingred-modal-x-btn {
   position: absolute;
   top: 14px;

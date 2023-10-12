@@ -10,6 +10,7 @@ import {
   deleteFavCocktail,
   addCocktailToFav,
 } from '../notification/notification';
+import { renderCocktailsBySearch } from '../favorite/fav-cocktails-pagination';
 export {
   getCocktailById,
   onToFavorite,
@@ -53,7 +54,14 @@ async function addToFavorite(event) {
   if (event.target.classList.contains('added')) {
     const id = event.target.id;
     const cocktailCard = document.getElementById(id);
+    const modal = document.querySelector('[data-first-modal]');
     removeFromLocalStorage('favorite', id);
+    document.body.classList.toggle('modal-open');
+    modal.classList.toggle('is-hidden');
+    if (location.pathname === '/favorite-cocktails.html') {
+      let updateLocalStorage = getFromLocalStorage('favorite');
+      renderCocktailsBySearch(updateLocalStorage);
+    }
     event.target.textContent = 'Add to favorite';
     event.target.classList.remove('added');
     cocktailCard.classList.remove('enabled');
@@ -122,5 +130,15 @@ function setStateFavorite(key, className) {
         cocktailModalBtn.textContent = 'Remove from favorite';
       }
     });
+  }
+}
+
+function getFromLocalStorage(key) {
+  try {
+    const value = localStorage.getItem(key);
+    return JSON.parse(value);
+  } catch (error) {
+    errorFromLS();
+    return null;
   }
 }

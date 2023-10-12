@@ -24,7 +24,8 @@
 .dark-mode .cocktail-modal .modal-cocktail-ingredient,
 .dark-mode .cocktail-modal .modal-instructions-title,
 .dark-mode .cocktail-modal .modal-cocktail-back,
-.dark-mode .ingredient-modal .modal-ingredient-back {
+.dark-mode .ingredient-modal .modal-ingredient-back,
+.dark-mode .full-description {
   color: rgba(253, 253, 255, 1);
 }
 .dark-mode .cocktail-modal .modal-cocktail-ingredient:hover {
@@ -60,9 +61,7 @@
 .dark-mode .ingredient-modal .back-button:hover,
 .dark-mode .ingredient-modal .back-button:focus,
 .dark-mode .cocktail-modal .modal-cocktail-back:hover,
-.dark-mode .cocktail-modal .modal-cocktail-back:focus,
-.dark-mode .ingredient-modal .modal-ingredient-back:hover,
-.dark-mode .ingredient-modal .modal-ingredient-back:focus {
+.dark-mode .cocktail-modal .modal-cocktail-back:focus {
   background-color: rgba(253, 253, 255, 0.2);
 }
 .dark-mode .cocktail-card,

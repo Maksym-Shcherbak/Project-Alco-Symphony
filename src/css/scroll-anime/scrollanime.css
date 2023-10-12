@@ -74,7 +74,6 @@
   transition: all 0.3s ease-in-out 0.3s;
 }
 
-.fav-cocktail-card-info,
 .cocktail-card-learn {
   transition: all 0.3s ease-in-out 0.3s;
 }
@@ -92,10 +91,6 @@
 .delete-btn,
 .learn-more-btn {
   transition: all 0.3s ease-in-out 0.2s;
-}
-
-.fav-cocktail-card-info:hover {
-  transform: translateY(-1rem);
 }
 
 .social-list-icon,
