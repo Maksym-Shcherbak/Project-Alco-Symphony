@@ -7,8 +7,8 @@ import { getIngredient } from './createModalIngredient';
 import { load } from '../favourite-btn/favourite-btn';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
 import {
-  deleteFavCocktail,
-  addCocktailToFav,
+  deleteFromFavoriteMessage,
+  addToFavoriteMessage,
 } from '../notification/notification';
 import { renderCocktailsBySearch } from '../favorite/fav-cocktails-pagination';
 export {
@@ -65,7 +65,7 @@ async function addToFavorite(event) {
     event.target.textContent = 'Add to favorite';
     event.target.classList.remove('added');
     cocktailCard.classList.remove('enabled');
-    deleteFavCocktail();
+    deleteFromFavoriteMessage('cocktail');
   } else {
     const id = event.target.id;
     const cocktailCard = document.getElementById(id);
@@ -90,7 +90,7 @@ async function addToFavorite(event) {
       event.target.textContent = 'Remove from favorite';
       event.target.classList.add('added');
       cocktailCard.classList.add('enabled');
-      addCocktailToFav();
+      addToFavoriteMessage('cocktail');
     }
   }
 }

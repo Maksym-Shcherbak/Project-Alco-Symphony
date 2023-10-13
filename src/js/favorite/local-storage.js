@@ -1,6 +1,9 @@
 import { removeFromLocalStorage } from '../modal/createModalForCocktail';
 import { renderCocktailsBySearch } from '../favorite/fav-cocktails-pagination';
-import { deleteFavCocktail, errorFromLS } from '../notification/notification';
+import {
+  deleteFromFavoriteMessage,
+  errorFromLS,
+} from '../notification/notification';
 export let storageCocktailArr = getFromLocalStorage('favorite');
 
 const hideContainer = document.querySelector('.not-found-cocktails-container');
@@ -29,7 +32,7 @@ listFavCocktail.addEventListener('click', event => {
       removeFromLocalStorage('favorite', id);
       updateLocalStorage = getFromLocalStorage('favorite');
       renderCocktailsBySearch(updateLocalStorage);
-      deleteFavCocktail();
+      deleteFromFavoriteMessage('cocktail');
     }
     if (updateLocalStorage.length === 0) {
       hideContainer.classList.remove('visually-hidden');

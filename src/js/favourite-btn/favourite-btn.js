@@ -1,6 +1,6 @@
 import {
-  deleteFavCocktail,
-  addCocktailToFav,
+  deleteFromFavoriteMessage,
+  addToFavoriteMessage,
 } from '../notification/notification';
 import { getFullDescription } from '../cocktails/full-description-cocktail';
 
@@ -39,7 +39,7 @@ export function favBtnClick(event) {
       const id = event.target.closest('li').id;
       removeFromLocalStorage('favorite', id);
       event.target.closest('li').classList.remove('enabled');
-      deleteFavCocktail();
+      deleteFromFavoriteMessage('cocktail');
     } else {
       event.target.closest('li').classList.add('enabled');
       const object = {
@@ -49,7 +49,7 @@ export function favBtnClick(event) {
         text: event.target.closest('li').children[0].children[2].textContent,
         isInFavorite: 'true',
       };
-      addCocktailToFav();
+      addToFavoriteMessage('cocktail');
       let savedCocktails = load('favorite') || [];
       let isInCocktailsArray;
       const id = event.target.closest('li').id;

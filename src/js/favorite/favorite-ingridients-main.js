@@ -1,7 +1,7 @@
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
 import {
   errorFromLS,
-  deleteFavCocktail,
+  deleteFromFavoriteMessage,
 } from '../../js/notification/notification';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
 import '../../js/header/header';
@@ -60,7 +60,7 @@ ingradientsListElement.addEventListener('click', event => {
     removeFromLocalStorage('ingredients', id);
     let updateLocalStorage = getFromLocalStorage('ingredients');
     renderIngradients(updateLocalStorage, ingradientsListElement);
-    deleteFavCocktail();
+    deleteFromFavoriteMessage('ingredient');
     if (updateLocalStorage && updateLocalStorage.length > 0) {
       parts = pagination.createCardsPerPage(updateLocalStorage);
       renderIngradients(parts[0], ingradientsListElement);
@@ -211,7 +211,7 @@ function removeByButton(element) {
     removeFromLocalStorage('ingredients', id);
     let updateLocalStorage = getFromLocalStorage('ingredients');
     renderIngradients(updateLocalStorage, ingradientsListElement);
-    deleteFavCocktail();
+    deleteFromFavoriteMessage('ingredient');
     drinkifyModal.selectOpenModalButton();
     ingradientsListElement.addEventListener('click', getIngredientInfo);
     backdrop.classList.add('is-hidden');
