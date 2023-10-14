@@ -38,19 +38,18 @@ document.addEventListener('DOMContentLoaded', event => {
   if (favoriteIngradientsArray.length !== 0) {
     noFoundElement.classList.add('hidden');
     ingradientsListElement.classList.remove('hidden');
+    parts = pagination.createCardsPerPage(favoriteIngradientsArray);
+
+    renderIngradients(parts[0], ingradientsListElement);
+    drinkifyModal.selectOpenModalButton();
+    ingradientsListElement.addEventListener('click', getIngredientInfo);
+    pagination.changePageByClick(
+      parts,
+      ingradientsListElement,
+      renderIngradients,
+      DrinkifyModal
+    );
   }
-
-  parts = pagination.createCardsPerPage(favoriteIngradientsArray);
-
-  renderIngradients(parts[0], ingradientsListElement);
-  drinkifyModal.selectOpenModalButton();
-  ingradientsListElement.addEventListener('click', getIngredientInfo);
-  pagination.changePageByClick(
-    parts,
-    ingradientsListElement,
-    renderIngradients,
-    DrinkifyModal
-  );
 });
 
 // listener for remove button
