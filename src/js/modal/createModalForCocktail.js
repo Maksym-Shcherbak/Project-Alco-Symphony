@@ -7,9 +7,10 @@ import { getIngredient } from './createModalIngredient';
 import { load } from '../favourite-btn/favourite-btn';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
 import {
-  deleteFavCocktail,
-  addCocktailToFav,
+  deleteFromFavoriteMessage,
+  addToFavoriteMessage,
 } from '../notification/notification';
+import { renderCocktailsBySearch } from '../favorite/fav-cocktails-pagination';
 export {
   getCocktailById,
   onToFavorite,
@@ -53,11 +54,31 @@ async function addToFavorite(event) {
   if (event.target.classList.contains('added')) {
     const id = event.target.id;
     const cocktailCard = document.getElementById(id);
+    const modal = document.querySelector('[data-first-modal]');
     removeFromLocalStorage('favorite', id);
+    document.body.classList.toggle('modal-open');
+    modal.classList.toggle('is-hidden');
+    if (location.pathname === '/favorite-cocktails.html') {
+      let updateLocalStorage = getFromLocalStorage('favorite');
+      if (updateLocalStorage && updateLocalStorage.length > 0) {
+        removeFromLocalStorage('favorite', id);
+        updateLocalStorage = getFromLocalStorage('favorite');
+        renderCocktailsBySearch(updateLocalStorage);
+        deleteFromFavoriteMessage('cocktail');
+      }
+      if (updateLocalStorage.length === 0) {
+        const listFavCocktail = document.querySelector('.fav-cocktails-list');
+        listFavCocktail.innerHTML = '';
+        const hideContainer = document.querySelector(
+          '.not-found-cocktails-container'
+        );
+        hideContainer.classList.remove('visually-hidden');
+      }
+    }
     event.target.textContent = 'Add to favorite';
     event.target.classList.remove('added');
     cocktailCard.classList.remove('enabled');
-    deleteFavCocktail();
+    deleteFromFavoriteMessage('cocktail');
   } else {
     const id = event.target.id;
     const cocktailCard = document.getElementById(id);
@@ -82,7 +103,7 @@ async function addToFavorite(event) {
       event.target.textContent = 'Remove from favorite';
       event.target.classList.add('added');
       cocktailCard.classList.add('enabled');
-      addCocktailToFav();
+      addToFavoriteMessage('cocktail');
     }
   }
 }
@@ -122,5 +143,15 @@ function setStateFavorite(key, className) {
         cocktailModalBtn.textContent = 'Remove from favorite';
       }
     });
+  }
+}
+
+function getFromLocalStorage(key) {
+  try {
+    const value = localStorage.getItem(key);
+    return JSON.parse(value);
+  } catch (error) {
+    errorFromLS();
+    return null;
   }
 }

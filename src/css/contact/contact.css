@@ -11,9 +11,7 @@ ul {
   list-style: none;
   padding: 0;
 }
-li {
-  padding: 10px;
-}
+
 a {
   text-decoration: none;
 }
@@ -85,7 +83,7 @@ p {
   flex-flow: wrap;
   justify-content: center;
   align-items: center;
-  row-gap: 20px;
+  gap: 20px;
   display: flex;
   list-style: none;
   margin-bottom: 20px;
@@ -151,7 +149,7 @@ p {
   .emp_details {
     display: flex;
     flex-wrap: wrap;
-    gap: 32px 16px;
+    gap: 32px 32px;
     justify-content: center;
     align-items: center;
   }
@@ -168,7 +166,7 @@ p {
     margin-top: 60px;
   }
   .employee {
-    width: 341px;
+    flex-basis: calc((100% - 32px) / 2);
     background-color: #7e8fdd;
     margin-bottom: 15px;
     box-sizing: border-box;
@@ -176,6 +174,12 @@ p {
     text-align: center;
     border-radius: 20px;
   }
+
+  .employee img {
+    width: 200px;
+    margin: 0 auto;
+  }
+
   .employee p {
     color: #fdfdff;
     font-size: 20px;
@@ -233,8 +237,9 @@ p {
     font-size: 45px;
     margin-top: 60px;
   }
+
   .employee {
-    width: 385.8px;
+    flex-basis: calc((100% - 100px) / 3);
     background-color: #7e8fdd;
     margin-bottom: 15px;
     box-sizing: border-box;
@@ -242,6 +247,7 @@ p {
     text-align: center;
     border-radius: 20px;
   }
+
   .employee p {
     color: #fdfdff;
     font-size: 20px;

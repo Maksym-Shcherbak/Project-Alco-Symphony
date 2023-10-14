@@ -36,8 +36,8 @@ export const endListOfPictures = () => {
   });
 };
 
-export const deleteFavCocktail = () => {
-  Notify.info('The cocktail has been removed from your favorites cocktails!', {
+export const deleteFromFavoriteMessage = name => {
+  Notify.info(`The ${name} has been removed from your favorite ${name}s!`, {
     position: 'right-top',
     cssAnimationDuration: 800,
     cssAnimationStyle: 'from-top',
@@ -55,8 +55,8 @@ export const errorFromLS = () => {
   });
 };
 
-export const addCocktailToFav = () => {
-  Notify.success('The coctail has been added to favorite', {
+export const addToFavoriteMessage = name => {
+  Notify.success(`The ${name} has been added to favorite`, {
     position: 'right-top',
     cssAnimationDuration: 800,
     fontSize: '18px',

@@ -1,7 +1,8 @@
 import {
-  deleteFavCocktail,
-  addCocktailToFav,
+  deleteFromFavoriteMessage,
+  addToFavoriteMessage,
 } from '../notification/notification';
+import { getFullDescription } from '../cocktails/full-description-cocktail';
 
 // import { load } from "../favorite/favorite-coctails-render";
 import {
@@ -38,7 +39,7 @@ export function favBtnClick(event) {
       const id = event.target.closest('li').id;
       removeFromLocalStorage('favorite', id);
       event.target.closest('li').classList.remove('enabled');
-      deleteFavCocktail();
+      deleteFromFavoriteMessage('cocktail');
     } else {
       event.target.closest('li').classList.add('enabled');
       const object = {
@@ -48,7 +49,7 @@ export function favBtnClick(event) {
         text: event.target.closest('li').children[0].children[2].textContent,
         isInFavorite: 'true',
       };
-      addCocktailToFav();
+      addToFavoriteMessage('cocktail');
       let savedCocktails = load('favorite') || [];
       let isInCocktailsArray;
       const id = event.target.closest('li').id;
@@ -61,5 +62,13 @@ export function favBtnClick(event) {
         arr = [];
       }
     }
+  }
+  if (event.target.classList.contains('cocktail-card')) {
+    const fullDescriptionPar = event.target.children[0].children[2];
+    const fullDescription = fullDescriptionPar.textContent;
+    const drinkNameTitle = fullDescriptionPar.previousElementSibling;
+    const drinkName = drinkNameTitle.textContent;
+    const drinkImgSrc = drinkNameTitle.previousElementSibling.children[0].src;
+    getFullDescription(fullDescription, drinkImgSrc, drinkName);
   }
 }

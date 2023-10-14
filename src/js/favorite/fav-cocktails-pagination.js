@@ -1,6 +1,5 @@
 import 'tui-pagination/dist/tui-pagination.css';
 import { renderFavCocktails } from './favorite-cocktails-render';
-import { storageCocktailArr } from './local-storage';
 import { PaginationForCocktails } from '../CocktailAPI/pagination';
 import { DrinkifyModal } from '../pop_up/pop_up_open';
 import { setIconFavorite } from '../favourite-btn/favourite-btn';
@@ -33,7 +32,6 @@ export function renderCocktailsBySearch(array) {
   favCocktailsPagination.hidePagination(options.itemsPerPage, container);
   renderFavCocktails(parts[0], cocktailList);
   drinkifyModal.selectOpenModalButton();
-
   favCocktailsPagination.changePageByClick(
     parts,
     cocktailList,

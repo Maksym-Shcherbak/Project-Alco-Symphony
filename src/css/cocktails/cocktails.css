@@ -30,6 +30,7 @@
 
 .cocktail-card-info {
   margin-bottom: 20px;
+  pointer-events: none;
 }
 
 .cocktail-card-info-thumb {
@@ -38,6 +39,7 @@
   border-radius: 16px;
   overflow: hidden;
   margin-bottom: 20px;
+  pointer-events: none;
 }
 
 .cocktail-card-info-img {
