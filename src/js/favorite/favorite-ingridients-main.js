@@ -31,26 +31,24 @@ const pagination = new PaginationForCocktails(
 const svgIcon = './img/sprite.svg';
 let parts;
 
-document.addEventListener('DOMContentLoaded', event => {
-  let favoriteIngradientsArray =
-    JSON.parse(localStorage.getItem('ingredients')) || [];
+let favoriteIngradientsArray =
+  JSON.parse(localStorage.getItem('ingredients')) || [];
 
-  if (favoriteIngradientsArray.length !== 0) {
-    noFoundElement.classList.add('hidden');
-    ingradientsListElement.classList.remove('hidden');
-    parts = pagination.createCardsPerPage(favoriteIngradientsArray);
+if (favoriteIngradientsArray.length !== 0) {
+  noFoundElement.classList.add('hidden');
+  ingradientsListElement.classList.remove('hidden');
+  parts = pagination.createCardsPerPage(favoriteIngradientsArray);
 
-    renderIngradients(parts[0], ingradientsListElement);
-    drinkifyModal.selectOpenModalButton();
-    ingradientsListElement.addEventListener('click', getIngredientInfo);
-    pagination.changePageByClick(
-      parts,
-      ingradientsListElement,
-      renderIngradients,
-      DrinkifyModal
-    );
-  }
-});
+  renderIngradients(parts[0], ingradientsListElement);
+  drinkifyModal.selectOpenModalButton();
+  ingradientsListElement.addEventListener('click', getIngredientInfo);
+  pagination.changePageByClick(
+    parts,
+    ingradientsListElement,
+    renderIngradients,
+    DrinkifyModal
+  );
+}
 
 // listener for remove button
 ingradientsListElement.addEventListener('click', event => {
