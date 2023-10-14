@@ -58,7 +58,9 @@ async function addToFavorite(event) {
     removeFromLocalStorage('favorite', id);
     document.body.classList.toggle('modal-open');
     modal.classList.toggle('is-hidden');
-    if (location.pathname === '/favorite-cocktails.html') {
+    if (
+      location.pathname === '/Project-Alco-Symphony/favorite-cocktails.html'
+    ) {
       let updateLocalStorage = getFromLocalStorage('favorite');
       if (updateLocalStorage && updateLocalStorage.length > 0) {
         updateLocalStorage = getFromLocalStorage('favorite');
