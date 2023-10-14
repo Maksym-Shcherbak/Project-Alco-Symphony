@@ -4,6 +4,10 @@ import {
   saveToLocalStorage,
   removeFromLocalStorage,
 } from './createModalForCocktail';
+import {
+  addToFavoriteMessage,
+  deleteFromFavoriteMessage,
+} from '../notification/notification';
 
 export function onToFavoriteIngredient(className) {
   const addBtn = document.querySelector(`.${className}`);
@@ -15,6 +19,7 @@ async function addToFavorite(event) {
     const id = event.target.id;
     const ingredCard = document.getElementById(id);
     removeFromLocalStorage('ingredients', id);
+    deleteFromFavoriteMessage('ingredient');
     event.target.textContent = 'Add to favorite';
     event.target.classList.remove('added');
     ingredCard.classList.remove('enabled');
@@ -45,6 +50,7 @@ async function addToFavorite(event) {
       let arr = [];
       arr.push(...ingred, ...savedIngredients);
       saveToLocalStorage('ingredients', arr);
+      addToFavoriteMessage('ingredient');
       event.target.textContent = 'Remove from favorite';
       event.target.classList.add('added');
       ingredCard.classList.add('enabled');

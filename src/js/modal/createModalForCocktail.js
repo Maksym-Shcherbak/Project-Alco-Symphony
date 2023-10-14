@@ -60,7 +60,20 @@ async function addToFavorite(event) {
     modal.classList.toggle('is-hidden');
     if (location.pathname === '/favorite-cocktails.html') {
       let updateLocalStorage = getFromLocalStorage('favorite');
-      renderCocktailsBySearch(updateLocalStorage);
+      if (updateLocalStorage && updateLocalStorage.length > 0) {
+        removeFromLocalStorage('favorite', id);
+        updateLocalStorage = getFromLocalStorage('favorite');
+        renderCocktailsBySearch(updateLocalStorage);
+        deleteFromFavoriteMessage('cocktail');
+      }
+      if (updateLocalStorage.length === 0) {
+        const listFavCocktail = document.querySelector('.fav-cocktails-list');
+        listFavCocktail.innerHTML = '';
+        const hideContainer = document.querySelector(
+          '.not-found-cocktails-container'
+        );
+        hideContainer.classList.remove('visually-hidden');
+      }
     }
     event.target.textContent = 'Add to favorite';
     event.target.classList.remove('added');
