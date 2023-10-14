@@ -32,7 +32,6 @@ export function renderCocktailsBySearch(array) {
   favCocktailsPagination.hidePagination(options.itemsPerPage, container);
   renderFavCocktails(parts[0], cocktailList);
   drinkifyModal.selectOpenModalButton();
-
   favCocktailsPagination.changePageByClick(
     parts,
     cocktailList,

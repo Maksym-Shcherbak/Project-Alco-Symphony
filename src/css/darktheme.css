@@ -25,7 +25,8 @@
 .dark-mode .cocktail-modal .modal-instructions-title,
 .dark-mode .cocktail-modal .modal-cocktail-back,
 .dark-mode .ingredient-modal .modal-ingredient-back,
-.dark-mode .full-description {
+.dark-mode .full-description,
+.dark-mode .ingredients-measure {
   color: rgba(253, 253, 255, 1);
 }
 .dark-mode .cocktail-modal .modal-cocktail-ingredient:hover {

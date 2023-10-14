@@ -57,15 +57,13 @@ document.addEventListener('DOMContentLoaded', event => {
 ingradientsListElement.addEventListener('click', event => {
   if (event.target.classList.contains('remove-button')) {
     const id = event.target.closest('li').id;
-    removeFromLocalStorage('ingredients', id);
     let updateLocalStorage = getFromLocalStorage('ingredients');
-    renderIngradients(updateLocalStorage, ingradientsListElement);
-    deleteFromFavoriteMessage('ingredient');
     if (updateLocalStorage && updateLocalStorage.length > 0) {
+      removeFromLocalStorage('ingredients', id);
+      deleteFromFavoriteMessage('ingredient');
+      updateLocalStorage = getFromLocalStorage('ingredients');
       parts = pagination.createCardsPerPage(updateLocalStorage);
       renderIngradients(parts[0], ingradientsListElement);
-      drinkifyModal.selectOpenModalButton();
-      ingradientsListElement.addEventListener('click', getIngredientInfo);
       pagination.changePageByClick(
         parts,
         ingradientsListElement,
@@ -75,7 +73,8 @@ ingradientsListElement.addEventListener('click', event => {
       noFoundElement.classList.add('hidden');
       drinkifyModal.selectOpenModalButton();
       ingradientsListElement.addEventListener('click', getIngredientInfo);
-    } else {
+    }
+    if (updateLocalStorage.length === 0) {
       noFoundElement.classList.remove('hidden');
     }
   }
@@ -135,6 +134,7 @@ function getFromLocalStorage(key) {
 
 function getIngredientInfo(e) {
   if (e.target.classList.contains('read-more-button')) {
+    console.log(e.target);
     const id = e.target.closest('li').id;
     const ingredients = getFromLocalStorage('ingredients');
     const ingredient = ingredients.find(item => item.id === id);
@@ -208,13 +208,27 @@ function renderIngredientModal(ingredientsArray, DOMElement) {
 function removeByButton(element) {
   element.addEventListener('click', e => {
     const id = e.target.id;
-    removeFromLocalStorage('ingredients', id);
     let updateLocalStorage = getFromLocalStorage('ingredients');
-    renderIngradients(updateLocalStorage, ingradientsListElement);
-    deleteFromFavoriteMessage('ingredient');
-    drinkifyModal.selectOpenModalButton();
-    ingradientsListElement.addEventListener('click', getIngredientInfo);
     backdrop.classList.add('is-hidden');
     body.classList.remove('modal-open');
+    if (updateLocalStorage && updateLocalStorage.length > 0) {
+      removeFromLocalStorage('ingredients', id);
+      updateLocalStorage = getFromLocalStorage('ingredients');
+      parts = pagination.createCardsPerPage(updateLocalStorage);
+      renderIngradients(parts[0], ingradientsListElement);
+      pagination.changePageByClick(
+        parts,
+        ingradientsListElement,
+        renderIngradients,
+        DrinkifyModal
+      );
+      noFoundElement.classList.add('hidden');
+      deleteFromFavoriteMessage('ingredient');
+      drinkifyModal.selectOpenModalButton();
+      ingradientsListElement.addEventListener('click', getIngredientInfo);
+    }
+    if (updateLocalStorage.length === 0) {
+      noFoundElement.classList.remove('hidden');
+    }
   });
 }
