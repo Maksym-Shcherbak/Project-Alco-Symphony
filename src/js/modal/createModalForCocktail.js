@@ -61,13 +61,13 @@ async function addToFavorite(event) {
     if (location.pathname === '/favorite-cocktails.html') {
       let updateLocalStorage = getFromLocalStorage('favorite');
       if (updateLocalStorage && updateLocalStorage.length > 0) {
-        removeFromLocalStorage('favorite', id);
         updateLocalStorage = getFromLocalStorage('favorite');
         renderCocktailsBySearch(updateLocalStorage);
         deleteFromFavoriteMessage('cocktail');
       }
       if (updateLocalStorage.length === 0) {
         const listFavCocktail = document.querySelector('.fav-cocktails-list');
+        console.log(listFavCocktail);
         listFavCocktail.innerHTML = '';
         const hideContainer = document.querySelector(
           '.not-found-cocktails-container'
