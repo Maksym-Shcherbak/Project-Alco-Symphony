@@ -18,9 +18,20 @@ const ingradientsListElement = document.querySelector(
 const noFoundElement = document.querySelector('.no-ingradients-wrapper');
 const drinkifyModal = new DrinkifyModal();
 
+const quantity = getVisiblePages();
+
+function getVisiblePages() {
+  if (window.innerWidth < 768) {
+    return 5;
+  } else {
+    return 7;
+  }
+}
+
 const PAGINATION_OPTIONS = {
   totalItems: 0,
   itemsPerPage: 6,
+  visiblePages: quantity,
   page: 1,
 };
 
