@@ -128,6 +128,10 @@
   background: rgba(36, 36, 36, 0.2);
 }
 @media screen and (max-width: 767px) {
+  .modal-ing-btn.add-to-fav {
+    margin-bottom: 14px;
+  }
+
   .modal-ingredient-back,
   .add-to-fav {
     width: 295px;
