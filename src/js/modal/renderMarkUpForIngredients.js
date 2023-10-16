@@ -26,22 +26,22 @@ export function renderModalForIngredient(arr, container) {
 
     <ul class="ingred-desc-list">
       <li class="desc-item">
-        <p class="item-text">
+        <p class="item-text-ingred">
           <span class="item-inner-title">Type: </span>${item.type}
         </p>
       </li>
       <li class="desc-item">
-        <p class="item-text">
+        <p class="item-text-ingred">
           <span class="item-inner-title">Country of origin: </span>${item.country}
         </p>
       </li>
       <li class="desc-item">
-        <p class="item-text">
+        <p class="item-text-ingred">
           <span class="item-inner-title">Alcohol by volume: </span>${item.abv} %
         </p>
       </li>
       <li class="desc-item">
-        <p class="item-text">
+        <p class="item-text-ingred">
           <span class="item-inner-title">Flavour: </span>${item.flavour}
         </p>
       </li>

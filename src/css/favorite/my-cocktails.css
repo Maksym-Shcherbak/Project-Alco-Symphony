@@ -4,6 +4,7 @@
 @import url('../common.css');
 @import url('../header/header.css');
 @import url('../footer/footer.css');
+@import url('../cocktails/cocktails.css');
 @import url('../scroll-anime/scrollanime.css');
 @import url('../pagination/pagination.css');
 @import url('../darktheme.css');
@@ -51,6 +52,7 @@
 
 .fav-cocktail-card-info {
   margin-bottom: 24px;
+  pointer-events: none;
 }
 
 .fav-cocktail-card-container {
@@ -188,7 +190,7 @@
 
   .learn-more-btn {
     max-width: 100%;
-    width: 180px;
+    width: 232px;
     padding: 14px 20px;
   }
 }

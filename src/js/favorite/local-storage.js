@@ -4,6 +4,7 @@ import {
   deleteFromFavoriteMessage,
   errorFromLS,
 } from '../notification/notification';
+import { getFullDescription } from '../cocktails/full-description-cocktail';
 export let storageCocktailArr = getFromLocalStorage('favorite');
 
 const hideContainer = document.querySelector('.not-found-cocktails-container');
@@ -37,6 +38,14 @@ listFavCocktail.addEventListener('click', event => {
     if (updateLocalStorage.length === 0) {
       hideContainer.classList.remove('visually-hidden');
     }
+  }
+  if (event.target.classList.contains('fav-cocktail-card')) {
+    const fullDescriptionPar = event.target.children[0].children[2];
+    const fullDescription = fullDescriptionPar.textContent;
+    const drinkNameTitle = fullDescriptionPar.previousElementSibling;
+    const drinkName = drinkNameTitle.textContent;
+    const drinkImgSrc = drinkNameTitle.previousElementSibling.children[0].src;
+    getFullDescription(fullDescription, drinkImgSrc, drinkName);
   }
 });
 

@@ -6,6 +6,7 @@ export const successRequest = quantity => {
     cssAnimationStyle: 'zoom',
     position: 'center-top',
     showOnlyTheLastOne: true,
+    clickToClose: true,
   });
 };
 
@@ -16,6 +17,7 @@ export const badRequest = () => {
       cssAnimationStyle: 'zoom',
       position: 'center-top',
       showOnlyTheLastOne: true,
+      clickToClose: true,
     }
   );
 };
@@ -25,6 +27,7 @@ export const needSearchQuery = () => {
     cssAnimationStyle: 'zoom',
     position: 'center-top',
     showOnlyTheLastOne: true,
+    clickToClose: true,
   });
 };
 
@@ -33,6 +36,7 @@ export const endListOfPictures = () => {
     cssAnimationStyle: 'zoom',
     position: 'center-top',
     showOnlyTheLastOne: true,
+    clickToClose: true,
   });
 };
 
@@ -43,6 +47,7 @@ export const deleteFromFavoriteMessage = name => {
     cssAnimationStyle: 'from-top',
     fontSize: '18px',
     showOnlyTheLastOne: true,
+    clickToClose: true,
   });
 };
 
@@ -52,6 +57,7 @@ export const errorFromLS = () => {
     cssAnimationDuration: 800,
     fontSize: '18px',
     showOnlyTheLastOne: true,
+    clickToClose: true,
   });
 };
 
@@ -61,14 +67,6 @@ export const addToFavoriteMessage = name => {
     cssAnimationDuration: 800,
     fontSize: '18px',
     showOnlyTheLastOne: true,
+    clickToClose: true,
   });
 };
-
-// -------------------------------------------
-// function handleCardButtonClick() {
-//   Notiflix.Notify.success('Mmm, great choice!');
-// }
-// const learnButtons = document.querySelectorAll('.cocktail-card-button');
-// learnButtons.forEach(button => {
-//   button.addEventListener('click', handleCardButtonClick);
-// });

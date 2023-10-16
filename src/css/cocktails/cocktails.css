@@ -1,8 +1,3 @@
-.container {
-  padding: 0 20px;
-  margin: 0 auto;
-}
-
 .drinkify-cocktails {
   padding-bottom: 80px;
 }
@@ -157,10 +152,6 @@
   }
 }
 @media screen and (min-width: 375px) {
-  .container {
-    width: 375px;
-  }
-
   .cocktail-card {
     width: 335px;
   }
@@ -173,11 +164,6 @@
 }
 
 @media screen and (min-width: 768px) {
-  .container {
-    width: 768px;
-    padding: 0 32px;
-  }
-
   .drinkify-cocktails {
     padding-bottom: 100px;
   }
@@ -249,10 +235,6 @@
 }
 
 @media screen and (min-width: 1280px) {
-  .container {
-    width: 1280px;
-  }
-
   .drinkify-cocktails-title {
     margin-bottom: 44px;
   }
